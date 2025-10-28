@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Financial Learning & AI Insights</title>
+<style>
+  body {
+    margin: 0;
+    font-family: "Inter", Arial, sans-serif;
+    background: #fff;
+    color: #111;
+    line-height: 1.6;
+  }
+
+  /* ---------- GLOBAL ---------- */
+  section {
+    padding: 60px 8%;
+  }
+
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    font-weight: 700;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  /* ---------- SECTION 1: SIGN UP ---------- */
+  .signup {
+    background: #1e1e1e;
+    color: #fff;
+    text-align: center;
+    padding: 70px 8%;
+  }
+
+  .signup h2 {
+    font-size: 2rem;
+  }
+
+  .highlight {
+    color: #ff9500;
+  }
+
+  .features {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin-top: 40px;
+  }
+
+  .feature {
+    text-align: left;
+    width: 250px;
+  }
+
+  .feature i {
+    color: #ff9500;
+    font-size: 1.5rem;
+    margin-bottom: 8px;
+  }
+
+  .feature p {
+    font-weight: 500;
+  }
+
+  /* ---------- SECTION 2: MARKET AI ---------- */
+  .market {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    flex-wrap: wrap;
+  }
+
+  .market ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .market li {
+    display: flex;
+    margin-bottom: 16px;
+  }
+
+  .market li span.num {
+    color: #d0d6dc;
+    font-size: 1.8rem;
+    margin-right: 12px;
+    font-weight: bold;
+  }
+
+  .market li a {
+    color: #ff7a00;
+  }
+
+  .market img {
+    max-width: 100%;
+    border-radius: 8px;
+  }
+
+  .market .btn {
+    background: #ff9500;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 22px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 20px;
+  }
+
+  /* ---------- SECTION 3: LEARN TO TRADE ---------- */
+  .trade {
+    background: #1e1e1e;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 40px;
+  }
+
+  .trade-text {
+  flex: 1;
+  min-width: 300px;
+  max-width: 450px;
+}
+
+  .trade-text h4 {
+    color: #2fe0b5;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    margin-bottom: 8px;
+  }
+
+  .trade-text a {
+    color: #a17cf0;
+    font-weight: 600;
+  }
+
+  .trade-text a:hover {
+  text-decoration: underline;
+}
+
+    .trade-cards {
+    position: relative;
+    flex: 1;
+    min-width: 320px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    height: 350px;
+  }
+
+
+  .card {
+    position: absolute;
+    width: 330px;
+    background: #fff;
+    color: #000;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+    padding: 18px 22px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: transform 0.4s ease;
+  }
+
+  .card img {
+    width: 70px;
+    height: 70px;
+    border-radius: 8px;
+  }
+
+  .card:hover {
+    transform: translateY(-15px);
+  }
+
+  .card1 { top: 0; z-index: 4; }
+  .card2 { top: 50px; z-index: 3; }
+  .card3 { top: 100px; z-index: 2; }
+  .card4 { top: 150px; z-index: 1; }
+
+  /* ---------- SECTION 4: FINANCIAL MARKETS ---------- */
+  .markets {
+    text-align: center;
+    background: #f9f9f9;
+  }
+
+  .card-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+  }
+
+  .info-card {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    width: 320px;
+    text-align: left;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+  }
+
+  .info-card:hover {
+    transform: translateY(-8px);
+  }
+
+  .info-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+  }
+
+  .info-content {
+    padding: 20px;
+  }
+
+  .info-content h3 {
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+  }
+
+  .info-content p {
+    color: #555;
+    margin-bottom: 12px;
+  }
+
+  .info-content a {
+    color: #0066ff;
+    font-weight: 600;
+  }
+
+  .about-navigation {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 40px;
+      border-top: 1px solid #eee;
+      padding-top: 25px;
+      gap: 600px;
+    }
+    .nav-about {
+      display: flex;
+      align-items: center;
+      color: #4b0082;
+      font-weight: 600;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+    .nav-about:hover {
+      color: #6f42c1;
+    }
+
+  
+</style>
+</head>
+<body>
+
+<!-- SECTION 1 -->
+<section class="signup">
+  <h2>Sign up for <span class="highlight">FREE</span> and get:</h2>
+  <div class="features">
+    <div class="feature"><i>🔔</i><p>Real-Time Alerts</p></div>
+    <div class="feature"><i>📈</i><p>Advanced Portfolio Features</p></div>
+    <div class="feature"><i>📊</i><p>Personalized Charts</p></div>
+    <div class="feature"><i>📱</i><p>Fully-Synced Mobile App</p></div>
+  </div>
+</section>
+
+<!-- SECTION 2 -->
+<section class="market">
+  <div class="text">
+    <h2>The science behind <span class="highlight">market-beating AI picks</span></h2>
+    <ul>
+      <li><span class="num">1</span> <strong>AI-powered stock selection:</strong> Processes 100+ metrics from 25 years of data to predict outperformance. <a href="#">Learn more</a></li>
+      <li><span class="num">2</span> <strong>Billionaire portfolios:</strong> Tracks holdings of top investors and hedge funds.</li>
+      <li><span class="num">3</span> <strong>Top undervalued stocks:</strong> Uses 17 valuation models to calculate true intrinsic value. <a href="#">Learn more</a></li>
+      <li><span class="num">4</span> <strong>WarrenAI:</strong> Converts natural language queries into real-time financial insights. <a href="#">Learn more</a></li>
+      <li><span class="num">5</span> <strong>Stock screener:</strong> Filters global stocks with 160+ metrics. <a href="#">Learn more</a></li>
+    </ul>
+    <button class="btn">Access 25 Years of AI-Analyzed Data</button>
+  </div>
+  <div class="image">
+    <img src="chart.png" alt="Market growth chart">
+  </div>
+</section>
+
+<!-- SECTION 3 -->
+<section class="trade">
+  <div class="trade-text">
+    <h4>EDUCATION</h4>
+    <h2>Learn how to trade</h2>
+    <p>We’ll teach you how to place trades, use market charts and introduce topics like risk management and market analysis.</p>
+    <a href="#">Learn about trading</a>
+  </div>
+
+  <div class="trade-cards">
+    <div class="card card1"><div>The trend is your friend</div><img src="trend.jpg" alt="Trend"></div>
+    <div class="card card2"><div>Trend Analysis 101</div><img src="analysis.jpg" alt="Analysis"></div>
+    <div class="card card3"><div>Risk Management 101</div><img src="risk.jpg" alt="Risk"></div>
+    <div class="card card4"><div>Online Trading 101</div><img src="online.jpg" alt="Online"></div>
+  </div>
+</section>
+
+<!-- SECTION 4 -->
+<section class="markets">
+  <h2>Introduction to financial markets</h2>
+  <div class="card-container">
+    <div class="info-card">
+      <img src="bullbear.jpg" alt="Trading online">
+      <div class="info-content">
+        <h3>Trading online</h3>
+        <p>Beginner’s guide to trading shares, currencies, and more.</p>
+        <a href="#">Learn how to trade online</a>
+      </div>
+    </div>
+
+    <div class="info-card">
+      <img src="riskmeter.jpg" alt="Risk management">
+      <div class="info-content">
+        <h3>Risk management</h3>
+        <p>Use Stop Loss and Take Profit orders to manage risk effectively.</p>
+        <a href="#">Learn how to manage risk</a>
+      </div>
+    </div>
+
+    <div class="info-card">
+      <img src="strategy.jpg" alt="Trading strategies">
+      <div class="info-content">
+        <h3>Trading strategies</h3>
+        <p>Implement effective trading strategies, techniques and mindsets.</p>
+        <a href="#">Learn about trading strategies</a>
+      </div>
+    </div>
+
+    <div class="about-navigation">
+      <a href="blog.html" class="nav-about"><i class="fas fa-arrow-left" style="margin-right: 8px;"></i> Back: Do blogs </a>
+      <a href="index.html" class="nav-about">Next: Home <i class="fas fa-arrow-right" style="margin-left: 8px;"></i></a>
+    </div>
+  </div>
+</section>
+
+<footer style="background:#0f172a; color:#f1f5f9; padding:25px 0; text-align:center; margin-top:40px;">
+  <div class="wrap" style="display:flex; flex-direction:column; gap:6px; align-items:center; justify-content:center;">
+    <div style="font-weight:600; font-size:1.1rem;">
+      Website developed with ❤️ by 
+      <a href="https://wa.me/254707995729" target="_blank" 
+         style="color:#38bdf8; text-decoration:none;">
+         Jeff 🔗
+      </a>
+    </div>
+    <small class="muted" style="color:#cbd5e1;">
+      © <span id="year"></span> Helalink Agencies — All rights reserved.
+    </small>
+  </div>
+</footer>
+</body>
+</html>

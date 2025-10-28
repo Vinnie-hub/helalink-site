@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Make Money From Anywhere | Helalink Agencies</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      color: #222;
+      background: #fff;
+      overflow-x: hidden;
+    }
+
+    /* Navbar */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 60px;
+      background: white;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
+    .logo {
+      font-size: 20px;
+      font-weight: 800;
+      color: #222;
+    }
+    .nav-links {
+      display: flex;
+      gap: 25px;
+    }
+    .nav-links a {
+      text-decoration: none;
+      color: #222;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+    .nav-links a:hover {
+      color: #007bff;
+    }
+
+    .nav-button {
+      background: #f4a71d;
+      color: #fff;
+      border: none;
+      border-radius: 25px;
+      padding: 10px 20px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    .nav-button:hover {
+      background: #e48f00;
+    }
+
+    /* Hero Section */
+    .hero {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 80px 60px;
+      flex-wrap: wrap;
+      background: linear-gradient(90deg, #fff 60%, #f9fbff 100%);
+    }
+
+    .hero-text {
+      max-width: 500px;
+    }
+
+    .hero-text h1 {
+      font-size: 3rem;
+      font-weight: 900;
+      color: #111;
+      line-height: 1.2;
+    }
+
+    .highlight {
+      position: relative;
+      display: inline-block;
+    }
+
+    .highlight::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 8px;
+      background: #f4a71d;
+      z-index: -1;
+      transform: rotate(-1deg);
+    }
+
+    .hero-text p {
+      font-size: 1.1rem;
+      color: #444;
+      margin-top: 20px;
+      line-height: 1.6;
+    }
+
+    .hero-buttons {
+      margin-top: 35px;
+      display: flex;
+      gap: 20px;
+    }
+
+    .btn {
+      padding: 14px 35px;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 16px;
+      text-decoration: none;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+
+    .btn-primary {
+      background: #007bff;
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: #0056d2;
+    }
+
+    .btn-outline {
+      border: 2px solid #007bff;
+      color: #007bff;
+      background: transparent;
+    }
+
+    .btn-outline:hover {
+      background: #007bff;
+      color: white;
+    }
+
+    .hero-image img {
+      width: 370px;
+      max-width: 100%;
+      border-radius: 25px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    }
+
+    @media (max-width: 900px) {
+      .hero {
+        flex-direction: column;
+        text-align: center;
+      }
+      .hero-text {
+        max-width: 100%;
+      }
+      .hero-buttons {
+        justify-content: center;
+      }
+      .hero-image {
+        margin-top: 40px;
+      }
+    }
+
+    .micro-tasking {
+  background: #f9fbff;
+  padding: 80px 60px;
+}
+.micro-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 50px;
+}
+
+.text-side {
+  flex: 1;
+  min-width: 320px;
+}
+
+.text-side h2 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #111;
+}
+
+.text-side p {
+  font-size: 1.1rem;
+  color: #444;
+  margin-top: 20px;
+  line-height: 1.7;
+}
+
+.features {
+  list-style: none;
+  padding: 0;
+  margin-top: 25px;
+}
+
+.features li {
+  font-size: 1.05rem;
+  color: #003366;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.image-side {
+  flex: 1.2;
+  display: flex;
+  justify-content: center;
+}
+
+.task-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 20px;
+  max-width: 550px;
+}
+
+.task-card {
+  background: #fff;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease;
+}
+
+.task-card:hover {
+  transform: translateY(-6px);
+}
+
+.task-card img {
+  width: 100%;
+  height: 130px;
+  object-fit: cover;
+}
+
+.task-card .info {
+  padding: 12px 16px;
+}
+
+.task-card .tag {
+  font-size: 0.7rem;
+  color: #007bff;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.task-card h4 {
+  margin: 5px 0;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #111;
+}
+
+.task-card p {
+  color: #555;
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.price {
+  display: block;
+  margin-top: 6px;
+  color: #333;
+  font-weight: 600;
+}
+
+@media (max-width: 900px) {
+  .micro-content {
+    flex-direction: column;
+    text-align: center;
+  }
+  .text-side {
+    max-width: 100%;
+  }
+  .image-side {
+    margin-top: 40px;
+  }
+}
+/* Section Wrapper */
+.payment-section {
+  background: #fff;
+  padding: 80px 60px;
+}
+
+.payment-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 60px;
+}
+
+/* Left Side */
+.payment-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 280px;
+}
+
+.phone {
+  position: relative;
+  width: 260px;
+}
+
+.phone-bg {
+  width: 100%;
+  border-radius: 30px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+/* Floating Payment Logos */
+.payment-logos {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.payment-logos img {
+  width: 160px;
+  background: #fff;
+  padding: 10px 20px;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+
+/* Right Side */
+.payment-text {
+  flex: 1;
+  min-width: 300px;
+}
+
+.payment-text .tag {
+  color: #2ecc71;
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+
+.payment-text h2 {
+  font-size: 2.3rem;
+  font-weight: 800;
+  color: #111;
+  line-height: 1.3;
+  margin-bottom: 20px;
+}
+
+.payment-text .description {
+  font-size: 1.05rem;
+  color: #444;
+  line-height: 1.7;
+  margin-bottom: 25px;
+}
+
+.benefits {
+  list-style: none;
+  padding: 0;
+}
+
+.benefits li {
+  font-size: 1.05rem;
+  color: #333;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .payment-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .payment-text {
+    order: 2;
+  }
+
+  .payment-image {
+    order: 1;
+  }
+
+  .payment-logos {
+    position: static;
+    transform: none;
+    align-items: center;
+  }
+
+  .payment-logos img {
+    width: 130px;
+  }
+}
+
+.workplace-section {
+  background: #fafbfc;
+  padding: 80px 50px;
+  text-align: center;
+  color: #222;
+}
+
+.workplace-container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.workplace-container h2 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #111;
+  margin-bottom: 15px;
+}
+
+.workplace-container .subtitle {
+  font-size: 1.1rem;
+  color: #555;
+  max-width: 650px;
+  margin: 0 auto 50px;
+  line-height: 1.7;
+}
+
+.workplace-grid {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+.workplace-card {
+  flex: 1;
+  min-width: 280px;
+  background: #fff;
+  border-left: 2px solid #eee;
+  padding: 25px 20px;
+  text-align: left;
+  transition: all 0.3s ease;
+}
+
+.workplace-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+}
+
+.workplace-card .icon {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.workplace-card:nth-child(1) .icon {
+  color: #ffb300;
+}
+.workplace-card:nth-child(2) .icon {
+  color: #00aaff;
+}
+.workplace-card:nth-child(3) .icon {
+  color: #ff6b81;
+}
+
+.workplace-card h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.workplace-card p {
+  color: #555;
+  line-height: 1.6;
+  font-size: 0.98rem;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .workplace-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .workplace-card {
+    text-align: center;
+    border-left: none;
+    border-top: 2px solid #eee;
+    max-width: 500px;
+  }
+
+  .workplace-card .icon {
+    font-size: 30px;
+  }
+}
+
+.about-navigation {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 40px;
+      border-top: 1px solid #eee;
+      padding-top: 25px;
+    }
+    .nav-about {
+      display: flex;
+      align-items: center;
+      color: #4b0082;
+      font-weight: 600;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+    .nav-about:hover {
+      color: #6f42c1;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav>
+    <div class="logo">Helalink</div>
+    <div class="nav-links">
+      <a href="#">Jobs</a>
+      <a href="#">FAQ</a>
+      <a href="#">App</a>
+      <a href="#">Contact</a>
+    </div>
+    <button class="nav-button">Customer Area →</button>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Make <span class="highlight">money.</span><br>From Clicking Ads,<br>anytime!</h1>
+      <p>People are happier if they are more financially independent. We can help you achieve this. 
+      Join our strong community and earn money easily and safely from wherever you want.</p>
+
+      <div class="hero-buttons">
+        <a href="#" class="btn btn-primary">Signup</a>
+        <a href="#" class="btn btn-outline">Whatsapp Us</a>
+      </div>
+    </div>
+
+    <div class="hero-image">
+      <img src="images/phone-app.png" alt="Job app interface" />
+    </div>
+  </section>
+
+  <section class="micro-tasking">
+  <div class="micro-content">
+    <div class="text-side">
+      <h2>Micro-tasking<br>made for you</h2>
+      <p>
+        We don’t just provide easy click jobs but offer interesting and fun tasks as well.
+        Join us in shaping the future by participating in AI training, surveys, voice recordings,
+        and photo contests.
+      </p>
+
+      <ul class="features">
+        <li>✅ Wide variety of jobs to choose from</li>
+        <li>✅ Great range of jobs available</li>
+        <li>✅ Customized just for you</li>
+      </ul>
+    </div>
+
+    <div class="image-side">
+      <div class="task-grid">
+        <div class="task-card">
+          <img src="images/yoga.jpg" alt="Yoga experience">
+          <div class="info">
+            <span class="tag">SURVEYS</span>
+            <h4>Yoga experience</h4>
+            <p>Answer a few questions about your Yoga experience</p>
+            <span class="price">€2.50 per job</span>
+          </div>
+        </div>
+
+        <div class="task-card">
+          <img src="images/animal.jpg" alt="Animal photo">
+          <div class="info">
+            <span class="tag">PHOTO CONTEST</span>
+            <h4>Animal photos</h4>
+            <p>Take a picture of your pet sleeping</p>
+            <span class="price">€1.20 per job</span>
+          </div>
+        </div>
+
+        <div class="task-card">
+          <img src="images/store.jpg" alt="Mystery visit">
+          <div class="info">
+            <span class="tag">MYSTERY VISIT</span>
+            <h4>Take pics of fragrances</h4>
+            <p>Take photos of fragrances in Lucy Stores</p>
+            <span class="price">€18.20 per job</span>
+          </div>
+        </div>
+
+        <div class="task-card">
+          <img src="images/dining.jpg" alt="Dining area photos">
+          <div class="info">
+            <span class="tag">PHOTO CAPTURING</span>
+            <h4>Show us your dining area</h4>
+            <p>Take photos of where you eat at home</p>
+            <span class="price">€2.50 per job</span>
+          </div>
+        </div>
+
+        <div class="task-card">
+          <img src="images/smarthome.jpg" alt="Smart home expert">
+          <div class="info">
+            <span class="tag">VOICE RECORDING</span>
+            <h4>Smart Home Expert</h4>
+            <p>Record 10 common smart home commands</p>
+            <span class="price">€1.60 per job</span>
+          </div>
+        </div>
+
+        <div class="task-card">
+          <img src="images/food.jpg" alt="App testing">
+          <div class="info">
+            <span class="tag">APP TESTING</span>
+            <h4>Test Food App</h4>
+            <p>Download and test new app features</p>
+            <span class="price">€3.50 per job</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Payment Section -->
+<section class="payment-section">
+  <div class="payment-container">
+
+    <!-- Left: Mobile image with payment methods -->
+    <div class="payment-image">
+      <div class="phone">
+        <img src="images/profile-phone.png" alt="User Profile" class="phone-bg" />
+
+        <div class="payment-logos">
+          <img src="images/payoneer.png" alt="Payoneer" />
+          <img src="images/sepa.png" alt="SEPA" />
+          <img src="images/paypal.png" alt="PayPal" />
+          <img src="images/ach.png" alt="ACH Payments" />
+        </div>
+      </div>
+    </div>
+
+    <!-- Right: Text content -->
+    <div class="payment-text">
+      <p class="tag">WEEKLY PAYMENTS</p>
+      <h2>Earn money with<br>micro tasking</h2>
+      <p class="description">
+        Once your work is finished and approved by the client, you can receive regular
+        and secure payments with ease.
+      </p>
+
+      <ul class="benefits">
+        <li>✅ Secure payment providers like Paypal & Payoneer</li>
+        <li>✅ Weekly payments</li>
+        <li>✅ Decide for yourself when you get paid.</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<!-- Workplace Section -->
+<section class="workplace-section">
+  <div class="workplace-container">
+    <h2>Workplace</h2>
+    <p class="subtitle">
+      No matter where you are or how much time you have, you’re guaranteed to find the right job for you.
+    </p>
+
+    <div class="workplace-grid">
+      <!-- Card 1 -->
+      <div class="workplace-card">
+        <div class="icon">
+          <i class="fas fa-briefcase"></i>
+        </div>
+        <h3>Find the right Job</h3>
+        <p>
+          No matter where you are or how much time you have, you’re guaranteed to find the right job for you.
+        </p>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="workplace-card">
+        <div class="icon">
+          <i class="fas fa-bell"></i>
+        </div>
+        <h3>Never miss a job</h3>
+        <p>
+          Activate push notifications in the Clickworker app and we’ll immediately let you know when a new job is available. That way, you’ll never miss an opportunity!
+        </p>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="workplace-card">
+        <div class="icon">
+          <i class="fas fa-wallet"></i>
+        </div>
+        <h3>Your account balance always in sight</h3>
+        <p>
+          You can easily track what you’ve earned and how much of it is available for payment.
+        </p>
+      </div>
+      <!-- Card 4 -->
+      <div class="workplace-card">
+        <div class="icon">
+          <i class="fas fa-wallet"></i>
+        </div>
+        <h3>Working without internet connection</h3>
+        <p>
+          Each accepted job is reserved for you for a fixed time. So you can work offline and submit the job when you are online again.
+        </p>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="workplace-card">
+        <div class="icon">
+          <i class="fas fa-wallet"></i>
+        </div>
+        <h3>Safe environment</h3>
+        <p>
+          Ensuring a secure environment for your data, so you can focus on your tasks without worrying about potential security breaches.
+        </p>
+      </div>
+
+      <!-- Card 6 -->
+      <div class="workplace-card">
+        <div class="icon">
+          <i class="fas fa-wallet"></i>
+        </div>
+        <h3>Helpdesk Support</h3>
+        <p>
+          Do you have questions or need help? We are happy to help you with all your queries about the Workplace.
+        </p>
+      </div>
+    </div>
+    <div class="about-navigation">
+      <a href="games.html" class="nav-about"><i class="fas fa-arrow-left" style="margin-right: 8px;"></i> Back: Play Games</a>
+      <a href="blog.html" class="nav-about">Next: Do Blogging <i class="fas fa-arrow-right" style="margin-left: 8px;"></i></a>
+    </div>
+  </div>
+</section>
+
+<footer style="background:#0f172a; color:#f1f5f9; padding:25px 0; text-align:center; margin-top:40px;">
+  <div class="wrap" style="display:flex; flex-direction:column; gap:6px; align-items:center; justify-content:center;">
+    <div style="font-weight:600; font-size:1.1rem;">
+      Website developed by 
+      <a href="https://wa.me/254707995729" target="_blank" 
+         style="color:#38bdf8; text-decoration:none;">
+         Jeff 🔗
+      </a>
+    </div>
+    <small class="muted" style="color:#cbd5e1;">
+      © <span id="year"></span> 2025 Helalink Agencies — All rights reserved.
+    </small>
+  </div>
+</footer>
+</body>
+</html>

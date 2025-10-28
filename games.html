@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Helalink - Play & Earn</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #fff;
+      color: #0a2540;
+    }
+
+    .hero {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      padding: 80px 10%;
+      min-height: 100vh;
+    }
+
+    .hero-text {
+      flex: 1 1 45%;
+    }
+
+    .hero-text h1 {
+      font-size: 2.8rem;
+      line-height: 1.3;
+      font-weight: 700;
+      margin-bottom: 15px;
+      color: #083358;
+    }
+
+    .hero-text p {
+      color: #a67c00;
+      font-weight: 600;
+      margin-bottom: 25px;
+    }
+
+    .hero-text .btn {
+      background-color: #00c26f;
+      color: #fff;
+      border: none;
+      padding: 14px 35px;
+      border-radius: 6px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .hero-text .btn:hover {
+      background-color: #00a65a;
+    }
+
+    .hero-image {
+      flex: 1 1 45%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+
+    .video-card {
+      width: 90%;
+      max-width: 480px;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 25px rgba(0,0,0,0.08);
+      overflow: hidden;
+      border: 1px solid #e5e5e5;
+    }
+
+    .video-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 16px;
+      border-bottom: 1px solid #eee;
+    }
+
+    .user-info {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .user-info img {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+    }
+
+    .user-info .name {
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+
+    .video-thumb img {
+      width: 100%;
+      display: block;
+    }
+
+    .video-footer {
+      padding: 12px 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.9rem;
+      color: #333;
+    }
+
+    .video-footer .payout {
+      color: #00c26f;
+      font-weight: 600;
+    }
+
+    @media (max-width: 900px) {
+      .hero {
+        flex-direction: column;
+        text-align: center;
+      }
+      .hero-text, .hero-image {
+        flex: 1 1 100%;
+      }
+      .hero-text h1 {
+        font-size: 2.2rem;
+      }
+      .video-card {
+        margin-top: 40px;
+      }
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: #f5f7fa;
+      color: #222;
+    }
+
+    .games-section {
+      background: #fff;
+      padding: 40px 0;
+      text-align: center;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .games-section h2 {
+      font-size: 1.8rem;
+      color: #333;
+      margin-bottom: 25px;
+      font-weight: 700;
+    }
+
+    .games-row {
+      display: flex;
+      gap: 20px;
+      animation: scrollGames 25s linear infinite;
+      width: max-content;
+    }
+
+    .game-card {
+      flex: 0 0 auto;
+      width: 160px;
+      height: 220px;
+      border-radius: 15px;
+      overflow: hidden;
+      background: #000;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+      transition: transform 0.3s ease;
+    }
+
+    .game-card:hover {
+      transform: translateY(-6px);
+    }
+
+    .game-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    @keyframes scrollGames {
+      from {
+        transform: translateX(0);
+      }
+      to {
+        transform: translateX(-50%);
+      }
+    }
+
+    /* Duplicate row for smooth loop */
+    .scroll-wrapper {
+      display: flex;
+      width: 200%;
+      animation: scrollGames 25s linear infinite;
+    }
+
+    .games-container {
+      display: flex;
+      gap: 20px;
+      width: 100%;
+    }
+
+    .games-section::before, .games-section::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      width: 80px;
+      height: 100%;
+      z-index: 1;
+      pointer-events: none;
+    }
+    .games-section::before {
+      left: 0;
+      background: linear-gradient(to right, #fff 50%, transparent);
+    }
+    .games-section::after {
+      right: 0;
+      background: linear-gradient(to left, #fff 50%, transparent);
+    }
+
+    @media (max-width: 768px) {
+      .game-card {
+        width: 120px;
+        height: 160px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Win money playing & watching video games</h1>
+      <p>Earn by playing games through Helalink apps</p>
+      <button class="btn">Play now</button>
+    </div>
+
+    <div class="hero-image">
+      <div class="video-card">
+        <div class="video-header">
+          <div class="user-info">
+            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="User">
+            <div>
+              <div class="name">readyeveryday_314</div>
+              <small>NBA2K25 · PlayNow Online</small>
+            </div>
+          </div>
+          <img src="https://cdn-icons-png.flaticon.com/512/906/906343.png" alt="controller" style="width:40px;">
+        </div>
+
+        <div class="video-thumb">
+          <img src="https://images.pexels.com/photos/7991373/pexels-photo-7991373.jpeg" alt="Game Preview">
+        </div>
+
+        <div class="video-footer">
+          <span>Win the match<br><small>3 people staked this challenge</small></span>
+          <span class="payout">$56.50</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="games-section">
+    <h2>Trending Games</h2>
+
+    <div class="scroll-wrapper">
+      <div class="games-container">
+        <div class="game-card"><img src="https://upload.wikimedia.org/wikipedia/en/7/79/Marvel_Rivals_cover.jpg" alt="Marvel Rivals"></div>
+        <div class="game-card"><img src="https://upload.wikimedia.org/wikipedia/en/a/ab/Call_of_Duty_Warzone_Logo.jpg" alt="Warzone"></div>
+        <div class="game-card"><img src="https://upload.wikimedia.org/wikipedia/en/thumb/8/8e/Fortnite_cover_art.jpg/220px-Fortnite_cover_art.jpg" alt="Fortnite"></div>
+        <div class="game-card"><img src="https://upload.wikimedia.org/wikipedia/en/f/f9/EA_Sports_FC_25_cover.jpg" alt="EA FC 25"></div>
+        <div class="game-card"><img src="https://upload.wikimedia.org/wikipedia/en/7/76/Clash_Royale_cover.jpg" alt="Clash Royale"></div>
+        <div class="game-card"><img src="https://upload.wikimedia.org/wikipedia/en/6/6e/College_Football_25_cover.jpg" alt="College Football 25"></div>
+        <div class="game-card"><img src="https://upload.wikimedia.org/wikipedia/en/3/36/Call_of_Duty_Black_Ops_6_cover.jpg" alt="Black Ops 6"></div>
+        <div class="game-card"><img src="https://upload.wikimedia.org/wikipedia/en/3/33/Apex_legends_cover.jpg" alt="Apex Legends"></div>
+        <div class="game-card"><img src="https://upload.wikimedia.org/wikipedia/en/d/d1/Madden_NFL_25_cover.jpg" alt="Madden NFL 25"></div>
+      </div>
+
+      <!-- Duplicate for seamless loop -->
+      <div class="games-container">
+        <div class="game-card"><img src="https://upload.wikimedia.org/wikipedia/en/7/79/Marvel_Rivals_cover.jpg" alt="Marvel Rivals"></div>
+        <div class="game-card"><img src="https://upload.wikimedia.org/wikipedia/en/a/ab/Call_of_Duty_Warzone_Logo.jpg" alt="Warzone"></div>
+        <div class="game-card"><img src="https://upload.wikimedia.org/wikipedia/en/thumb/8/8e/Fortnite_cover_art.jpg/220px-Fortnite_cover_art.jpg" alt="Fortnite"></div>
+        <div class="game-card"><img src="https://upload.wikimedia.org/wikipedia/en/f/f9/EA_Sports_FC_25_cover.jpg" alt="EA FC 25"></div>
+        <div class="game-card"><img src="https://upload.wikimedia.org/wikipedia/en/7/76/Clash_Royale_cover.jpg" alt="Clash Royale"></div>
+        <div class="game-card"><img src="https://upload.wikimedia.org/wikipedia/en/6/6e/College_Football_25_cover.jpg" alt="College Football 25"></div>
+        <div class="game-card"><img src="https://upload.wikimedia.org/wikipedia/en/3/36/Call_of_Duty_Black_Ops_6_cover.jpg" alt="Black Ops 6"></div>
+        <div class="game-card"><img src="https://upload.wikimedia.org/wikipedia/en/3/33/Apex_legends_cover.jpg" alt="Apex Legends"></div>
+        <div class="game-card"><img src="https://upload.wikimedia.org/wikipedia/en/d/d1/Madden_NFL_25_cover.jpg" alt="Madden NFL 25"></div>
+      </div>
+    </div>
+  </section>
+</body>
+</html>
+
+
