@@ -15,46 +15,56 @@
     }
 
     /* Navbar */
-    nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 15px 60px;
-      background: white;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-    }
-    .logo {
-      font-size: 20px;
-      font-weight: 800;
-      color: #222;
-    }
-    .nav-links {
-      display: flex;
-      gap: 25px;
-    }
-    .nav-links a {
-      text-decoration: none;
-      color: #222;
-      font-weight: 500;
-      transition: color 0.3s ease;
-    }
-    .nav-links a:hover {
-      color: #007bff;
+    nav.site-nav {
+      position:sticky;
+      top:0;
+      z-index:1200;
+      background: rgba(255,255,255,0.98);
+      backdrop-filter: blur(6px);
+      box-shadow: 0 2px 10px rgba(2,6,23,0.06);
     }
 
-    .nav-button {
-      background: #f4a71d;
-      color: #fff;
-      border: none;
-      border-radius: 25px;
-      padding: 10px 20px;
-      font-weight: 600;
-      cursor: pointer;
-      transition: background 0.3s ease;
+    .nav-inner {
+      max-width:1100px;
+      margin:0 auto;
+      padding:12px 18px;
+      display:flex;
+      gap:12px;
+      align-items:center;
+      justify-content:center;
+      flex-wrap:nowrap;
     }
-    .nav-button:hover {
-      background: #e48f00;
+
+    .nav-link {
+      text-decoration:none;
+      padding:8px 12px;
+      border-radius:10px;
+      font-weight:600;
+      color:#0b1220;
+      transition:all .18s;
     }
+    .nav-link:hover { background: rgba(59,130,246,0.08); transform:translateY(-2px); }
+
+    .nav-cta { padding:8px 14px; border-radius:999px; font-weight:700; color:white; text-decoration:none; }
+    .nav-cta.register { background: linear-gradient(135deg, #6a11cb, #2575f2); }
+    .nav-cta.contact  { background: linear-gradient(90deg,#22c55e,#4ade80); }
+
+    .post-card {
+  max-width: 1100px;
+  margin: 28px auto;
+  background: var(--card);
+  border-radius: 14px;
+  box-shadow: 0 8px 30px rgba(15, 23, 42, 0.06);
+  overflow: hidden;
+}
+.post-meta {
+  background: linear-gradient(90deg, #4f46e5, #3b82f6);
+  color: #fff;
+  padding: 14px 20px;
+  font-size: 0.95rem;
+  text-align: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
 
     /* Hero Section */
     .hero {
@@ -71,9 +81,9 @@
     }
 
     .hero-text h1 {
-      font-size: 3rem;
+      font-size: 2.8rem;
       font-weight: 900;
-      color: #111;
+      color: #2516f5;
       line-height: 1.2;
     }
 
@@ -138,7 +148,8 @@
     }
 
     .hero-image img {
-      width: 370px;
+      width: 400px;
+      height: 380px;
       max-width: 100%;
       border-radius: 25px;
       box-shadow: 0 8px 20px rgba(0,0,0,0.1);
@@ -160,6 +171,89 @@
       }
     }
 
+    section.blog-guide {
+    max-width: 900px;
+    margin: 60px auto;
+    padding: 30px;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+  }
+
+  h1 {
+    color: #0e64ee;
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  p.intro {
+    font-size: 1.05rem;
+    text-align: center;
+    color: #475569;
+    margin-bottom: 40px;
+  }
+
+  h2 {
+    color: #2563eb;
+    font-size: 1.3rem;
+    margin-top: 30px;
+  }
+
+  h3 {
+    color: #334155;
+    margin-top: 20px;
+    font-size: 1.15rem;
+  }
+
+  ul {
+    list-style-type: disc;
+    margin-left: 25px;
+  }
+
+  .step {
+    background: #f9fafb;
+    border-left: 4px solid #2563eb;
+    padding: 20px;
+    margin-top: 25px;
+    border-radius: 10px;
+  }
+
+  .highlight-box {
+    background: #e0f2fe;
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 10px;
+    color: #0f172a;
+  }
+
+  .topics {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 15px 0;
+  }
+
+  .topic {
+    background: #f1f5f9;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 8px 16px;
+    font-size: 0.95rem;
+    color: #475569;
+  }
+
+  @media (max-width: 600px) {
+    section.blog-guide {
+      margin: 20px;
+      padding: 20px;
+    }
+
+    .topics {
+      flex-direction: column;
+    }
+  }
+
     .micro-tasking {
   background: #f9fbff;
   padding: 80px 60px;
@@ -178,9 +272,9 @@
 }
 
 .text-side h2 {
-  font-size: 2.5rem;
+  font-size: 2.0rem;
   font-weight: 800;
-  color: #111;
+  color: #043efc;
 }
 
 .text-side p {
@@ -299,37 +393,17 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  min-width: 280px;
 }
 
 .phone {
   position: relative;
-  width: 260px;
+  width: 500px;
 }
 
 .phone-bg {
   width: 100%;
   border-radius: 30px;
   box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-}
-
-/* Floating Payment Logos */
-.payment-logos {
-  position: absolute;
-  top: 20%;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.payment-logos img {
-  width: 160px;
-  background: #fff;
-  padding: 10px 20px;
-  border-radius: 12px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
 }
 
 /* Right Side */
@@ -346,9 +420,9 @@
 }
 
 .payment-text h2 {
-  font-size: 2.3rem;
+  font-size: 2.0rem;
   font-weight: 800;
-  color: #111;
+  color: #041cf7;
   line-height: 1.3;
   margin-bottom: 20px;
 }
@@ -375,28 +449,20 @@
 }
 
 /* Responsive */
-@media (max-width: 900px) {
+@media (max-width: 768px) {
   .payment-container {
     flex-direction: column;
     text-align: center;
+
+  }
+  .phone-bg {
+    max-width: 400px
   }
 
-  .payment-text {
-    order: 2;
-  }
-
-  .payment-image {
-    order: 1;
-  }
-
-  .payment-logos {
-    position: static;
-    transform: none;
-    align-items: center;
-  }
-
-  .payment-logos img {
-    width: 130px;
+}
+@media (max-width: 480px) {
+  .payment-container {
+    max-width: 220%;
   }
 }
 
@@ -413,9 +479,9 @@
 }
 
 .workplace-container h2 {
-  font-size: 2.5rem;
+  font-size: 2.0rem;
   font-weight: 800;
-  color: #111;
+  color: #062bfc;
   margin-bottom: 15px;
 }
 
@@ -496,6 +562,59 @@
   }
 }
 
+.blog-container {
+  max-width: 900px;
+  margin: 60px auto;
+  background: #fff;
+  padding: 40px 60px;
+  border-radius: 16px;
+  color: #222;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+}
+
+.blog-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+.blog-header h1 {
+  font-size: 2.0rem;
+  color: #055af8;
+}
+.blog-header p {
+  color: #777;
+  margin-top: 8px;
+  font-size: 1rem;
+}
+
+.blog-section {
+  margin-bottom: 40px;
+}
+.blog-section h2 {
+  color: #2e2e2e;
+  margin-bottom: 15px;
+  font-size: 1.5rem;
+  border-left: 5px solid #6a3fe2;
+  padding-left: 12px;
+}
+.blog-section ul {
+  margin-left: 20px;
+  list-style-type: "✅ ";
+}
+.blog-section ul li {
+  margin-bottom: 10px;
+}
+
+.highlight-box {
+  background: #f2f0fe;
+  border-left: 5px solid #6a3fe2;
+  padding: 20px;
+  border-radius: 12px;
+  margin: 30px 0;
+}
+.highlight-box strong {
+  color: #6a3fe2;
+}
+
 .about-navigation {
       display: flex;
       justify-content: space-between;
@@ -518,112 +637,204 @@
   </style>
 </head>
 <body>
-  <!-- Navbar -->
-  <nav>
-    <div class="logo">Helalink</div>
-    <div class="nav-links">
-      <a href="#">Jobs</a>
-      <a href="#">FAQ</a>
-      <a href="#">App</a>
-      <a href="#">Contact</a>
+  <!-- Header -->
+  <nav class="site-nav" aria-label="Main navigation">
+    <div class="nav-inner wrap">
+      <a class="nav-link" href="index.html">Home</a>
+      <a class="nav-link" href="#services">Services</a>
+      <a class="nav-link" href="#about">About</a>
+      <a class="nav-cta contact" href="https://wa.me/254755252499?text=Hello%20Coach%20Dajenny,%20guide%20me%20through." target="_blank">WhatsApp</a>
+      <a class="nav-cta register" href="https://helalink.com/register.php?ref=DAJENNY" target="_blank">Register</a>
     </div>
-    <button class="nav-button">Customer Area →</button>
   </nav>
+  <!-- POST CARD -->
+  <main class="post-card">
+
+    <div class="post-meta">📅 Updated May 21, 2025 • Written by <strong>DAJENNY</strong></div>
+
+    <div class="post-body">
 
   <!-- Hero Section -->
   <section class="hero">
     <div class="hero-text">
-      <h1>Make <span class="highlight">money.</span><br>From Clicking Ads,<br>anytime!</h1>
-      <p>People are happier if they are more financially independent. We can help you achieve this. 
-      Join our strong community and earn money easily and safely from wherever you want.</p>
+      <h1>How To Start a Blog  and Make Money in Helalink!</h1>
+      <p>People are happier if they are more financially independent. We can help you achieve this.</p>
+      <p>Practical steps and modern strategies to launch a blog that builds community, attracts readers and earns — from ads and affiliates to paid subscriptions.</p>
 
       <div class="hero-buttons">
-        <a href="#" class="btn btn-primary">Signup</a>
-        <a href="#" class="btn btn-outline">Whatsapp Us</a>
+        <a href="https://helalink.com/register.php?ref=DAJENNY" class="btn btn-primary">Sign Up</a>
+        <a href="https://wa.me/254755252499?text=Hello%20Coach%20Dajenny,%20guide%20me%20through." class="btn btn-outline">Whatsapp Us</a>
       </div>
     </div>
 
     <div class="hero-image">
-      <img src="images/phone-app.png" alt="Job app interface" />
+      <img src="pictures/Blog.png" alt="blog app interface" />
     </div>
   </section>
 
+  <section class="blog-guide">
+  <h1>What is Blogging & Why Start One?</h1>
+  <p class="intro">
+    Blogging is a conversational, frequently updated form of web content — part diary, part newsletter, and part community hub. 
+    Whether you’re blogging to earn, teach, or build a personal brand, clarity about your goal will shape every choice you make.
+  </p>
+
+  <div class="step">
+    <h2>Step 1 — Planning & Preparation</h2>
+    <p>
+      Successful blogs don’t start by accident. Decide your primary goal (audience, income source, creative outlet) and spend time 
+      researching your competitors, keywords and audience needs. A 30–60 day competitor study will pay off down the line.
+    </p>
+
+    <h3>Pick a Niche</h3>
+    <p>
+      Narrow focus beats general noise. Choose a niche you enjoy and can create authority in — from travel to budget living 
+      to niche hobbies like tabletop RPGs. Combine topics where relevant to create a unique voice.
+    </p>
+
+    <div class="highlight-box">
+      <strong>Popular topics</strong>
+      <div class="topics">
+        <div class="topic">Travel</div>
+        <div class="topic">Finance</div>
+        <div class="topic">Food</div>
+        <div class="topic">DIY</div>
+        <div class="topic">Fitness</div>
+        <div class="topic">Tech</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="step">
+    <h2>Step 2 — Choose Platform & Domain</h2>
+    <p>
+      Hosted platforms (Wix, Squarespace) are quick to start; WordPress combined with standalone hosting offers the most flexibility long term. 
+      Register a custom domain to build credibility, and keep legal pages (disclosures, privacy) handy.
+    </p>
+  </div>
+
+  <div class="step">
+    <h2>Step 3 — Add Content</h2>
+    <p>
+      Quality content is the core. Use clear headings, FAQs for LLMs, and keep posts skimmable with bullet points. 
+      Maintain a schedule — posting at least once a month helps momentum; weekly is better for growth niches.
+    </p>
+
+    <div class="highlight-box">
+      <strong>Post length guidelines</strong><br>
+      Aim for 300–1500 words depending on topic depth. Recipes and quick guides can be shorter; 
+      longform authority pieces may sit at 2000+ words when necessary.
+    </div>
+  </div>
+
+  <div class="step">
+    <h2>Step 4 — Monetization Options</h2>
+    <p>
+      Ads, affiliate links, sponsorships, gated content, and merchandise are common routes. 
+      Choose channels that fit your audience — subscriptions and niche paid content often convert better than general ads.
+    </p>
+
+    <ul>
+      <li>Affiliate programs (ShareASale, CJ)</li>
+      <li>Ad networks (Google AdSense)</li>
+      <li>Sponsored posts and brand deals</li>
+      <li>Paid newsletters and gated tutorials</li>
+    </ul>
+  </div>
+
+  <div class="step">
+    <h2>Step 5 — Growth & Promotion</h2>
+    <p>
+      Build community with social media, guest posts, podcasts, and local/hyperlocal content. 
+      Consider lead magnets to grow email lists and run occasional paid promotion to accelerate reach.
+    </p>
+  </div>
+</section>
   <section class="micro-tasking">
   <div class="micro-content">
     <div class="text-side">
-      <h2>Micro-tasking<br>made for you</h2>
+      <h2>Why do Blogs Pay More<br>In Helalink?</h2>
       <p>
-        We don’t just provide easy click jobs but offer interesting and fun tasks as well.
+        We don’t just provide easy click blogs but offer interesting and fun tasks as well.
         Join us in shaping the future by participating in AI training, surveys, voice recordings,
         and photo contests.
       </p>
 
       <ul class="features">
-        <li>✅ Wide variety of jobs to choose from</li>
-        <li>✅ Great range of jobs available</li>
+        <li>✅ Wide variety of blogs to choose from</li>
+        <li>✅ Great range of blogs available</li>
         <li>✅ Customized just for you</li>
       </ul>
+            <h2>Sample Post Templates</h2>
+            <div class="card">
+              <h3>How-to / Tutorial</h3>
+              <p class="muted">Start with a short intro, list materials/tools, include step-by-step instructions, and finish with a short takeaway and CTA.</p>
+            </div>
+            <div class="card">
+              <h3>Personal Narrative with Takeaway</h3>
+              <p class="muted">Tell a short story, emphasize lessons learned, and provide clear next steps for readers to apply the lesson.</p>
+            </div>
     </div>
 
     <div class="image-side">
       <div class="task-grid">
         <div class="task-card">
-          <img src="images/yoga.jpg" alt="Yoga experience">
+          <img src="pictures/yoga.jpeg" alt="Yoga experience">
           <div class="info">
             <span class="tag">SURVEYS</span>
             <h4>Yoga experience</h4>
             <p>Answer a few questions about your Yoga experience</p>
-            <span class="price">€2.50 per job</span>
+            <span class="price">Ksh 89.50 per blog</span>
           </div>
         </div>
 
         <div class="task-card">
-          <img src="images/animal.jpg" alt="Animal photo">
+          <img src="pictures/pet.jpg" alt="Animal photo">
           <div class="info">
             <span class="tag">PHOTO CONTEST</span>
             <h4>Animal photos</h4>
             <p>Take a picture of your pet sleeping</p>
-            <span class="price">€1.20 per job</span>
+            <span class="price">Ksh 124.20 per blog</span>
           </div>
         </div>
 
         <div class="task-card">
-          <img src="images/store.jpg" alt="Mystery visit">
+          <img src="pictures/fragrance.webp" alt="Mystery visit">
           <div class="info">
             <span class="tag">MYSTERY VISIT</span>
             <h4>Take pics of fragrances</h4>
             <p>Take photos of fragrances in Lucy Stores</p>
-            <span class="price">€18.20 per job</span>
+            <span class="price">Ksh 162.20 per blog</span>
           </div>
         </div>
 
         <div class="task-card">
-          <img src="images/dining.jpg" alt="Dining area photos">
+          <img src="pictures/dining.jpeg" alt="Dining area photos">
           <div class="info">
             <span class="tag">PHOTO CAPTURING</span>
             <h4>Show us your dining area</h4>
             <p>Take photos of where you eat at home</p>
-            <span class="price">€2.50 per job</span>
+            <span class="price">Ksh 112.50 per blog</span>
           </div>
         </div>
 
         <div class="task-card">
-          <img src="images/smarthome.jpg" alt="Smart home expert">
+          <img src="pictures/smarthome.webp" alt="Smart home expert">
           <div class="info">
             <span class="tag">VOICE RECORDING</span>
             <h4>Smart Home Expert</h4>
             <p>Record 10 common smart home commands</p>
-            <span class="price">€1.60 per job</span>
+            <span class="price">Ksh 78.60 per blog</span>
           </div>
         </div>
 
         <div class="task-card">
-          <img src="images/food.jpg" alt="App testing">
+          <img src="pictures/food.jpeg" alt="App testing">
           <div class="info">
             <span class="tag">APP TESTING</span>
             <h4>Test Food App</h4>
             <p>Download and test new app features</p>
-            <span class="price">€3.50 per job</span>
+            <span class="price">Ksh 92.50 per blog</span>
           </div>
         </div>
       </div>
@@ -638,28 +849,21 @@
     <!-- Left: Mobile image with payment methods -->
     <div class="payment-image">
       <div class="phone">
-        <img src="images/profile-phone.png" alt="User Profile" class="phone-bg" />
-
-        <div class="payment-logos">
-          <img src="images/payoneer.png" alt="Payoneer" />
-          <img src="images/sepa.png" alt="SEPA" />
-          <img src="images/paypal.png" alt="PayPal" />
-          <img src="images/ach.png" alt="ACH Payments" />
-        </div>
+        <img src="pictures/withdraw.jpeg" alt="User Profile" class="phone-bg" />
       </div>
     </div>
 
     <!-- Right: Text content -->
     <div class="payment-text">
       <p class="tag">WEEKLY PAYMENTS</p>
-      <h2>Earn money with<br>micro tasking</h2>
+      <h2>Withdrawals and<br>Payments</h2>
       <p class="description">
         Once your work is finished and approved by the client, you can receive regular
         and secure payments with ease.
       </p>
 
       <ul class="benefits">
-        <li>✅ Secure payment providers like Paypal & Payoneer</li>
+        <li>✅ Secure payment providers like Mpesa & MTN</li>
         <li>✅ Weekly payments</li>
         <li>✅ Decide for yourself when you get paid.</li>
       </ul>
@@ -668,12 +872,56 @@
   </div>
 </section>
 
+<div class="blog-container">
+    <div class="blog-header">
+      <h1>Blogging Tips — Make Money in 2025</h1>
+      <p>Learn how to start, grow, and monetize your blog for real income.</p>
+    </div>
+
+    <div class="blog-section">
+      <h2>Blogging Isn’t Dead</h2>
+      <p>
+        It’s thriving — especially now with remote work and digital audiences looking for connection,
+        insights, and trustworthy content. A blog that’s well-planned, consistent, and monetized can
+        still become a strong income stream in 2025.
+      </p>
+    </div>
+
+    <div class="blog-section">
+      <h2>Key Steps to Get Started</h2>
+      <ul>
+        <li><strong>Pick your niche & blog name:</strong> Define what you’ll write about and what your audience will expect.</li>
+        <li><strong>Launch your blog online:</strong> Get hosting, domain, install your CMS (like WordPress) so you own your platform.</li>
+        <li><strong>Design & publish your first posts:</strong> Focus on quality content that serves readers and solves real problems.</li>
+        <li><strong>Promote & build your audience:</strong> Use SEO, social media, guest posts, and consistency to drive traffic.</li>
+        <li><strong>Monetize your blog:</strong> Ads, affiliate marketing, digital products, services — once you have traffic.</li>
+      </ul>
+    </div>
+
+    <div class="blog-section">
+      <h2>Top Monetization Methods</h2>
+      <p>
+        According to Forbes, making money blogging typically involves mixing a few of these strategies:
+      </p>
+      <div class="highlight-box">
+        <ul>
+          <li>Display advertising (e.g., AdSense, media networks)</li>
+          <li>Affiliate marketing — recommending products or services you trust</li>
+          <li>Sponsored content & brand partnerships</li>
+          <li>Selling your own digital products or courses</li>
+          <li>Offering services (e.g., consulting, coaching, freelance writing)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+
 <!-- Workplace Section -->
 <section class="workplace-section">
   <div class="workplace-container">
-    <h2>Workplace</h2>
+    <h2>Tips to Maximize Your Earnings</h2>
     <p class="subtitle">
-      No matter where you are or how much time you have, you’re guaranteed to find the right job for you.
+      No matter where you are or how much time you have, you’re guaranteed to find the right blog for you.
     </p>
 
     <div class="workplace-grid">
@@ -682,9 +930,9 @@
         <div class="icon">
           <i class="fas fa-briefcase"></i>
         </div>
-        <h3>Find the right Job</h3>
+        <h3>Find the right blog</h3>
         <p>
-          No matter where you are or how much time you have, you’re guaranteed to find the right job for you.
+          No matter where you are or how much time you have, you’re guaranteed to find the right blog for you.
         </p>
       </div>
 
@@ -693,9 +941,9 @@
         <div class="icon">
           <i class="fas fa-bell"></i>
         </div>
-        <h3>Never miss a job</h3>
+        <h3>Never miss a blog</h3>
         <p>
-          Activate push notifications in the Clickworker app and we’ll immediately let you know when a new job is available. That way, you’ll never miss an opportunity!
+          Activate push notifications in the Helalink app and we’ll immediately let you know when a new blog is available. That way, you’ll never miss an opportunity!
         </p>
       </div>
 
@@ -716,7 +964,7 @@
         </div>
         <h3>Working without internet connection</h3>
         <p>
-          Each accepted job is reserved for you for a fixed time. So you can work offline and submit the job when you are online again.
+          Each accepted blog is reserved for you for a fixed time. So you can work offline and submit the blog when you are online again.
         </p>
       </div>
 
@@ -736,9 +984,10 @@
         <div class="icon">
           <i class="fas fa-wallet"></i>
         </div>
-        <h3>Helpdesk Support</h3>
+        <h3>Final Thoughts</h3>
         <p>
-          Do you have questions or need help? We are happy to help you with all your queries about the Workplace.
+          The bottom line: Starting a blog in 2025 is about clarity, quality, consistency, and monetization.
+        Pick something you care about, publish great content, build a community, and diversify your income.
         </p>
       </div>
     </div>
@@ -749,17 +998,17 @@
   </div>
 </section>
 
-<footer style="background:#0f172a; color:#f1f5f9; padding:25px 0; text-align:center; margin-top:40px;">
+<footer style="background:#e8e8f0; color:#15212c; padding:25px 0; text-align:center; margin-top:40px;">
   <div class="wrap" style="display:flex; flex-direction:column; gap:6px; align-items:center; justify-content:center;">
     <div style="font-weight:600; font-size:1.1rem;">
-      Website developed by 
+      Website developed with ❤️ by 
       <a href="https://wa.me/254707995729" target="_blank" 
-         style="color:#38bdf8; text-decoration:none;">
+         style="color:#170f91; text-decoration:none;">
          Jeff 🔗
       </a>
     </div>
-    <small class="muted" style="color:#cbd5e1;">
-      © <span id="year"></span> 2025 Helalink Agencies — All rights reserved.
+    <small class="muted" style="color:#25282b;">
+      © <span id="year"></span> Helalink Agencies — All rights reserved.
     </small>
   </div>
 </footer>

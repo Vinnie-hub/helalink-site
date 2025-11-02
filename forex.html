@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Financial Learning & AI Insights</title>
+<title>Advanced Helalink Forex Learning</title>
 <style>
   body {
     margin: 0;
@@ -29,6 +29,59 @@
   }
 
   /* ---------- SECTION 1: SIGN UP ---------- */
+
+  nav.site-nav {
+      position:sticky;
+      top:0;
+      z-index:1200;
+      background: rgba(255,255,255,0.98);
+      backdrop-filter: blur(6px);
+      box-shadow: 0 2px 10px rgba(2,6,23,0.06);
+    }
+
+    .nav-inner {
+      max-width:1100px;
+      margin:0 auto;
+      padding:12px 18px;
+      display:flex;
+      gap:12px;
+      align-items:center;
+      justify-content:center;
+      flex-wrap:nowrap;
+    }
+
+    .nav-link {
+      text-decoration:none;
+      padding:8px 12px;
+      border-radius:10px;
+      font-weight:600;
+      color:#0b1220;
+      transition:all .18s;
+    }
+    .top-date {
+  width: 100%;
+  background: #f8fafc; /* light gray background */
+  color: #475569; /* muted text */
+  text-align: center;
+  padding: 8px 0;
+  font-size: 0.95rem;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+/* ✅ Optional: make it fixed at the very top */
+.top-date.fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+    .nav-link:hover { background: rgba(59,130,246,0.08); transform:translateY(-2px); }
+    .nav-cta { padding:8px 14px; border-radius:999px; font-weight:700; color:white; text-decoration:none; }
+    .nav-cta.register { background: linear-gradient(90deg,#0352fc,#0a35f7); }
+    .nav-cta.contact  { background: linear-gradient(90deg,#22c55e,#4ade80); }
+
+
   .signup {
     background: #1e1e1e;
     color: #fff;
@@ -69,83 +122,222 @@
 
   /* ---------- SECTION 2: MARKET AI ---------- */
   .market {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 40px;
-    flex-wrap: wrap;
-  }
+  background: linear-gradient(135deg, #f8fafc 0%, #eef2ff 100%);
+  padding: 80px 10%;
+  border-radius: 24px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  overflow: hidden;
+  animation: slideLeft 1.2s ease forwards;
+}
 
-  .market ul {
-    list-style: none;
-    padding: 0;
-  }
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
 
-  .market li {
-    display: flex;
-    margin-bottom: 16px;
-  }
+.text {
+  flex: 1;
+  color: #1e293b;
+  animation: fadeInUp 1.2s ease;
+}
 
-  .market li span.num {
-    color: #d0d6dc;
-    font-size: 1.8rem;
-    margin-right: 12px;
-    font-weight: bold;
-  }
+.market h2 {
+  font-size: 2rem;
+  margin-bottom: 25px;
+  color: #0f172a;
+  line-height: 1.3;
+}
 
-  .market li a {
-    color: #ff7a00;
-  }
+.highlight {
+  color: #2563eb;
+  background: rgba(37,99,235,0.1);
+  padding: 2px 6px;
+  border-radius: 6px;
+}
 
-  .market img {
-    max-width: 100%;
-    border-radius: 8px;
-  }
+.market ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 30px;
+}
 
-  .market .btn {
-    background: #ff9500;
-    color: #fff;
-    border: none;
-    border-radius: 8px;
-    padding: 12px 22px;
-    font-weight: 600;
-    cursor: pointer;
-    margin-top: 20px;
+.market li {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 18px;
+  line-height: 1.6;
+  color: #334155;
+  font-size: 1.05rem;
+  transition: transform 0.3s ease;
+}
+
+.market li:hover {
+  transform: translateX(6px);
+}
+
+.market li a {
+  color: #2563eb;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.market li a:hover {
+  text-decoration: underline;
+}
+
+.num {
+  display: inline-block;
+  width: 28px;
+  height: 28px;
+  background: #2563eb;
+  color: #fff;
+  font-weight: 700;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 28px;
+  margin-right: 12px;
+  flex-shrink: 0;
+}
+
+.btn {
+  background: linear-gradient(90deg, #06b6d4, #2563eb);
+  color: white;
+  border: none;
+  padding: 14px 28px;
+  font-size: 1rem;
+  font-weight: 700;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(37,99,235,0.3);
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(37,99,235,0.4);
+}
+
+.image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image img {
+  max-width: 100%;
+  height: 500px;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  animation: fadeIn 1.2s ease;
+}
+
+.quote {
+  font-style: italic;
+  margin-top: 35px;
+  background: #f1f5f9;
+  padding: 18px 25px;
+  border-left: 4px solid #2563eb;
+  border-radius: 12px;
+  color: #475569;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.05);
+}
+
+.quote span {
+  display: block;
+  margin-top: 8px;
+  font-style: normal;
+  color: #1e293b;
+  font-weight: 600;
+}
+
+@keyframes slideLeft {
+  from { opacity: 0; transform: translateX(-60px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@media (max-width: 900px) {
+  .content {
+    flex-direction: column;
+    text-align: center;
   }
+  .image img {
+    max-width: 90%;
+    margin-top: 25px;
+  }
+  .market h2 {
+    font-size: 1.6rem;
+  }
+  .btn {
+    width: 100%;
+  }
+}
 
   /* ---------- SECTION 3: LEARN TO TRADE ---------- */
   .trade {
-    background: #1e1e1e;
-    color: #fff;
+    background: #fffefe;
+    color: #0a0a0a;
     display: flex;
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
+    padding: auto;
     gap: 40px;
   }
 
   .trade-text {
   flex: 1;
   min-width: 300px;
-  max-width: 450px;
+  max-width: 600px;
 }
 
   .trade-text h4 {
-    color: #2fe0b5;
+    color: #ff9500;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.8px;
     margin-bottom: 8px;
   }
 
-  .trade-text a {
-    color: #a17cf0;
-    font-weight: 600;
-  }
-
-  .trade-text a:hover {
-  text-decoration: underline;
+  /* Buttons */
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 18px;
 }
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 16px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 700;
+  color: #fff;
+}
+
+.btn.whatsapp {
+  background: #17a335;
+}
+
+.btn.register {
+  background: #062af7;
+}
+.btn:hover {transform: scale(1.05);}
 
     .trade-cards {
     position: relative;
@@ -183,9 +375,53 @@
   }
 
   .card1 { top: 0; z-index: 4; }
-  .card2 { top: 50px; z-index: 3; }
-  .card3 { top: 100px; z-index: 2; }
-  .card4 { top: 150px; z-index: 1; }
+  .card2 { top: 70px; z-index: 3; }
+  .card3 { top: 140px; z-index: 2; }
+  .card4 { top: 210px; z-index: 1; }
+
+  .journey {
+      background: #f9f9f9;
+      padding: 80px 10%;
+      text-align: left;
+      border-radius: 30px;
+      margin: 60px 10%;
+      animation: slideInLeft 1.2s ease forwards;
+    }
+
+    .journey h2 {
+      font-size: 2rem;
+      color: #0066ff;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .journey p {
+      text-align: center;
+      color: #2f3033;
+      margin-bottom: 40px;
+    }
+    .journey-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+    }
+
+    .journey-step {
+      background: #d0d6dc;
+      padding: 25px;
+      border-radius: 18px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.06);
+      transition: 0.3s;
+    }
+
+    .journey-step:hover {
+      transform: translateX(-10px);
+    }
+
+    .journey-step h3 {
+      color: #0066ff;
+      margin-bottom: 10px;
+    }
 
   /* ---------- SECTION 4: FINANCIAL MARKETS ---------- */
   .markets {
@@ -238,6 +474,119 @@
     color: #0066ff;
     font-weight: 600;
   }
+  .success-stories {
+  text-align: center;
+  background: white;
+  padding: 80px 10%;
+  border-radius: 18px;
+  margin-top: 60px;
+  position: relative;
+  overflow: hidden;
+}
+
+.success-stories h2 {
+  font-size: 2rem;
+  color: #0f172a;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.success-stories .subtitle {
+  color: #475569;
+  font-size: 1.1rem;
+  margin-bottom: 40px;
+}
+
+.testimonial-slider {
+  overflow: hidden;
+  position: relative;
+}
+
+.testimonial-track {
+  display: flex;
+  transition: transform 0.8s ease;
+}
+
+.testimonial {
+  flex: 0 0 100%;
+  max-width: 100%;
+  padding: 20px;
+  opacity: 0.9;
+}
+
+.avatar {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 12px;
+  border: 3px solid #3b82f6;
+}
+
+.testimonial h3 {
+  color: #1e293b;
+  margin-bottom: 4px;
+  font-weight: 600;
+}
+
+.role {
+  color: #64748b;
+  font-size: 0.95rem;
+  margin-bottom: 10px;
+}
+
+blockquote {
+  font-style: italic;
+  color: #334155;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+  background: #f8fafc;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.05);
+}
+
+.slider-dots {
+  margin: 20px 0 30px;
+}
+
+.dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background: #cbd5e1;
+  border-radius: 50%;
+  margin: 0 5px;
+  transition: background 0.3s;
+  cursor: pointer;
+}
+
+.dot.active {
+  background: #3b82f6;
+}
+
+.btn.join-now {
+  display: inline-block;
+  background: linear-gradient(90deg, #06b6d4, #3b82f6);
+  color: white;
+  padding: 14px 28px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 700;
+  transition: 0.3s;
+}
+
+.btn.join-now:hover {
+  transform: scale(1.05);
+  background: linear-gradient(90deg, #0ea5e9, #2563eb);
+}
+
+@media (max-width: 850px) {
+  .testimonial blockquote {
+    font-size: 0.95rem;
+  }
+}
 
   .about-navigation {
       display: flex;
@@ -264,10 +613,25 @@
 </style>
 </head>
 <body>
+    <!-- Header -->
+  <nav class="site-nav" aria-label="Main navigation">
+    <div class="nav-inner wrap">
+      <a class="nav-link" href="index.html">Home</a>
+      <a class="nav-link" href="#services">Services</a>
+      <a class="nav-link" href="#about">About</a>
+      <a class="nav-cta contact" href="https://wa.me/254755252499?text=Hello%20Coach%20Dajenny,%20guide%20me%20through." target="_blank">WhatsApp</a>
+      <a class="nav-cta register" href="https://helalink.com/register.php?ref=DAJENNY" target="_blank">Register</a>
+    </div>
+  </nav>
+  <!-- POST CARD -->
+  <div class="top-date">
+  📅 Updated May 21, 2025 • Written by <strong>DAJENNY</strong>
+</div>
 
 <!-- SECTION 1 -->
 <section class="signup">
-  <h2>Sign up for <span class="highlight">FREE</span> and get:</h2>
+  <h2>🎓 Learn <span class="highlight">Forex Trading</span> With Helalink</h2>
+  <p>Turn your curiosity into skill — and your skill into income. Join thousands of learners mastering forex the smart, safe, and practical way on Helalink.</p>
   <div class="features">
     <div class="feature"><i>🔔</i><p>Real-Time Alerts</p></div>
     <div class="feature"><i>📈</i><p>Advanced Portfolio Features</p></div>
@@ -276,38 +640,110 @@
   </div>
 </section>
 
-<!-- SECTION 2 -->
-<section class="market">
-  <div class="text">
-    <h2>The science behind <span class="highlight">market-beating AI picks</span></h2>
-    <ul>
-      <li><span class="num">1</span> <strong>AI-powered stock selection:</strong> Processes 100+ metrics from 25 years of data to predict outperformance. <a href="#">Learn more</a></li>
-      <li><span class="num">2</span> <strong>Billionaire portfolios:</strong> Tracks holdings of top investors and hedge funds.</li>
-      <li><span class="num">3</span> <strong>Top undervalued stocks:</strong> Uses 17 valuation models to calculate true intrinsic value. <a href="#">Learn more</a></li>
-      <li><span class="num">4</span> <strong>WarrenAI:</strong> Converts natural language queries into real-time financial insights. <a href="#">Learn more</a></li>
-      <li><span class="num">5</span> <strong>Stock screener:</strong> Filters global stocks with 160+ metrics. <a href="#">Learn more</a></li>
-    </ul>
-    <button class="btn">Access 25 Years of AI-Analyzed Data</button>
-  </div>
-  <div class="image">
-    <img src="chart.png" alt="Market growth chart">
-  </div>
-</section>
-
 <!-- SECTION 3 -->
 <section class="trade">
   <div class="trade-text">
-    <h4>EDUCATION</h4>
-    <h2>Learn how to trade</h2>
+    <h2>Start Learning how trade</h2>
+    <h4>Learn Forex trading step-by-step with expert mentors, live sessions, and real strategies. Start your journey to financial independence today.</h4>
     <p>We’ll teach you how to place trades, use market charts and introduce topics like risk management and market analysis.</p>
-    <a href="#">Learn about trading</a>
+    <div class="actions">
+          <a class="btn whatsapp" href="https://wa.me/254755252499?text=Hello%20Coach%20Dajenny,%20help%20me%20get%20started." target="_blank">
+            <i class="fab fa-whatsapp"></i> WhatsApp Us
+          </a>
+          <a class="btn register" href="registration.html" target="_blank">
+            <i class="fas fa-user-plus"></i> Learn Forex Trading
+          </a>
+        </div>
+        <p>Don’t just watch others trade — learn, practice, and profit with Helalink.</p>
   </div>
 
   <div class="trade-cards">
-    <div class="card card1"><div>The trend is your friend</div><img src="trend.jpg" alt="Trend"></div>
-    <div class="card card2"><div>Trend Analysis 101</div><img src="analysis.jpg" alt="Analysis"></div>
-    <div class="card card3"><div>Risk Management 101</div><img src="risk.jpg" alt="Risk"></div>
-    <div class="card card4"><div>Online Trading 101</div><img src="online.jpg" alt="Online"></div>
+    <div class="card card1"><div>✅ 100% beginner-friendly lessons</div><img src="pictures/signal1.jpeg" alt="Trend"></div>
+    <div class="card card2"><div>✅ Real market simulations and demo trading</div><img src="pictures/signal2.jpeg" alt="Analysis"></div>
+    <div class="card card3"><div>✅ Earn certification and join paid mentorships</div><img src="pictures/forex6.jpg" alt="Risk"></div>
+    <div class="card card4"><div>✅ Step-by-step learning from real traders</div><img src="pictures/forex5.jpeg" alt="Online"></div>
+  </div>
+</section>
+
+<section id="journey" class="journey">
+    
+    <h2>🚀 Your 30-Day Forex Learning Journey</h2>
+    <p>In just 30 days, you’ll learn how to trade confidently, manage risk, and build income online — guided by Helalink mentors.</p>
+
+    <div class="journey-grid">
+      <div class="journey-step">
+        <h3>📘 Week 1: Foundations</h3>
+        <p>Understand Forex basics, key terms, and how markets move. Set up your trading platforms correctly.</p>
+      </div>
+      <div class="journey-step">
+        <h3>📊 Week 2: Strategy</h3>
+        <p>Learn chart reading, candlestick patterns, and simple profitable strategies used by real traders.</p>
+      </div>
+      <div class="journey-step">
+        <h3>💡 Week 3: Practice & Mindset</h3>
+        <p>Trade in demo mode, master emotional control, and learn discipline — the real secret to profit.</p>
+      </div>
+      <div class="journey-step">
+        <h3>💰 Week 4: Earn & Grow</h3>
+        <p>Move from demo to live, join Helalink earning programs, and start your online income path.</p>
+      </div>
+      <div class="journey-step">
+        <h3>⚙️ Week 5: Tools & Analytics</h3>
+        <p>Learn indicators, trade journaling, and performance analytics to sharpen decision-making.</p>
+      </div>
+      <div class="journey-step">
+        <h3>📈 Week 6: Scale & Risk Control</h3>
+        <p>Grow safely from small trades. Apply risk models, risk-reward ratios, and capital protection.</p>
+    </div>
+    </div>
+  </section>
+
+
+<section class="market">
+  <div class="content">
+    <div class="text">
+      <h2>The science behind <span class="highlight">market-beating AI picks in Forex</span></h2>
+      <ul>
+        <li><span class="num">1</span> 💹 <strong>AI-powered trade insights:</strong> 
+          Analyzes millions of price points and economic indicators to forecast profitable moves. 
+          <a href="registration.html">Learn more</a>
+        </li>
+
+        <li><span class="num">2</span> 🧠 <strong>Machine learning precision:</strong> 
+          Uses deep time-series models that adapt and learn from every trade. 
+          <a href="registration.html">Learn more</a>
+        </li>
+
+        <li><span class="num">3</span> 💬 <strong>Real-time market sentiment:</strong> 
+          Tracks global financial news, tweets, and investor tone before major shifts. 
+          <a href="registration.html">Learn more</a>
+        </li>
+
+        <li><span class="num">4</span> 📊 <strong>Data-driven strategy building:</strong> 
+          Filters out market noise to identify the most profitable currency pairs. 
+          <a href="registration.html">Learn more</a>
+        </li>
+
+        <li><span class="num">5</span> ⚡ <strong>Helalink AI signals:</strong> 
+          Converts raw data into actionable buy/sell alerts right on your dashboard. 
+          <a href="registration.html">Learn more</a>
+        </li>
+      </ul>
+
+      <a class="btn" href="registration.html" target="_blank">
+            <i class="fas fa-user-plus"></i> Join Helalink to Learn AI Forex Today
+          </a>
+
+      <blockquote class="quote">
+        “Helalink’s AI didn’t just teach me Forex — it showed me how to trade smart.  
+        I learned data-backed strategies that really work.”
+        <span>— Brian K., Helalink Frx Graduate</span>
+      </blockquote>
+    </div>
+
+    <div class="image">
+      <img src="pictures/forex6.jpg" alt="AI Forex Trading">
+    </div>
   </div>
 </section>
 
@@ -316,7 +752,7 @@
   <h2>Introduction to financial markets</h2>
   <div class="card-container">
     <div class="info-card">
-      <img src="bullbear.jpg" alt="Trading online">
+      <img src="pictures/forex1.jpeg" alt="Trading online">
       <div class="info-content">
         <h3>Trading online</h3>
         <p>Beginner’s guide to trading shares, currencies, and more.</p>
@@ -325,29 +761,119 @@
     </div>
 
     <div class="info-card">
-      <img src="riskmeter.jpg" alt="Risk management">
+      <img src="pictures/forex2.jpeg" alt="Risk management">
       <div class="info-content">
         <h3>Risk management</h3>
         <p>Use Stop Loss and Take Profit orders to manage risk effectively.</p>
-        <a href="#">Learn how to manage risk</a>
+        <a href="registration.html">Learn how to manage risk</a>
       </div>
     </div>
 
     <div class="info-card">
-      <img src="strategy.jpg" alt="Trading strategies">
+      <img src="pictures/forex4.jpeg" alt="Trading strategies">
       <div class="info-content">
         <h3>Trading strategies</h3>
         <p>Implement effective trading strategies, techniques and mindsets.</p>
-        <a href="#">Learn about trading strategies</a>
+        <a href="registration.html">Learn about trading strategies</a>
       </div>
-    </div>
-
-    <div class="about-navigation">
-      <a href="blog.html" class="nav-about"><i class="fas fa-arrow-left" style="margin-right: 8px;"></i> Back: Do blogs </a>
-      <a href="index.html" class="nav-about">Next: Home <i class="fas fa-arrow-right" style="margin-left: 8px;"></i></a>
     </div>
   </div>
 </section>
+
+<section class="success-stories">
+  <h2>💬 Real Success from Helalink Learners</h2>
+  <p class="subtitle">See how others transformed their skills into real trading confidence and income with Helalink Academy.</p>
+
+  <div class="testimonial-slider">
+    <div class="testimonial-track">
+      
+      <!-- Testimonial 1 -->
+      <div class="testimonial">
+        <img src="https://randomuser.me/api/portraits/women/50.jpg" alt="Aisha Learner" class="avatar">
+        <h3>Aisha Mwangi</h3>
+        <p class="role">Beginner turned Forex Trader</p>
+        <blockquote>
+          “I started knowing nothing about forex. Within three weeks, I was trading confidently on a demo account.
+          Helalink’s mentorship made everything easy to understand.”
+        </blockquote>
+      </div>
+
+      <!-- Testimonial 2 -->
+      <div class="testimonial">
+        <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="David Learner" class="avatar">
+        <h3>David Otieno</h3>
+        <p class="role">Helalink Graduate</p>
+        <blockquote>
+          “The Academy gave me structure and real strategy. I passed the demo phase and started earning with affiliate programs — all guided by mentors!”
+        </blockquote>
+      </div>
+
+      <!-- Testimonial 3 -->
+      <div class="testimonial">
+        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Kevin Learner" class="avatar">
+        <h3>Kevin Muriuki</h3>
+        <p class="role">Freelancer & Trader</p>
+        <blockquote>
+          “Helalink helped me find financial direction. The live sessions and community gave me confidence and focus — I’d recommend it to anyone.”
+        </blockquote>
+      </div>
+
+      <!-- Testimonial 4 -->
+      <div class="testimonial">
+        <img src="https://randomuser.me/api/portraits/women/67.jpg" alt="Zainab Learner" class="avatar">
+        <h3>Zainab Yusuf</h3>
+        <p class="role">Digital Earner</p>
+        <blockquote>
+          “Learning through Helalink felt personal. The coaches cared about my progress. I learned how to read charts and control risk like a pro.”
+        </blockquote>
+      </div>
+    </div>
+  </div>
+
+  <div class="slider-dots">
+    <span class="dot active"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+  </div>
+  <a href="registration.html" class="btn join-now">Join Helalink Today</a>
+
+  <div class="about-navigation">
+      <a href="blog.html" class="nav-about"><i class="fas fa-arrow-left" style="margin-right: 8px;"></i> Back: Do blogs </a>
+      <a href="index.html" class="nav-about">Next: Home <i class="fas fa-arrow-right" style="margin-left: 8px;"></i></a>
+    </div>
+
+</section>
+
+<script>
+
+document.addEventListener("DOMContentLoaded", () => {
+  const track = document.querySelector(".testimonial-track");
+  const dots = document.querySelectorAll(".dot");
+  const slides = document.querySelectorAll(".testimonial");
+  let index = 0;
+
+  function showSlide(i) {
+    track.style.transform = `translateX(-${i * 100}%)`;
+    dots.forEach(dot => dot.classList.remove("active"));
+    dots[i].classList.add("active");
+  }
+
+  dots.forEach((dot, i) => {
+    dot.addEventListener("click", () => {
+      index = i;
+      showSlide(index);
+    });
+  });
+
+  setInterval(() => {
+    index = (index + 1) % slides.length;
+    showSlide(index);
+  }, 5000);
+});
+
+
+</script>
 
 <footer style="background:#0f172a; color:#f1f5f9; padding:25px 0; text-align:center; margin-top:40px;">
   <div class="wrap" style="display:flex; flex-direction:column; gap:6px; align-items:center; justify-content:center;">

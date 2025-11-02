@@ -33,60 +33,427 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700,800,900" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
-    <!-- Microdata / Structured data (updated brand) -->
-    <script type="application/ld+json">
-        {
-          "@context":"https://schema.org/",
-          "@type":"WebSite",
-          "name":"Helalink Agencies",
-          "url":"https://helalink.com/",
-          "potentialAction":{"@type":"SearchAction","target":"https://helalink.com/search?q={search_term_string}","query-input":"required name=search_term_string"}
-        }
-    </script>
-
-    <script type="application/ld+json">
-      {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
-        {"@type":"Question","name":"Is the membership free?","acceptedAnswer":{"@type":"Answer","text":"Yes — creating an account on Helalink is free. You can join and stop anytime."}},
-        {"@type":"Question","name":"How much will I earn per survey?","acceptedAnswer":{"@type":"Answer","text":"Earnings vary by survey but typically range from small bonuses up to higher reward surveys. Check each survey for its reward."}},
-        {"@type":"Question","name":"How can I close my account?","acceptedAnswer":{"@type":"Answer","text":"You can request account removal via support@helalink.com or from your profile settings."}}
-      ]}
-    </script>
-
-    <script type="application/ld+json">
-      {"@context":"http://schema.org","@type":"Organization","name":"Helalink Agencies","url":"https://helalink.com/","logo":{"@type":"ImageObject","url":"https://helalink.com/assets/img/helalink-logo.png"},"foundingDate":"2023","sameAs":["https://www.facebook.com/helalink","https://www.instagram.com/helalink","https://twitter.com/helalink"],"founder":[{"@type":"Person","name":"Helalink Team"}],"address":{"@type":"PostalAddress","addressCountry":{"@type":"Country","name":"KE"}}}
-    </script>
-
     <!-- Page styles (refined & rebranded: orange/gold theme) -->
     <style>
       :root{
-        --bg-dark: #0b0f16;
-        --accent1: #ffb347; /* orange-gold */
-        --accent2: #ff7a18;
-        --muted: #9aa4b2;
-        --card: #ffffff;
+      --bg:#fff;
+      --card:#f8fafc;
+      --muted:#6b7280;
+      --accent:#0ea5a4; 
+      --accent-2:#115e59;
+      --shadow: 0 6px 18px rgba(16,24,40,0.06);
+      --glass: rgba(255,255,255,0.6);
+      --font: 'Poppins', 'Inter', ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
       }
-      html,body{height:100%;margin:0;font-family:'Montserrat',Helvetica,Arial,sans-serif;background:linear-gradient(180deg,#fffaf6 0%, #fffdfb 100%);color:#222}
+      html,body {
+      font-family: "Inter", sans-serif;
+      background: #f7f8fc;
+      color: #333;
+      margin: 0;
+      font-size: 17px;
+      line-height: 1.6;
+      padding: 0; }
       a{color:var(--accent2)}
-      .header{background:#fff;box-shadow:0 2px 8px rgba(0,0,0,0.06);padding:14px 0}
-      .navbar-brand img{max-width:280px;height:auto}
-      .menu{list-style:none;margin:0;padding:0;display:flex;align-items:center;gap:14px}
-      .menu li{display:inline-block}
-      .menu a{color:#333;text-decoration:none;padding:8px 12px;font-weight:600;border-radius:6px}
-      .menu a:hover{background:linear-gradient(90deg,var(--accent1),var(--accent2));color:#fff}
-      .nav-join-btn{background:linear-gradient(90deg,var(--accent2),var(--accent1));color:#fff;padding:8px 14px;border-radius:6px}
 
-      /* hero */
-      .hero{background:linear-gradient(135deg,var(--accent1),var(--accent2));color:#111;padding:60px 0;margin-top:10px;border-radius:12px}
-      .hero h1{color:#08121a;font-size:2.2rem;margin:0 0 12px}
-      .hero p{color:#08121a;font-size:1.05rem;margin-bottom:18px}
-      .earn-now-btn{display:inline-block;background:#08121a;color:var(--accent1);padding:12px 18px;border-radius:10px;font-weight:800;text-decoration:none}
-      .earn-now-btn i{margin-left:8px}
+      p {
+  font-size: 1.02rem;   
+  color: #292d35;     
+  line-height: 1.7;  
+}
 
-      .container{max-width:1100px;margin:26px auto;padding:0 18px}
-      .tag-line-hr{color:#334155;line-height:1.8}
-      .gap{height:18px}
-      .gap-half{height:10px}
-      .page-inner-gap{height:28px}
+      
+      nav.site-nav {
+      position:sticky;
+      top:0;
+      z-index:1200;
+      background: rgba(255,255,255,0.98);
+      backdrop-filter: blur(6px);
+      box-shadow: 0 2px 10px rgba(2,6,23,0.06);
+    }
+
+    .nav-inner {
+      max-width:1100px;
+      margin:0 auto;
+      padding:12px 18px;
+      display:flex;
+      gap:12px;
+      align-items:center;
+      justify-content:center;
+      flex-wrap:nowrap;
+    }
+
+    .nav-link {
+      text-decoration:none;
+      padding:8px 12px;
+      border-radius:10px;
+      font-weight:600;
+      color:#0b1220;
+      transition:all .18s;
+    }
+    .nav-link:hover { background: rgba(59,130,246,0.08); transform:translateY(-2px); }
+
+    .nav-cta { padding:8px 14px; border-radius:999px; font-weight:700; color:white; text-decoration:none; }
+    .nav-cta.register { background: linear-gradient(135deg, #6a11cb, #2575f2); }
+    .nav-cta.contact  { background: linear-gradient(90deg,#22c55e,#4ade80); }
+
+    .post-card {
+  max-width: 1100px;
+  margin: 28px auto;
+  background: var(--card);
+  border-radius: 14px;
+  box-shadow: 0 8px 30px rgba(15, 23, 42, 0.06);
+  overflow: hidden;
+}
+.post-meta {
+  background: linear-gradient(90deg, #4f46e5, #3b82f6);
+  color: #fff;
+  padding: 14px 20px;
+  font-size: 0.95rem;
+  text-align: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* General Section Styling */
+.earn-section {
+  background: #ffffff;
+  padding: 60px 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Flex Layout */
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 40px;
+  margin-bottom: 60px;
+}
+
+
+/* Text Block */
+.text-block {
+  flex: 1 1 45%;
+}
+
+.text-block h2 {
+  font-size: 1.8rem;
+  color: #2563eb;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.text-block p {
+  color: #334155;
+  line-height: 1.8;
+  font-size: 1.05rem;
+}
+
+/* Image Block */
+.image-block {
+  flex: 1 1 45%;
+  text-align: center;
+}
+
+.image-block img {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
+}
+
+.image-block img:hover {
+  transform: scale(1.03);
+}
+
+/* Buttons */
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 16px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 700;
+  color: #fff;
+}
+
+.btn.whatsapp {
+  background: #17a335;
+}
+
+.btn.register {
+  background: #062af7;
+}
+.btn:hover {transform: scale(1.05);}
+
+/* Boxed Content */
+.box-item {
+  background: #f9fafb;
+  padding: 20px;
+  border-left: 4px solid #2563eb;
+  border-radius: 8px;
+}
+
+.box-item ul {
+  margin-top: 10px;
+  padding-left: 20px;
+}
+
+.box-item li {
+  margin-bottom: 8px;
+  line-height: 1.6;
+}
+
+/* Responsive Layout */
+@media (max-width: 768px) {
+  .row, .row.reverse {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .text-block, .image-block {
+    flex: 1 1 100%;
+  }
+
+  .image-block img {
+    max-width: 80%;
+  }
+}
+.faq-section {
+  background: #fff9f0;
+  padding: 60px 20px;
+  border-top: 3px solid #3829c7;
+  border-bottom: 3px solid #ffb84d;
+}
+
+.faq-section .faq-header {
+  max-width: 1000px;
+  margin: auto;
+  text-align: center;
+}
+
+.faq-section h2 {
+  font-size: 1.6rem;
+  color: #2300e6;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.faq-section p.header-text {
+  color: #555;
+  font-size: 1.02rem;
+  margin-bottom: 40px;
+}
+
+.faq-container {
+  max-width: 900px;
+  margin: auto;
+}
+
+.faq-item {
+  background: white;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+}
+
+.faq-question {
+  width: 100%;
+  text-align: left;
+  padding: 18px 25px;
+  background: linear-gradient(90deg, #5a5df8, #4f44f0);
+  color: white;
+  font-size: 1.02rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+}
+
+.faq-answer {
+  display: none;
+  padding: 20px;
+  color: #444;
+  background: #fffaf3;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+/* Optional hover and open effects */
+.faq-item.active .faq-answer {
+  display: block;
+}
+
+.faq-question:hover {
+  background: linear-gradient(90deg, #4e51f5, #2610f0);
+}
+
+
+    .survey-guide {
+  background: #f9fbfd;
+  padding: 40px 30px;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  max-width: 800px;
+  margin: 40px auto;
+  font-family: "Inter", sans-serif;
+}
+
+.survey-guide h2 {
+  font-size: 1.8rem;
+  color: #062af7;
+  margin-bottom: 25px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.step {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 22px;
+  background: #fff;
+  border-radius: 10px;
+  padding: 15px 20px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.step:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+}
+
+.step-number {
+  background-color: #00a3a3;
+  color: white;
+  font-weight: bold;
+  border-radius: 50%;
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  margin-right: 15px;
+  flex-shrink: 0;
+}
+
+.step-content h3 {
+  margin: 0 0 6px 0;
+  color: #2233cc;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.step-content p {
+  margin: 0;
+  color: #4b5563;
+  line-height: 1.6;
+  font-size: 0.97rem;
+}
+
+
+    /* Examples table */
+    table{width:100%;border-collapse:collapse;margin-top:12px}
+    th,td{padding:10px 8px;text-align:left;border-bottom:1px solid rgba(15,23,42,0.05)}
+    th{font-weight:600;font-size:0.95rem}
+
+    .earnings-tips, .withdrawals, .support {
+    margin: 40px auto;
+    max-width: 900px;
+    background: #fff;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  }
+
+  .earnings-tips h2, .withdrawals h2, .support h2 {
+    font-size: 1.6rem;
+    color: #054ef7;
+    margin-bottom: 20px;
+    font-weight: 700;
+  }
+
+  .tips-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+  }
+
+  .tip-card {
+    background: #f9fafb;
+    border-radius: 12px;
+    padding: 20px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .tip-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  }
+
+  .tip-card h3 {
+    color: #2563eb;
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+  }
+
+  .withdrawals ol {
+    margin-left: 20px;
+    line-height: 1.7;
+  }
+
+  .support ul {
+    margin-left: 20px;
+    list-style-type: disc;
+  }
+
+  .support p, .withdrawals li {
+    color: #374151;
+  }
+
+  @media (max-width: 600px) {
+    .earnings-tips, .withdrawals, .support {
+      padding: 20px;
+    }
+    .tip-card h3 {
+      font-size: 1rem;
+    }
+  }
+
+    /* Calculator */
+    .calc-row{display:flex;gap:8px;align-items:center;margin-top:10px}
+    input[type=number],select{padding:8px;border-radius:8px;border:1px solid #e6eef0;width:100%}
+    button.primary{background:var(--accent-2);color:white;padding:12px 16px;border-radius:8px;border:0;cursor:pointer}
+    button.primary:hover { background: #2300e6; transform:translateY(-3px); }
+    footer{margin-top:28px;color:var(--muted);font-size:13px;text-align:center}
+    .output-text {
+  display: inline-block;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #2300e6;
+  line-height: 1.8;
+}
+
+    /* small utilities */
+    .small{font-size:0.92rem}
+    .badge{display:inline-block;padding:6px 8px;border-radius:999px;background:rgba(16,185,129,0.12);color:var(--accent-2);font-weight:600}
+  
 
       /* box / testimonials */
       .img-box img{max-width:220px;display:block;margin:0 auto}
@@ -99,15 +466,24 @@
       .owl-carousel .reviews-surveys h4{margin:6px 0 8px;font-weight:700;color:#111}
       .owl-carousel .reviews-surveys p{color:#4b5563}
 
-      /* call-to-action */
-      .btn-block.btn-large{display:inline-block;background:linear-gradient(90deg,var(--accent2),var(--accent1));color:#fff;padding:12px 20px;border-radius:8px;font-weight:800;text-decoration:none}
-      .btn-block.btn-large:hover{opacity:0.95}
+      .about-navigation {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+    padding: 15px 20px;
+    
+  }
 
-      /* footer */
-      .footer{background:#081226;color:#e6eef8;padding:36px 0;margin-top:40px}
-      .footer h4{color:#fff}
-      .footer a{color:var(--accent1);text-decoration:none}
-      .footer .social-icons img{width:36px;height:36px;display:inline-block;margin-right:10px}
+  .nav-about {
+    color: #4b0082;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  .nav-about:hover {
+    color: #007bff;
+  }
 
       /* small */
       @media(max-width:768px){
@@ -115,100 +491,266 @@
         .hero{padding:36px 12px}
         .hero h1{font-size:1.4rem}
       }
+      .nav-about {
+      width: 100%;
+      text-align: center;
+    }
     </style>
 </head>
 <body>
 
   <!-- Header -->
-  <header class="header se-menus">
-    <div class="container">
-      <div class="row" style="display:flex;align-items:center;justify-content:space-between;gap:12px">
-        <!-- Replace placeholder logo: update src to your logo path -->
-        <a href="https://helalink.com" class="navbar-brand"><img src="https://via.placeholder.com/332x68.png?text=Helalink+Logo" alt="Helalink Agencies" width="332" height="68" /></a>
+  <nav class="site-nav" aria-label="Main navigation">
+    <div class="nav-inner wrap">
+      <a class="nav-link" href="index.html">Home</a>
+      <a class="nav-link" href="#services">Services</a>
+      <a class="nav-link" href="#about">About</a>
+      <a class="nav-cta contact" href="https://wa.me/254755252499?text=Hello%20Coach%20Dajenny,%20guide%20me%20through." target="_blank">WhatsApp</a>
+      <a class="nav-cta register" href="registration.html" target="_blank">Register</a>
+    </div>
+  </nav>
+  <!-- POST CARD -->
+  <main class="post-card">
 
-        <!-- simple responsive menu (kept structure) -->
-        <nav>
-          <input class="menu-btn" type="checkbox" id="menu-btn" style="display:none" />
-          <label class="menu-icon" for="menu-btn" style="display:none"><span class="navicon"></span></label>
-          <ul class="menu" style="margin:0">
-            <li><a href="https://helalink.com">Home</a></li>
-            <li><a href="https://helalink.com/about">About Us</a></li>
-            <li><a href="https://helalink.com/how-does-it-work">How does it work?</a></li>
-            <li><a href="https://helalink.com/contact-us">24/7 Support</a></li>
-            <li><a href="https://helalink.com/login" class="btn nav-join-btn nav-join-btn">Join</a></li>
+    <div class="post-meta">📅 Updated May 21, 2025 • Written by <strong>DAJENNY</strong></div>
+
+    <div class="post-body">
+<!-- EARN SECTION -->
+<section class="earn-section">
+  <div class="container">
+    
+    <!-- Row 1: Text Left, Image Right -->
+    <div class="row">
+      <div class="text-block">
+        <h2>🗳️ <span style="font-weight:700;">How Surveys Pay in Helalink!</span></h2>
+        <p>
+          At <strong>Helalink Agencies</strong>, surveys are one of the main ways users can earn money online.
+          Simply complete available surveys, answer honestly, and get rewarded directly in your Helalink wallet.
+        </p>
+        <div class="actions">
+          <a class="btn whatsapp" href="https://wa.me/254755252499?text=Hello%20Coach%20Dajenny,%20help%20me%20get%20started." target="_blank">
+            <i class="fab fa-whatsapp"></i> WhatsApp Us
+          </a>
+          <a class="btn register" href="registration.html" target="_blank">
+            <i class="fas fa-user-plus"></i> Register Now
+          </a>
+        </div>
+      </div>
+      <div class="image-block">
+        <img src="pictures/survey.png" alt="Survey & Payments">
+      </div>
+    </div>
+
+    <!-- Row 2: Image Left, Text Right -->
+    <div class="row reverse">
+      <div class="image-block">
+        <img src="pictures/surveys.png" alt="Helalink Surveys">
+      </div>
+      <div class="text-block">
+        <h2>Earn Money With Helalink Surveys</h2>
+        <p>
+          Do you really want to make money online easily or how about making additional money without getting into any kind of hassle? 
+          If this is the case, you’re certainly at the right platform. <strong>Helalink Agencies</strong> allows you to make money 
+          by simply answering a few questions in paid surveys. Try your luck and you won’t regret it.
+        </p>
+      </div>
+    </div>
+
+    <!-- Row 3: Text Left, Image Right -->
+    <div class="row">
+      <div class="text-block">
+        <div class="box-item">
+          <h2>Why Helalink?</h2>
+          <i class="fa fa-quote-left" aria-hidden="true"></i>
+          <ul>
+            <li>We have members across Africa & match your profile and interests.</li>
+            <li>We’re popular for fast payouts & fun surveys.</li>
+            <li>Our surveys are educative, social, and business-related.</li>
           </ul>
-        </nav>
-      </div>
-    </div>
-  </header>
-
-  <div class="header-gap"></div>
-
-  <!-- Hero -->
-  <section class="fleet_section-paid">
-    <div class="hero">
-      <div class="container">
-        <div class="row" style="display:flex;flex-wrap:wrap;align-items:center;gap:20px">
-          <div class="col-lg-6" style="flex:1 1 55%">
-            <h1>Let your hustle be heard loud. <span style="color:#08121a;font-weight:800">Join us</span> today &amp; know your worth…</h1>
-            <p>Your opinion really matters to us!</p>
-            <div class="gap"></div>
-            <a href="https://helalink.com/register" class="earn-now-btn pulse-button icon-move" aria-label="Free signup now">Register <i class="fa-solid fa-money-check-dollar" aria-hidden="true"></i></a>
-          </div>
-
-          <div class="col-lg-6 mobile-off" style="flex:1 1 40%;text-align:right">
-            <figure>
-              <!-- Replace the hero illustration with your file -->
-              <img src="https://via.placeholder.com/400.png?text=Payment+Illustration" class="img-responsive" width="400" height="400" alt="Survey & Payments" title="Complete Online Surveys" style="max-width:100%;border-radius:12px" />
-            </figure>
-          </div>
+          <i class="fa fa-quote-right pull-right" aria-hidden="true"></i>
         </div>
       </div>
-    </div>
-  </section>
-
-  <div class="gap"></div>
-
-  <!-- Intro / About -->
-  <aside>
-    <div class="container">
-      <div class="row" style="display:flex;flex-wrap:wrap;gap:20px;align-items:flex-start">
-        <div style="flex:1 1 55%">
-          <h2>MAKE ONLINE MONEY BY PAID SURVEYS</h2>
-          <div class="gap-half"></div>
-          <p class="tag-line-hr">Do you really want to make money online easily or how about making additional money without getting into any kind of hassle? If this is the case then you’re certainly at the right platform. Helalink Agencies is one of the most user-friendly websites that allows you to make money online by simply answering a few questions in paid surveys. Now this is easy, so it’s best to give it a go. Try your luck and you won’t regret your decision.</p>
-        </div>
-
-        <div style="flex:1 1 35%;text-align:right">
-          <div class="img-box" id="object" style="position:relative;left:0">
-            <img src="https://via.placeholder.com/220x150.png?text=Helalink+Badge" class="img-responsive" width="220" height="150" alt="Badge" />
-          </div>
-
-          <div class="box-item" style="margin-top:12px">
-            <i class="fa fa-quote-left" aria-hidden="true"></i>
-            <p>Helalink is worth signing up for. We have members across Africa & we try our best to match your profile and interests.</p>
-            <h2 class="tag-line-hr" style="color:var(--accent2)">We’re popular due to fast payouts & fun surveys.</h2>
-            <h2 class="tag-line-hr" style="color:var(--accent1)">Let us know what you think of us.</h2>
-            <i class="fa fa-quote-right pull-right" aria-hidden="true"></i>
-          </div>
-        </div>
+      <div class="image-block">
+        <img src="pictures/survey sample.png" alt="Survey Sample">
       </div>
     </div>
-  </aside>
 
-  <div class="page-inner-gap"></div>
+  </div>
+</section>
+<!-- How Survey Pays -->
+  <section class="survey-guide">
+  <h2>How Surveys Pay in Helalink</h2>
+
+  <div class="step">
+    <div class="step-number">1</div>
+    <div class="step-content">
+      <h3>Find surveys on your dashboard</h3>
+      <p>Open the <strong>Surveys</strong> or <strong>Tasks</strong> tab — surveys are posted by Helalink partners. Some require profile matches (age, location, interests).</p>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-number">2</div>
+    <div class="step-content">
+      <h3>Complete eligibility screening</h3>
+      <p>Short screening questions determine if you're a fit. If disqualified during screening you usually get no reward (or a small consolation).</p>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-number">3</div>
+    <div class="step-content">
+      <h3>Finish the survey honestly</h3>
+      <p>Fill out every required question. Surveys often take 2–15 minutes depending on length and complexity.</p>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-number">4</div>
+    <div class="step-content">
+      <h3>Get reward credited (points or cash)</h3>
+      <p>Rewards may be credited immediately or after review. Some surveys give points which convert to cash in your wallet.</p>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-number">5</div>
+    <div class="step-content">
+      <h3>Approval & withdrawal</h3>
+      <p>After approval (instant or within 24–48 hrs), earnings appear in your wallet. Withdraw once you reach the minimum threshold via supported methods (e.g., M-Pesa).</p>
+    </div>
+  </div>
+
+        <div class="card" style="margin-top:16px">
+          <h2>Example payouts</h2>
+          <p   >Typical examples — amounts vary by survey sponsor and country.</p>
+          <table aria-label="example payouts">
+            <thead>
+              <tr><th>Survey length</th><th>Estimated pay (Ksh)</th><th>Notes</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>1–3 minutes</td><td>10–30</td><td>Quick polls; low pay</td></tr>
+              <tr><td>5–10 minutes</td><td>40–150</td><td>Most common length</td></tr>
+              <tr><td>15+ minutes</td><td>150–500+</td><td>In-depth or product tests</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Calculator -->
+        <div class="card" style="margin-top:16px">
+          <h2 style="text-align: center;">Survey Earnings calculation</h2>
+          <p style="text-align: center;">In helalink, the more surveys you take the nore you earn. Estimate how you will earn daily/weekly from a mix of short and long helalink surveys.</p>
+
+          <div class="calc-row">
+            <label class="small" style="width:170px">Short surveys/day (Ksh 20 each)</label>
+            <input id="shortCount" type="number" min="0" value="3" />
+          </div>
+          <div class="calc-row">
+            <label class="small" style="width:170px">Medium surveys/day (Ksh 80 each)</label>
+            <input id="medCount" type="number" min="0" value="2" />
+          </div>
+          <div class="calc-row">
+            <label class="small" style="width:170px">Long surveys/week (Ksh 200 each)</label>
+            <input id="longCount" type="number" min="0" value="1" />
+          </div>
+
+          <div style="margin-top:12px;display:flex;gap:8px;align-items:center"> <button class="primary" id="calcBtn">Calculate</button> 
+            <div id="calcResult" class="small">Your estimate will appear here.
+            </div> 
+          </div>
+
+          <script>
+            (function(){
+              const elShort = document.getElementById('shortCount');
+              const elMed = document.getElementById('medCount');
+              const elLong = document.getElementById('longCount');
+              const btn = document.getElementById('calcBtn');
+              const out = document.getElementById('calcResult');
+
+              function calc(){
+                const short = Number(elShort.value) || 0;
+                const med = Number(elMed.value) || 0;
+                const long = Number(elLong.value) || 0;
+
+                const daily = short*20 + med*80 + (long*200/7); // spread long weekly across days
+                const weekly = daily*7;
+
+                out.innerHTML = `
+  <span class="output-text">
+    Daily earnings = Ksh ${daily.toFixed(0)} <br>
+    Weekly earnings = Ksh ${weekly.toFixed(0)}.
+  </span>
+`;
+              }
+
+              btn.addEventListener('click', calc);
+              // initial
+              calc();
+            })();
+          </script>
+        </div>
+
+      </section>
+
+      <section class="earnings-tips">
+  <h2>💡 Tips to Maximize Your Earnings</h2>
+  <div class="tips-grid">
+    <div class="tip-card">
+      <h3>🧩 Complete your profile</h3>
+      <p>More profile detail → better matches → higher-paying surveys.</p>
+    </div>
+    <div class="tip-card">
+      <h3>💬 Stay Active and Consistent</h3>
+      <p>The system favors active users when assigning new surveys.</p>
+    </div>
+    <div class="tip-card">
+      <h3>📅 Check daily</h3>
+      <p>Surveys expire quickly. Regular checks get you the best opportunities.</p>
+    </div>
+    <div class="tip-card">
+      <h3>👥 Refer Friends</h3>
+      <p>Helalink often offers referral bonuses or commissions when your friends sign up and complete tasks.</p>
+    </div>
+    <div class="tip-card">
+      <h3>🤝 Be honest</h3>
+      <p>Consistent and truthful answers keep you eligible for future surveys.</p>
+    </div>
+    <div class="tip-card">
+      <h3>📱 Use the app</h3>
+      <p>Push notifications can alert you to high-paying surveys first.</p>
+    </div>
+  </div>
+</section>
+
+<section class="withdrawals">
+  <h2>💰 Withdrawal & Payments</h2>
+  <ol>
+    <li>Open <strong>Wallet</strong> → Check available balance.</li>
+    <li>Ensure you meet the minimum withdrawal threshold.</li>
+    <li>Choose payout method (e.g., <strong>M-Pesa</strong>), enter required details.</li>
+    <li>Confirm withdrawal & keep the transaction ID for reference.</li>
+  </ol>
+</section>
+
+<section class="support">
+  <h2>📩 Contact & Support</h2>
+  <p>If a payout is missing or delayed, send a message to support with:</p>
+  <ul>
+    <li>Account email</li>
+    <li>Survey ID (if available)</li>
+    <li>Screenshot</li>
+  </ul>
+  <p><strong>Typical response time:</strong> 24–72 hours.</p>
+</section>
 
   <!-- Testimonials carousel -->
   <div class="container">
-    <div class="row">
+  <div class="row">
       <div class="col-lg-12 text-center">
         <h2>Our members’ reviews:</h2>
       </div>
     </div>
   </div>
-
-  <div class="gap"></div>
-
   <div class="container">
     <div class="row">
       <div id="owl-demo" class="owl-carousel owl-theme">
@@ -220,7 +762,7 @@
             <p class="tag-line-hr">“So, it’s been 3 months of me using this platform for earning some extra pocket money and it turned out to be a worthy idea because I have earned some good amount of cash through surveys in my free time after college.”</p>
             <div class="star-ratings-css"><div class="star-ratings-css-top" style="width:100%">★★★★★</div></div>
             <div class="gap"></div>
-            <h5 class="text-muted text-center">BRITTANY</h5>
+            <h5 class="text-center">BRITTANY</h5>
           </div>
         </div>
 
@@ -231,7 +773,7 @@
             <p class="tag-line-hr">“Helalink is legit and I have been using it for a few months now. The amount of surveys is pretty good and the payouts are satisfying.”</p>
             <div class="star-ratings-css"><div class="star-ratings-css-top" style="width:100%">★★★★★</div></div>
             <div class="gap"></div>
-            <h5 class="text-muted text-center">JEREMY</h5>
+            <h5 class="text-center">JEREMY</h5>
           </div>
         </div>
 
@@ -242,7 +784,7 @@
             <p class="tag-line-hr">“Over the last couple of weeks, I did paid surveys on Helalink that seem to match my profile questions — so hurray for that!”</p>
             <div class="star-ratings-css"><div class="star-ratings-css-top" style="width:100%">★★★★★</div></div>
             <div class="gap"></div>
-            <h5 class="text-muted text-center">SILVER</h5>
+            <h5 class="text-center">SILVER</h5>
           </div>
         </div>
 
@@ -253,7 +795,7 @@
             <p class="tag-line-hr">“Helalink is easy on the eyes, very navigable, with a calm theme and no distracting bells and whistles other sites have.”</p>
             <div class="star-ratings-css"><div class="star-ratings-css-top" style="width:100%">★★★★★</div></div>
             <div class="gap"></div>
-            <h5 class="text-muted text-center">SARAH</h5>
+            <h5 class="text-center">SARAH</h5>
           </div>
         </div>
 
@@ -264,7 +806,7 @@
             <p class="tag-line-hr">“The site is slick and professional. My first impression is overwhelmingly positive!”</p>
             <div class="star-ratings-css"><div class="star-ratings-css-top" style="width:100%">★★★★★</div></div>
             <div class="gap"></div>
-            <h5 class="text-muted text-center">ANDERSON</h5>
+            <h5 class="text-center">ANDERSON</h5>
           </div>
         </div>
 
@@ -275,157 +817,134 @@
             <p class="tag-line-hr">“I am a housewife and I get surveys according to my interests — this is the best way I can earn some money.”</p>
             <div class="star-ratings-css"><div class="star-ratings-css-top" style="width:100%">★★★★★</div></div>
             <div class="gap"></div>
-            <h5 class="text-muted text-center">O'SULLIVAN</h5>
+            <h5 class="text-center">O'SULLIVAN</h5>
           </div>
         </div>
 
       </div>
     </div>
   </div>
-
-
-  <div class="parallax-9913"></div>
-  <div class="gap"></div>
-
   <!-- CTA -->
   <div class="container">
     <div class="row">
-      <div style="text-align:center;width:100%">
-        <a href="https://helalink.com/register" aria-label="Free signup now" class="btn-block btn btn-large icon-move" style="background:linear-gradient(90deg,var(--accent2),var(--accent1));color:#fff;padding:12px 20px;border-radius:8px;text-decoration:none;font-weight:800">START EARNING <i class="fa fa-sign-in" aria-hidden="true"></i></a>
+      <div style="text-align:center;width:50%">
+        <a href="registration.html" aria-label="Free signup now" class="btn-block btn btn-large icon-move" style="background:linear-gradient(135deg, #6a11cb, #2575f2);color:#f7f4f4;padding:12px 20px;border-radius:8px;text-decoration:none;font-weight:800;">
+          <i class="fa-solid fa-user-plus"></i>START EARNING <i class="fa fa-sign-in" aria-hidden="true"></i></a>
       </div>
     </div>
   </div>
 
   <br />
 
-  <div class="container">
-    <div class="row">
-      <div style="text-align:center;width:100%">
-        <!-- Placeholder for Trust widget - update with real business id if desired -->
-        <div style="width:100%;max-width:360px;margin:0 auto">
-          <a href="#" target="_blank" rel="noopener" style="display:inline-block;padding:8px 12px;background:#fff;border-radius:6px;color:#111;text-decoration:none">Trustpilot (placeholder)</a>
-        </div>
-      </div>
-    </div>
-  </div>
-
   <!-- FAQ SECTION -->
-<section style="background:#fff9f0; padding:60px 20px; border-top:3px solid #ffb84d; border-bottom:3px solid #ffb84d;">
-  <div style="max-width:1000px; margin:auto; text-align:center;">
-    <h2 style="font-size:2rem; color:#e69500; font-weight:700; margin-bottom:10px;">📋 Frequently Asked Questions</h2>
-    <p style="color:#555; font-size:1.1rem; margin-bottom:40px;">Everything you need to know about earning from surveys on Helalink</p>
-    <img src="https://images.unsplash.com/photo-1605902711622-cfb43c44367f?auto=format&fit=crop&w=800&q=80" alt="Survey participants" style="border-radius:10px; width:100%; max-width:800px; margin-bottom:40px; box-shadow:0 4px 15px rgba(0,0,0,0.1);">
+<section class="faq-section">
+  <div class="faq-header">
+    <h2>📋 Frequently Asked Questions</h2>
+    <p class="header-text">Everything you need to know about earning from surveys on Helalink</p>
   </div>
 
-  <div style="max-width:900px; margin:auto;">
-    <div class="faq-item" style="background:white; margin-bottom:15px; border-radius:10px; box-shadow:0 3px 10px rgba(0,0,0,0.08); overflow:hidden;">
-      <button class="faq-question" style="width:100%; text-align:left; padding:18px 25px; background:linear-gradient(90deg,#ffb84d,#e69500); color:white; font-size:1rem; font-weight:600; border:none; cursor:pointer;">Do surveys pay in Helalink?</button>
-      <div class="faq-answer" style="display:none; padding:20px; color:#444; background:#fffaf3;">
+  <div class="faq-container">
+    <div class="faq-item">
+      <button class="faq-question">
+        Do surveys pay in Helalink?
+        <i class="fa-solid fa-chevron-down"></i>
+      </button>
+      <div class="faq-answer">
         Yes, Helalink pays its users to complete surveys that provide honest feedback or reviews. Your opinions help small and global companies create better products and services. In return, you’ll earn rewards that you can withdraw in different ways through your Helalink account.
       </div>
     </div>
 
-    <div class="faq-item" style="background:white; margin-bottom:15px; border-radius:10px; box-shadow:0 3px 10px rgba(0,0,0,0.08); overflow:hidden;">
-      <button class="faq-question" style="width:100%; text-align:left; padding:18px 25px; background:linear-gradient(90deg,#ffb84d,#e69500); color:white; font-size:1rem; font-weight:600; border:none; cursor:pointer;">How to make money online in Helalink survey?</button>
-      <div class="faq-answer" style="display:none; padding:20px; color:#444; background:#fffaf3;">
+    <div class="faq-item">
+      <button class="faq-question">
+        How to make money online in Helalink survey?
+        <i class="fa-solid fa-chevron-down"></i>
+      </button>
+      <div class="faq-answer">
         With Helalink, it's simple and fun! Participate in online paid surveys and earn rewards that you can withdraw to your M-Pesa account. Thousands of members earn daily by completing surveys and other simple tasks. Just register, activate your account, and start earning.
       </div>
     </div>
 
-    <div class="faq-item" style="background:white; margin-bottom:15px; border-radius:10px; box-shadow:0 3px 10px rgba(0,0,0,0.08); overflow:hidden;">
-      <button class="faq-question" style="width:100%; text-align:left; padding:18px 25px; background:linear-gradient(90deg,#ffb84d,#e69500); color:white; font-size:1rem; font-weight:600; border:none; cursor:pointer;">Does Helalink pay out instantly?</button>
-      <div class="faq-answer" style="display:none; padding:20px; color:#444; background:#fffaf3;">
+    <div class="faq-item">
+      <button class="faq-question">
+        Does all survey platforms pay out instantly?
+        <i class="fa-solid fa-chevron-down"></i>
+      </button>
+      <div class="faq-answer">
         Not all survey sites pay instantly, but Helalink ensures fast and reliable payouts once you meet the withdrawal threshold. Earnings from surveys are processed quickly to your M-Pesa or wallet within the shortest time possible after verification.
       </div>
     </div>
 
-    <div class="faq-item" style="background:white; margin-bottom:15px; border-radius:10px; box-shadow:0 3px 10px rgba(0,0,0,0.08); overflow:hidden;">
-      <button class="faq-question" style="width:100%; text-align:left; padding:18px 25px; background:linear-gradient(90deg,#ffb84d,#e69500); color:white; font-size:1rem; font-weight:600; border:none; cursor:pointer;">How do I withdraw from Helalink?</button>
-      <div class="faq-answer" style="display:none; padding:20px; color:#444; background:#fffaf3;">
-        To withdraw your earnings, log into your Helalink dashboard, go to the “Withdraw” section, and choose M-Pesa or your preferred payment option. Enter your details and amount, then confirm. Withdrawals are processed securely and fast within a short period.
+    <div class="faq-item">
+      <button class="faq-question">
+        Why was I disqualified from a survey?
+        <i class="fa-solid fa-chevron-down"></i>
+      </button>
+      <div class="faq-answer">
+        You likely didn't meet the target profile (age, location, purchase history). Screening happens to match the right respondents for a study.
       </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">
+        What is the minimum withdrawal?
+        <i class="fa-solid fa-chevron-down"></i>
+      </button>
+      <div class="faq-answer">
+        Minimum withdrawal varies by country. Common thresholds: Ksh 500–1,000. Check your account settings for exact amount.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">
+        How long until a survey payout shows in my wallet?
+        <i class="fa-solid fa-chevron-down"></i>
+      </button>
+      <div class="faq-answer">
+        Most are instant; some require a review period up to 48 hours. If it takes longer, contact Helalink support with the survey ID.
+    </div>
     </div>
   </div>
 </section>
 
+  <!-- Navigation -->
+<div class="about-navigation" aria-label="Post navigation">
+  <a class="nav-about" href="readmore-bonus.html">
+    <i class="fas fa-arrow-left"></i> Back: Welcome Bonus
+  </a>
+  <a class="nav-about" href="games.html">
+    Next: Play Games <i class="fas fa-arrow-right"></i>
+  </a>
+</div>
+</section>
+
 <script>
-  const faqButtons = document.querySelectorAll('.faq-question');
-  faqButtons.forEach(button => {
+  const faqItems = document.querySelectorAll('.faq-item');
+  faqItems.forEach(item => {
+    const button = item.querySelector('.faq-question');
     button.addEventListener('click', () => {
-      const answer = button.nextElementSibling;
-      answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
+      item.classList.toggle('active');
     });
   });
 </script>
 
 
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container">
-      <div class="row footer-links" style="display:flex;flex-wrap:wrap;gap:18px">
-        <div style="flex:1 1 30%">
-          <h4>Helalink Agencies</h4>
-          <div class="gap-half"></div>
-          <p class="tag-line-hr">Our staff continuously strives to answer queries at their earliest convenience.</p>
-          <br>
-          <h4>How it works</h4>
-          <div class="gap-half"></div>
-          <ul class="list-unstyled">
-            <li><i class="fa fa-cubes" aria-hidden="true"></i> <a href="https://helalink.com/how-does-it-work"> How does it work?</a></li>
-            <li><i class="fa-solid fa-list-check" aria-hidden="true"></i> <a href="https://helalink.com/paid-surveys"> Paid Surveys</a></li>
-            <li><i class="fa-solid fa-money-check-dollar" aria-hidden="true"></i> <a href="https://helalink.com/earn-money-online"> Earn Money Online</a></li>
-            <li><i class="fa-solid fa-square-poll-vertical" aria-hidden="true"></i> <a href="https://helalink.com/survey-panels"> Survey Panels</a></li>
-          </ul>
-        </div>
 
-        <div style="flex:1 1 30%">
-          <h4>Quick Links</h4>
-          <div class="gap-half"></div>
-          <ul class="list-unstyled">
-            <li><i class="fa fa-home" aria-hidden="true"></i> <a href="https://helalink.com"> Home</a></li>
-            <li><i class="fa fa-info-circle" aria-hidden="true"></i> <a href="https://helalink.com/about"> About Us</a></li>
-            <li><i class="fa fa-phone" aria-hidden="true"></i> <a href="https://helalink.com/contact-us"> Contact us</a></li>
-          </ul>
-          <h4>Support & Legal</h4>
-          <div class="gap-half"></div>
-          <ul class="list-unstyled">
-            <li><i class="fa fa-question-circle" aria-hidden="true"></i><a href="https://helalink.com/faq"> FAQs</a></li>
-            <li><i class="fa fa-file-text" aria-hidden="true"></i> <a href="https://helalink.com/terms-and-conditions">Terms & Conditions</a></li>
-            <li><i class="fa fa-shield" aria-hidden="true"></i> <a href="https://helalink.com/privacy-policy"> Privacy Policy</a></li>
-          </ul>
-        </div>
-
-        <div style="flex:1 1 30%">
-          <h4>Follow On Us</h4>
-          <div class="gap-half"></div>
-          <ul class="list-unstyled">
-            <li><i class="fa fa-mobile" aria-hidden="true"></i><a href="https://helalink.com/opinion-app"> Mobile App</a></li>
-            <li><i class="fa fa-rss" aria-hidden="true"></i> <a href="https://helalink.com/blog" target="_blank"> Blog</a></li>
-          </ul>
-          <ul class="list-unstyled social-icons-footer" style="margin-top:12px">
-            <li style="display:inline-block;margin-right:8px"><a href="https://www.facebook.com/helalink" target="_blank" aria-label="Facebook"><img src="https://via.placeholder.com/32x32.png?text=F" alt="facebook-icon"/></a></li>
-            <li style="display:inline-block;margin-right:8px"><a href="https://www.instagram.com/helalink" target="_blank" aria-label="Instagram"><img src="https://via.placeholder.com/32x32.png?text=I" alt="instagram-icon"/></a></li>
-            <li style="display:inline-block;margin-right:8px"><a href="https://twitter.com/helalink" target="_blank" aria-label="Twitter"><img src="https://via.placeholder.com/32x32.png?text=T" alt="twitter-icon"/></a></li>
-            <li style="display:inline-block;margin-right:8px"><a href="https://www.youtube.com/helalink" target="_blank" aria-label="YouTube"><img src="https://via.placeholder.com/32x32.png?text=Y" alt="youtube-icon"/></a></li>
-            <li style="display:inline-block;margin-right:8px"><a href="https://www.linkedin.com/company/helalink" target="_blank" aria-label="LinkedIn"><img src="https://via.placeholder.com/32x32.png?text=L" alt="linkedin-icon"/></a></li>
-          </ul>
-        </div>
-
-      </div>
+  <footer style="background:#e8e8f0; color:#15212c; padding:25px 0; text-align:center; margin-top:40px;">
+  <div class="wrap" style="display:flex; flex-direction:column; gap:6px; align-items:center; justify-content:center;">
+    <div style="font-weight:600; font-size:0.9rem;">
+      Website developed with ❤️ by 
+      <a href="https://wa.me/254707995729" target="_blank" 
+         style="color:#170f91; text-decoration:none;">
+         Jeff 🔗
+      </a>
     </div>
-  </footer>
-
-  <div class="footer-bottom">
-    <div class="container">
-      <div class="row">
-        <div style="text-align:center;width:100%">
-          <p>© Copyright 2023 - <span id="year"></span> | HELALINK AGENCIES. All rights reserved.</p>
-        </div>
-      </div>
-    </div>
+    <small class="muted" style="color:#25282b;">
+      © <span id="year"></span> Helalink Agencies — All rights reserved.
+    </small>
   </div>
+</footer>
 
-  <a href="javascript:" id="return-to-top" aria-label="Button to Top" style="display: inline;position:fixed;right:18px;bottom:18px;background:linear-gradient(90deg,var(--accent2),var(--accent1));color:#fff;padding:10px;border-radius:50%;box-shadow:0 6px 20px rgba(0,0,0,0.12)"><i class="fa fa-chevron-up"></i></a>
+  <a href="javascript:" id="return-to-top" aria-label="Button to Top" style="display: inline;position:fixed;right:18px;bottom:18px;background: #170f91;color:#fff;padding:10px;border-radius:50%;box-shadow:0 6px 20px rgba(0,0,0,0.12)"><i class="fa fa-chevron-up"></i></a>
 
   <!-- JS libs -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

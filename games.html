@@ -6,13 +6,74 @@
   <title>Helalink - Play & Earn</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      font-family: 'Inter', sans-serif;
-      background: #fff;
-      color: #0a2540;
+
+    :root {
+    --accent1: #2563eb;
+    --accent2: #06b6d4;
+    --card-bg: #ffffff;
+    --text-dark: #0f172a;
+    --text-light: #475569;
+    --bg-light: #f8fafc;
+  }
+
+  body {
+    font-family: 'Poppins', sans-serif;
+    background: var(--bg-light);
+    margin: 0;
+    padding: 0;
+    color: var(--text-dark);
+  }
+
+  nav.site-nav {
+      position:sticky;
+      top:0;
+      z-index:1200;
+      background: rgba(255,255,255,0.98);
+      backdrop-filter: blur(6px);
+      box-shadow: 0 2px 10px rgba(2,6,23,0.06);
     }
 
+    .nav-inner {
+      max-width:1100px;
+      margin:0 auto;
+      padding:12px 18px;
+      display:flex;
+      gap:12px;
+      align-items:center;
+      justify-content:center;
+      flex-wrap:nowrap;
+    }
+
+    .nav-link {
+      text-decoration:none;
+      padding:8px 12px;
+      border-radius:10px;
+      font-weight:600;
+      color:#0b1220;
+      transition:all .18s;
+    }
+    .nav-link:hover { background: rgba(59,130,246,0.08); transform:translateY(-2px); }
+
+    .nav-cta { padding:8px 14px; border-radius:999px; font-weight:700; color:white; text-decoration:none; }
+    .nav-cta.register { background: linear-gradient(90deg,#0352fc,#0a35f7); }
+    .nav-cta.contact  { background: linear-gradient(90deg,#22c55e,#4ade80); }
+
+    .post-card {
+  max-width: 1100px;
+  margin: 28px auto;
+  background: var(--card);
+  border-radius: 14px;
+  box-shadow: 0 8px 30px rgba(15, 23, 42, 0.06);
+  overflow: hidden;
+}
+.post-meta {
+  background: linear-gradient(90deg, #4f46e5, #3b82f6);
+  color: #fff;
+  padding: 14px 20px;
+  font-size: 0.95rem;
+  text-align: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
     .hero {
       display: flex;
       flex-wrap: wrap;
@@ -31,30 +92,19 @@
       line-height: 1.3;
       font-weight: 700;
       margin-bottom: 15px;
-      color: #083358;
+      color: #0781eb;
     }
 
     .hero-text p {
-      color: #a67c00;
+      color: #3d3d3b;
       font-weight: 600;
       margin-bottom: 25px;
     }
 
-    .hero-text .btn {
-      background-color: #00c26f;
-      color: #fff;
-      border: none;
-      padding: 14px 35px;
-      border-radius: 6px;
-      font-size: 1rem;
-      font-weight: 600;
-      cursor: pointer;
-      transition: 0.3s;
-    }
-
-    .hero-text .btn:hover {
-      background-color: #00a65a;
-    }
+    .video-actions { display:flex; gap:12px; flex-wrap:wrap; margin-bottom:18px; }
+    .btn { display:inline-flex; align-items:center; gap:10px; padding:10px 16px; border-radius:10px; text-decoration:none; font-weight:700; color:#fff; }
+    .btn.whatsapp { background:#25D366; }
+    .btn.register { background: #0352fc; }
 
     .hero-image {
       flex: 1 1 45%;
@@ -99,10 +149,25 @@
       font-size: 0.9rem;
     }
 
-    .video-thumb img {
-      width: 100%;
-      display: block;
-    }
+     a.video-btn {
+    display: inline-block;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+    transition: all 0.3s ease;
+  }
+
+  a.video-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 30px rgba(0, 200, 255, 0.6);
+  }
+
+  video {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+  }
 
     .video-footer {
       padding: 12px 16px;
@@ -141,113 +206,420 @@
       color: #222;
     }
 
+    .play-section {
+  background: #fff;
+  padding: 40px 0;
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.play-section h2 {
+  font-size: 1.8rem;
+  color: #0352fc;
+  margin-bottom: 25px;
+  font-weight: 700;
+}
+
+.scroll-wrapper {
+  display: flex;
+  width: max-content;
+  animation: scrollGames 40s linear infinite;
+}
+
+.games-container {
+  display: flex;
+  gap: 20px;
+}
+
+.game-card {
+  flex: 0 0 auto;
+  width: 160px;
+  height: 220px;
+  border-radius: 15px;
+  overflow: hidden;
+  background: #000;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease, box-shadow ease;
+}
+
+.game-card:hover {
+  transform: scale(1.3);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+}
+
+.game-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@keyframes scrollGames {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.play-section::before, .play-section::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 80px;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.play-section::before {
+  left: 0;
+  background: linear-gradient(to right, #fff 50%, transparent);
+}
+
+.play-section::after {
+  right: 0;
+  background: linear-gradient(to left, #fff 50%, transparent);
+}
+
+@media (max-width: 768px) {
+  .game-card {
+    width: 120px;
+    height: 160px;
+  }
+}
     .games-section {
-      background: #fff;
-      padding: 40px 0;
-      text-align: center;
-      overflow: hidden;
-      position: relative;
-    }
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 40px;
+    background: var(--card-bg);
+    border-radius: 20px;
+    box-shadow: 0 8px 26px rgba(0,0,0,0.08);
+  }
 
-    .games-section h2 {
-      font-size: 1.8rem;
-      color: #333;
-      margin-bottom: 25px;
-      font-weight: 700;
-    }
+  .games-header {
+    text-align: center;
+    margin-bottom: 40px;
+  }
 
-    .games-row {
-      display: flex;
-      gap: 20px;
-      animation: scrollGames 25s linear infinite;
-      width: max-content;
-    }
+  .games-header h1 {
+    font-size: 2.3rem;
+    background: #fff;
+    color: #0352fc;
+    font-weight: 700;
+  }
 
-    .game-card {
-      flex: 0 0 auto;
-      width: 160px;
-      height: 220px;
-      border-radius: 15px;
-      overflow: hidden;
-      background: #000;
-      box-shadow: 0 6px 12px rgba(0,0,0,0.15);
-      transition: transform 0.3s ease;
-    }
+  .games-header p {
+    color: var(--text-light);
+    font-size: 1.1rem;
+    max-width: 780px;
+    margin: 10px auto;
+  }
 
-    .game-card:hover {
-      transform: translateY(-6px);
-    }
+  .games-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 24px;
+    margin-bottom: 50px;
+  }
 
-    .game-card img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
+  .games-card {
+    background: linear-gradient(180deg, var(--bg-light), #fff);
+    padding: 24px;
+    border-radius: 16px;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.06);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
 
-    @keyframes scrollGames {
-      from {
-        transform: translateX(0);
-      }
-      to {
-        transform: translateX(-50%);
-      }
-    }
+  .games-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+  }
 
-    /* Duplicate row for smooth loop */
-    .scroll-wrapper {
-      display: flex;
-      width: 200%;
-      animation: scrollGames 25s linear infinite;
-    }
+  .game-icon {
+    font-size: 2.2rem;
+    margin-bottom: 14px;
+    display: inline-block;
+  }
 
-    .games-container {
-      display: flex;
-      gap: 20px;
-      width: 100%;
-    }
+  .games-card h3 {
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+    color: var(--accent1);
+  }
 
-    .games-section::before, .games-section::after {
-      content: "";
-      position: absolute;
-      top: 0;
-      width: 80px;
-      height: 100%;
-      z-index: 1;
-      pointer-events: none;
-    }
-    .games-section::before {
-      left: 0;
-      background: linear-gradient(to right, #fff 50%, transparent);
-    }
-    .games-section::after {
-      right: 0;
-      background: linear-gradient(to left, #fff 50%, transparent);
-    }
+  .games-card p {
+    font-size: 0.95rem;
+    color: var(--text-light);
+    line-height: 1.6;
+  }
 
-    @media (max-width: 768px) {
-      .game-card {
-        width: 120px;
-        height: 160px;
-      }
+  .how-to-play {
+    margin-top: 40px;
+  }
+
+  .how-to-play h2 {
+    font-size: 1.7rem;
+    color: var(--accent1);
+    margin-bottom: 15px;
+  }
+
+  .how-to-play ol {
+    list-style: decimal;
+    margin-left: 28px;
+    line-height: 1.8;
+    color: var(--text-dark);
+  }
+
+  .tip-box {
+    margin-top: 30px;
+    padding: 22px;
+    border-left: 6px solid var(--accent1);
+    background: #eef6ff;
+    border-radius: 8px;
+  }
+
+  .tip-box strong {
+    color: var(--accent1);
+  }
+
+  @media (max-width: 768px) {
+    .games-section {
+      padding: 28px;
     }
+    .games-header h1 {
+      font-size: 1.9rem;
+    }
+  }
+
+  .why-helalink {
+  background: #f8fafc;
+  color: #222;
+  padding: 60px 20px;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+}
+
+.why-helalink h2 {
+  font-size: 1.9rem;
+  color: #1b29ec;
+  font-weight: 700;
+  margin-bottom: 50px;
+}
+
+.why-helalink h2 span {
+  color: #16a34a;
+}
+
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.why-card {
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+  padding: 30px 25px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.why-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+.icon {
+  font-size: 2.5rem;
+  color: #16a34a;
+  margin-bottom: 15px;
+}
+
+.why-card h3 {
+  color: #111;
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.why-card p {
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+.reviews-section {
+  background: #f8fafc;
+  padding: 70px 20px;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  color: #222;
+}
+
+.reviews-section h2 {
+  font-size: 1.9rem;
+  font-weight: 700;
+  margin-bottom: 50px;
+  color: #0a35f7;
+}
+
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  max-width: 1150px;
+  margin: 0 auto 50px;
+}
+
+.review-card {
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+  padding: 30px 25px;
+  text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.review-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.1);
+}
+
+.stars {
+  color: #16a34a;
+  font-size: 1.3rem;
+  margin-bottom: 12px;
+}
+
+.review-card h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #111;
+}
+
+.review-card p {
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.author {
+  font-weight: 700;
+  color: #111;
+}
+
+.time {
+  display: block;
+  color: #888;
+  font-size: 0.85rem;
+}
+
+.trust {
+  margin-top: 20px;
+}
+
+.trust p {
+  color: #333;
+  font-size: 0.95rem;
+}
+
+.trust span {
+  color: #16a34a;
+  font-weight: 600;
+}
+
+.cta {
+  display: inline-block;
+  background: #212edb;
+  color: #fff;
+  padding: 14px 32px;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  margin-top: 15px;
+  transition: background 0.3s ease;
+}
+
+.cta:hover {
+  background: #0205ac;
+}
+
+@media (max-width: 768px) {
+  .review-card {
+    text-align: center;
+  }
+}
+
+.about-navigation {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+    padding: 15px 20px;
+    
+  }
+
+  .nav-about {
+    color: #4b0082;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.3s ease;}
+
+  .nav-about:hover {
+    color: #007bff;
+  }
   </style>
 </head>
 
 <body>
+  <!-- NAV -->
+  <nav class="site-nav" aria-label="Main navigation">
+    <div class="nav-inner wrap">
+      <a class="nav-link" href="index.html">Home</a>
+      <a class="nav-link" href="#services">Services</a>
+      <a class="nav-link" href="#about">About</a>
+      <a class="nav-cta contact" href="https://wa.me/254755252499?text=Hello%20Coach%20Dajenny,%20guide%20me%20through." target="_blank">WhatsApp</a>
+      <a class="nav-cta register" href="registration.html" target="_blank">Register</a>
+    </div>
+  </nav>
+
+  <!-- POST CARD -->
+  <main class="post-card">
+
+    <div class="post-meta">📅 Updated May 21, 2025 • Written by <strong>DAJENNY</strong></div>
+
+    <div class="post-body">
   <section class="hero">
     <div class="hero-text">
-      <h1>Win money playing & watching video games</h1>
-      <p>Earn by playing games through Helalink apps</p>
-      <button class="btn">Play now</button>
+      <h1>🎮 Play & Earn on Helalink Games</h1>
+      <p>Helalink Games — where fun meets rewards</p>
+      <p>
+        This section is designed to give you an exciting way to earn while you play. 
+        Whether you enjoy quick puzzles, trivia challenges, or spin-to-win games, Helalink offers a variety of mini-games that keep you entertained while boosting your account earnings.
+      </p>
+      <div class="games-actions">
+      <a class="btn whatsapp" href="https://wa.me/254755252499?text=Hello%20Coach%20Dajenny,%20help%20me%20get%20started." target="_blank">
+        <i class="fab fa-whatsapp"></i> WhatsApp Us
+      </a>
+
+      <a class="btn register" href="registration.html" target="_blank">
+        <i class="fas fa-user-plus"></i> Play Now
+      </a>
+    </div>
     </div>
 
     <div class="hero-image">
       <div class="video-card">
         <div class="video-header">
           <div class="user-info">
-            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="User">
+            <img src="pictures/games.jpg" alt="User">
             <div>
-              <div class="name">readyeveryday_314</div>
+              <div class="name">SpinEveryday_314</div>
               <small>NBA2K25 · PlayNow Online</small>
             </div>
           </div>
@@ -255,47 +627,264 @@
         </div>
 
         <div class="video-thumb">
-          <img src="https://images.pexels.com/photos/7991373/pexels-photo-7991373.jpeg" alt="Game Preview">
+        <a href="registration.html" class="video-btn">
+  <video autoplay loop muted>
+    <source src="spin.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+</a>
         </div>
 
         <div class="video-footer">
-          <span>Win the match<br><small>3 people staked this challenge</small></span>
-          <span class="payout">$56.50</span>
+          <span>Tap to play<br><small>3 people staked this challenge</small></span>
+          <span class="payout">ksh 247.50</span>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="games-section">
-    <h2>Trending Games</h2>
-
+  <section class="play-section">
+    <h2>Top Helalink Games</h2>
     <div class="scroll-wrapper">
       <div class="games-container">
-        <div class="game-card"><img src="https://upload.wikimedia.org/wikipedia/en/7/79/Marvel_Rivals_cover.jpg" alt="Marvel Rivals"></div>
-        <div class="game-card"><img src="https://upload.wikimedia.org/wikipedia/en/a/ab/Call_of_Duty_Warzone_Logo.jpg" alt="Warzone"></div>
-        <div class="game-card"><img src="https://upload.wikimedia.org/wikipedia/en/thumb/8/8e/Fortnite_cover_art.jpg/220px-Fortnite_cover_art.jpg" alt="Fortnite"></div>
-        <div class="game-card"><img src="https://upload.wikimedia.org/wikipedia/en/f/f9/EA_Sports_FC_25_cover.jpg" alt="EA FC 25"></div>
-        <div class="game-card"><img src="https://upload.wikimedia.org/wikipedia/en/7/76/Clash_Royale_cover.jpg" alt="Clash Royale"></div>
-        <div class="game-card"><img src="https://upload.wikimedia.org/wikipedia/en/6/6e/College_Football_25_cover.jpg" alt="College Football 25"></div>
-        <div class="game-card"><img src="https://upload.wikimedia.org/wikipedia/en/3/36/Call_of_Duty_Black_Ops_6_cover.jpg" alt="Black Ops 6"></div>
-        <div class="game-card"><img src="https://upload.wikimedia.org/wikipedia/en/3/33/Apex_legends_cover.jpg" alt="Apex Legends"></div>
-        <div class="game-card"><img src="https://upload.wikimedia.org/wikipedia/en/d/d1/Madden_NFL_25_cover.jpg" alt="Madden NFL 25"></div>
-      </div>
-
-      <!-- Duplicate for seamless loop -->
-      <div class="games-container">
-        <div class="game-card"><img src="https://upload.wikimedia.org/wikipedia/en/7/79/Marvel_Rivals_cover.jpg" alt="Marvel Rivals"></div>
-        <div class="game-card"><img src="https://upload.wikimedia.org/wikipedia/en/a/ab/Call_of_Duty_Warzone_Logo.jpg" alt="Warzone"></div>
-        <div class="game-card"><img src="https://upload.wikimedia.org/wikipedia/en/thumb/8/8e/Fortnite_cover_art.jpg/220px-Fortnite_cover_art.jpg" alt="Fortnite"></div>
-        <div class="game-card"><img src="https://upload.wikimedia.org/wikipedia/en/f/f9/EA_Sports_FC_25_cover.jpg" alt="EA FC 25"></div>
-        <div class="game-card"><img src="https://upload.wikimedia.org/wikipedia/en/7/76/Clash_Royale_cover.jpg" alt="Clash Royale"></div>
-        <div class="game-card"><img src="https://upload.wikimedia.org/wikipedia/en/6/6e/College_Football_25_cover.jpg" alt="College Football 25"></div>
-        <div class="game-card"><img src="https://upload.wikimedia.org/wikipedia/en/3/36/Call_of_Duty_Black_Ops_6_cover.jpg" alt="Black Ops 6"></div>
-        <div class="game-card"><img src="https://upload.wikimedia.org/wikipedia/en/3/33/Apex_legends_cover.jpg" alt="Apex Legends"></div>
-        <div class="game-card"><img src="https://upload.wikimedia.org/wikipedia/en/d/d1/Madden_NFL_25_cover.jpg" alt="Madden NFL 25"></div>
+        <div class="game-card"><img src="https://img.poki-cdn.com/cdn-cgi/image/q=78,scq=50,width=204,height=204,fit=cover,f=auto/2d5e417ea0fc1ef06d746b2cef691c07/bubble-shooter-lak.png" alt="1"></div>
+        <div class="game-card"><img src="https://www.shutterstock.com/image-illustration/neon-3d-play-casino-game-600nw-2470306267.jpg" alt="2"></div>
+        <div class="game-card"><img src="https://t4.ftcdn.net/jpg/15/67/81/75/240_F_1567817510_oZouwLtkeFuCLjAGLUMdi6vloAQMQ5t3.jpg" alt="3"></div>
+        <div class="game-card"><img src="https://t4.ftcdn.net/jpg/03/02/42/43/240_F_302424378_djSZbKJGPMp7AnJkopnGQ7NUj1d06DVa.jpg" alt="4"></div>
+        <div class="game-card"><img src="https://images.seeklogo.com/logo-png/61/1/aviator-logo-png_seeklogo-618852.png" alt="5"></div>
+        <div class="game-card"><img src="https://t3.ftcdn.net/jpg/02/38/49/84/240_F_238498452_OgKgKXRJ9ilHtfbw3GXbTlpZHDvzFPGU.jpg" alt="6"></div>
+        <div class="game-card"><img src="https://m.media-amazon.com/images/I/81c0y3+hxCL.png" alt="7"></div>
+        <div class="game-card"><img src="https://thumbs.dreamstime.com/b/games-14152659.jpg" alt="8"></div>
+        <div class="game-card"><img src="https://c8.alamy.com/comp/PJ2GH3/3d-gold-coins-illustration-realistic-gold-coin-on-transparent-background-vector-PJ2GH3.jpg" alt="9"></div>
+        <div class="game-card"><img src="https://cdn-0001.qstv.on.epicgames.com/NOUCpfCAtlYUZehYvJ/image/landscape_comp.jpeg" alt="10"></div>
+        <div class="game-card"><img src="https://thumbs.dreamstime.com/b/word-writing-text-game-night-business-concept-entertainment-fun-play-time-event-gaming-written-skicky-note-paper-wood-111449920.jpg" alt="11"></div>
+        <div class="game-card"><img src="https://m.media-amazon.com/images/I/71gvihbA13L._AC_SS115_.jpg" alt="12"></div>
+        <div class="game-card"><img src="https://t3.ftcdn.net/jpg/04/94/45/90/360_F_494459053_WFq14InIwz3e8kqueRyM9cdeKZWRs8Ze.jpg" alt="13"></div>
+        <div class="game-card"><img src="https://cdn.vectorstock.com/i/1000v/73/85/maze-puzzle-game-with-girl-vector-3967385.jpg" alt="14"></div>
       </div>
     </div>
   </section>
+
+  <script>
+// --- Randomize the order of games ---
+document.addEventListener("DOMContentLoaded", () => {
+  const container = document.getElementById("gamesContainer");
+  const cards = Array.from(container.children);
+  const shuffled = cards.sort(() => Math.random() - 0.5);
+  
+  // Clear and re-append shuffled cards
+  container.innerHTML = "";
+  shuffled.forEach(card => container.appendChild(card.cloneNode(true)));
+
+  // Duplicate to make scrolling loop seamless
+  shuffled.forEach(card => container.appendChild(card.cloneNode(true)));
+});
+</script>
+
+  <section class="games-section">
+
+    <div class="games-header">
+      <h1>🎮 Play & Earn on Helalink Games</h1>
+      <p>Helalink brings together skill, fun, and earnings in one exciting gaming space. Play your favorite classics, test your strategy, and earn rewards from over 12 unique games — all built to entertain and reward you.</p>
+    </div>
+
+    <div class="games-grid">
+      <div class="games-card">
+        <div class="game-icon">♟️</div>
+        <h3>Chess</h3>
+        <p>Challenge players worldwide in Chess, a battle of minds and strategy. Win matches to earn Helalink Points and climb the global leaderboard.</p>
+      </div>
+
+      <div class="games-card">
+        <div class="game-icon">🔴⚫</div>
+        <h3>Checkers</h3>
+        <p>Play fast and fun Checkers matches. Each win boosts your daily bonus score, and winning streaks unlock exclusive rewards.</p>
+      </div>
+
+      <div class="games-card">
+        <div class="game-icon">✈️</div>
+        <h3>Aviator</h3>
+        <p>Predict, react, and cash out before the plane flies away! The higher the risk, the greater the reward. A perfect mix of thrill and timing.</p>
+      </div>
+
+      <div class="games-card">
+        <div class="game-icon">⚽</div>
+        <h3>Soccer</h3>
+        <p>Score goals, challenge others, and earn points in this interactive soccer challenge that combines skill and precision.</p>
+      </div>
+
+      <div class="games-card">
+        <div class="game-icon">🎲</div>
+        <h3>Dice Duel</h3>
+        <p>Roll your way to victory! Compete in dice duels where luck and quick decisions can earn you instant Helalink Points.</p>
+      </div>
+
+      <div class="games-card">
+        <div class="game-icon">🧩</div>
+        <h3>Puzzle Match</h3>
+        <p>Solve exciting puzzles under time pressure. Each completed level adds to your Helalink earnings and sharpens your logic.</p>
+      </div>
+
+      <div class="games-card">
+        <div class="game-icon">🧠</div>
+        <h3>Trivia Quest</h3>
+        <p>Answer questions on various topics. The faster and more accurately you respond, the more points you earn.</p>
+      </div>
+
+      <div class="games-card">
+        <div class="game-icon">🎰</div>
+        <h3>Spin & Win</h3>
+        <p>Spin the virtual wheel to test your luck. Every spin can earn you cash bonuses, multipliers, or exclusive Helalink tokens.</p>
+      </div>
+
+      <div class="games-card">
+        <div class="game-icon">💰</div>
+        <h3>Coin Flip</h3>
+        <p>Predict the outcome — heads or tails. A simple yet exciting way to earn quick rewards on Helalink.</p>
+      </div>
+
+      <div class="games-card">
+        <div class="game-icon">🏎️</div>
+        <h3>Car Racer</h3>
+        <p>Race through fun tracks, avoid obstacles, and finish first to get bonus Helalink Points and leaderboard rankings.</p>
+      </div>
+
+      <div class="games-card">
+        <div class="game-icon">🔢</div>
+        <h3>Number Rush</h3>
+        <p>Test your reflexes by tapping or arranging numbers in order before time runs out. Perfect for quick players who think fast!</p>
+      </div>
+
+      <div class="games-card">
+        <div class="game-icon">🔠</div>
+        <h3>Word Play</h3>
+        <p>Form as many words as possible from given letters. The smarter your words, the more points you collect per round.</p>
+      </div>
+    </div>
+
+    <div class="how-to-play">
+      <h2>🧭 How to Play & Earn</h2>
+      <ol>
+        <li><strong>Log In:</strong> Access your Helalink dashboard and open the <em>Games</em> section.</li>
+        <li><strong>Select a Game:</strong> Select from puzzles, quizzes, spins, aviator and more.</li>
+        <li><strong>Start Playing:</strong> Compete in matches or solo rounds based on skill and luck.</li>
+        <li><strong>Earn Rewards:</strong> Win Helalink Points for each completed round, challenge, or high score.</li>
+        <li><strong>Redeem Points:</strong> Use earned points to boost surveys, withdraw cash, or unlock bonuses.</li>
+      </ol>
+    </div>
+
+  </section>
+
+  <section class="why-helalink">
+  <h2>We’re the #1 site to make money. <span>Here’s why</span></h2>
+
+  <div class="why-grid">
+    <div class="why-card">
+      <div class="icon">💵</div>
+      <h3>Highest payouts</h3>
+      <p>Earn way more than on other sites. It’s our goal to help you make as much money as possible.</p>
+    </div>
+
+    <div class="why-card">
+      <div class="icon">⚡</div>
+      <h3>Instant cashouts</h3>
+      <p>Ready to get your money? The minimum cashout varies by region, between as little as ksh.1000 and ksh.1500, and payouts are almost instant.</p>
+    </div>
+
+    <div class="why-card">
+      <div class="icon">🎁</div>
+      <h3>Daily bonuses</h3>
+      <p>Climb the daily bonus ladder, reach the leaderboard, or start a streak to earn extra rewards — for free.</p>
+    </div>
+  </div>
+</section>
+
+<section class="reviews-section">
+  <h2>Everyone’s talking about Helalink</h2>
+
+  <div class="reviews-grid">
+    <div class="review-card">
+      <div class="stars">⭐⭐⭐⭐⭐</div>
+      <h3>The most I've ever earned from one of these apps.</h3>
+      <p>Best and most reliable play-to-earn source that I’ve used. I rarely have any problems with payouts, and when I do, support is always there to help!</p>
+      <div class="author">KillSw!tch</div>
+      <span class="time">6 days ago</span>
+    </div>
+
+    <div class="review-card">
+      <div class="stars">⭐⭐⭐⭐⭐</div>
+      <h3>Better than other play-to-earn apps.</h3>
+      <p>I’ve been using Helalink for months. It’s an easy way to make extra spending money with fun games and quick payouts.</p>
+      <div class="author">Brenda</div>
+      <span class="time">8 days ago</span>
+    </div>
+
+    <div class="review-card">
+      <div class="stars">⭐⭐⭐⭐⭐</div>
+      <h3>Best site to play games and make money!</h3>
+      <p>Helalink has been super reliable. My sister and I both earn weekly — payouts are fast and transparent!</p>
+      <div class="author">Dylan_m</div>
+      <span class="time">9 days ago</span>
+    </div>
+
+    <div class="review-card">
+      <div class="stars">⭐⭐⭐⭐⭐</div>
+      <h3>Fun and rewarding experience!</h3>
+      <p>I started playing casually but ended up making decent extra cash every month. The bonuses make it even better!</p>
+      <div class="author">Kendra</div>
+      <span class="time">5 days ago</span>
+    </div>
+
+    <div class="review-card">
+      <div class="stars">⭐⭐⭐⭐⭐</div>
+      <h3>Simple and fast withdrawals.</h3>
+      <p>What I love most is how smooth the cashout process is. It feels great to get rewarded instantly after gaming.</p>
+      <div class="author">Lenny</div>
+      <span class="time">7 days ago</span>
+    </div>
+
+    <div class="review-card">
+      <div class="stars">⭐⭐⭐⭐⭐</div>
+      <h3>Helalink is my go-to app!</h3>
+      <p>I’ve tried many “play to earn” apps, but this one stands out for its user-friendly interface and instant payments.</p>
+      <div class="author">Nia</div>
+      <span class="time">3 days ago</span>
+    </div>
+  </div>
+
+  <div class="tip-box">
+      <strong>💡 Tip:</strong> New games and challenges appear regularly. Participate in daily tournaments and weekly leaderboards to earn extra multipliers and badges.
+  </div>
+
+  <div class="trust">
+    <p>You are the next to <strong>give a review</strong></p>
+    <a href="registration.html" class="cta">Start earning now</a>
+  </div>
+  <!-- Navigation -->
+<div class="about-navigation" aria-label="Post navigation">
+  <a class="nav-about" href="surveys.html">
+    <i class="fas fa-arrow-left"></i> Back: Take Surveys
+  </a>
+  <a class="nav-about" href="ads.html">
+    Next: Click Ads <i class="fas fa-arrow-right"></i>
+  </a>
+</div>
+</section>
+
+<footer style="background:#e8e8f0; color:#15212c; padding:25px 0; text-align:center; margin-top:40px;">
+  <div class="wrap" style="display:flex; flex-direction:column; gap:6px; align-items:center; justify-content:center;">
+    <div style="font-weight:600; font-size:1.1rem;">
+      Website developed with ❤️ by 
+      <a href="https://wa.me/254707995729" target="_blank" 
+         style="color:#170f91; text-decoration:none;">
+         Jeff 🔗
+      </a>
+    </div>
+    <small class="muted" style="color:#25282b;">
+      © <span id="year"></span> Helalink Agencies — All rights reserved.
+    </small>
+  </div>
+</footer>
 </body>
 </html>
 

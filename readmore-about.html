@@ -13,26 +13,32 @@
   <style>
     body {
       font-family: "Inter", sans-serif;
-      background: #f8fafc;
+      background: #f1f5f9;
       margin: 0;
       padding: 0;
       color: #333;
+      line-height: 1.7;
     }
 
     /* Navigation */
     nav.navigation-bar {
-      background: #4b0082;
+      background: #fbfbfc;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
       padding: 15px 0;
       text-align: center;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.2);
     }
     .nav-container {
       display: flex;
       justify-content: center;
-      flex-wrap: wrap;
-      gap: 15px;
+      gap: 10px;
+      padding: 2px;
+      flex-wrap: nowrap;
     }
     .nav-link {
-      color: #fff;
+      color: #0a0a0a;
       text-decoration: none;
       font-weight: 500;
       padding: 8px 15px;
@@ -55,31 +61,45 @@
       transform: scale(1.05);
     }
 
-    /* About Section */
-    .about-detail {
+    .contact-btn {
+      background: linear-gradient(90deg, #23b62f, #55f763);
+      color: #fff;
+      font-weight: 600;
+      padding: 8px 18px;
+      border-radius: 25px;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+    .contact-btn:hover {
+      transform: scale(1.05);
+    }
+
+    /* Section Boxes */
+    section {
       max-width: 900px;
       margin: 40px auto;
-      padding: 40px 25px;
-      background: #fff;
+      padding: 35px 25px;
+      background: #ffffff;
       border-radius: 15px;
       box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
     }
-    .about-meta {
-      color: #666;
-      font-size: 0.95rem;
-      border-bottom: 1px solid #eee;
-      padding-bottom: 15px;
-      margin-bottom: 25px;
-    }
-    .about-title-detail {
-      font-size: 2rem;
-      font-weight: 700;
-      color: #4b0082;
-      margin-bottom: 20px;
-      line-height: 1.3;
+
+    section:nth-child(even) {
+      background: #f9f9ff;
     }
 
-    /* Image + Intro Text Layout */
+    h1, h2, h3 {
+      color: #4b0082;
+      margin-bottom: 12px;
+    }
+
+    .post-meta {
+      color: #666;
+      font-size: 0.95rem;
+      margin-bottom: 15px;
+    }
+
+    /* Intro Section */
     .intro-section {
       display: flex;
       flex-wrap: wrap;
@@ -97,20 +117,6 @@
       flex: 2;
     }
 
-    .about-content-detail p {
-      color: #444;
-      line-height: 1.8;
-      font-size: 1.05rem;
-    }
-
-    .about-content-detail h2 {
-      font-size: 1.5rem;
-      color: #4b0082;
-      margin-top: 35px;
-      margin-bottom: 10px;
-    }
-
-    /* Smaller Action Buttons */
     .action-buttons {
       display: flex;
       flex-wrap: wrap;
@@ -120,7 +126,7 @@
     .action-buttons a {
       flex: 1;
       text-align: center;
-      padding: 8px 12px;
+      padding: 10px 12px;
       border-radius: 8px;
       font-weight: 600;
       font-size: 0.95rem;
@@ -128,12 +134,8 @@
       color: white;
       transition: 0.3s;
     }
-    .whatsapp-btn {
-      background: #25d366;
-    }
-    .register-action-btn {
-      background: #4b0082;
-    }
+    .whatsapp-btn { background: #25d366; }
+    .register-action-btn { background: #4b0082; }
     .action-buttons a:hover {
       transform: translateY(-2px);
       opacity: 0.9;
@@ -141,47 +143,59 @@
 
     /* Highlight Box */
     .highlight-box {
-      background: linear-gradient(135deg, #4b0082 0%, #6f42c1 100%);
+      background: linear-gradient(135deg, #4b0082, #6f42c1);
       color: white;
-      padding: 25px;
+      padding: 20px 25px;
       border-radius: 12px;
       margin: 25px 0;
     }
-    .highlight-box h3 {
-      margin-top: 0;
+    .highlight-box h3 { margin-top: 0; }
+
+    /* Table */
+    .earnings-table table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 15px;
+    }
+    .earnings-table th, .earnings-table td {
+      border: 1px solid #ddd;
+      padding: 10px;
+      text-align: left;
+    }
+    .earnings-table th {
+      background: #4b0082;
       color: #fff;
     }
+    .earnings-table tr:nth-child(even) {
+      background: #f9f9f9;
+    }
 
+    /* Navigation Links */
     .about-navigation {
       display: flex;
       justify-content: space-between;
-      align-items: center;
       margin-top: 40px;
-      border-top: 1px solid #eee;
-      padding-top: 25px;
+      padding-top: 20px;
+      border-top: 1px solid #ddd;
     }
     .nav-about {
-      display: flex;
-      align-items: center;
       color: #4b0082;
       font-weight: 600;
       text-decoration: none;
       transition: 0.3s;
     }
-    .nav-about:hover {
-      color: #6f42c1;
-    }
+    .nav-about:hover { color: #6f42c1; }
 
     /* Footer */
     footer {
-      background: #0f172a;
-      color: #f1f5f9;
+      background: #f9fafc;
+      color: #07121d;
       padding: 25px 0;
       text-align: center;
       margin-top: 50px;
     }
     footer a {
-      color: #38bdf8;
+      color: #0834f8;
       text-decoration: none;
       font-weight: 600;
     }
@@ -190,12 +204,8 @@
     }
 
     @media (max-width: 768px) {
-      .intro-section {
-        flex-direction: column;
-      }
-      .intro-text {
-        text-align: center;
-      }
+      .intro-section { flex-direction: column; }
+      .intro-text { text-align: center; }
     }
   </style>
 </head>
@@ -205,26 +215,20 @@
   <nav class="navigation-bar">
     <div class="nav-container">
       <a href="index.html" class="nav-link">Home</a>
-      <a href="helalink.html" class="nav-link">Helalink</a>
-      <a href="hela-link.html" class="nav-link">Hela Link</a>
-      <a href="blog-about.html" class="nav-link">Blog</a>
-      <a href="https://helalink.com/register.php?ref=DAJENNY" class="register-btn" target="_blank">REGISTER HELALINK</a>
+      <a href="#services" class="nav-link">Services</a>
+      <a href="#about" class="nav-link">About</a>
+      <a href="https://wa.me/254755252499?text=Hello%20Coach%20Dajenny,%20guide%20me%20through." class="contact-btn" target="_blank">WHATSAPP</a>
+      <a href="registration.html" class="register-btn" target="_blank">REGISTER</a>
     </div>
   </nav>
-
-  <!-- About Section -->
-  <div class="about-detail">
-    <div class="about-meta">
-      Posted in <span style="color: #e91e63; font-weight: 600;">Helalink Agencies</span> • by <strong>DAJENNY</strong> • Aug 11, 2025
-    </div>
-    <div class="post-meta">
+  <!-- Hero Section -->
+  <section class="hero-detail" id="services">
+    <div style="text-align: center;" class="post-meta">
       📅 Updated May 21, 2025 • Written by <strong>DAJENNY</strong>
     </div>
-
-    <h1 class="about-title-detail">Helalink Agencies — Platform for Earning Money Online in 2025</h1>
-
+    <h1>Helalink Agencies — Platform for Earning Money Online in 2025</h1>
     <div class="intro-section">
-      <img src="images/helalink-about.jpg" alt="Helalink platform overview" />
+      <img src="pictures/about.jpg" alt="Helalink platform overview" />
       <div class="intro-text">
         <p><strong>Want to know more about Helalink?</strong></p>
         <p>Helalink is one of Africa’s most reliable and fast-growing platforms for digital income, launched in 2023. It empowers you to earn through referrals, surveys, videos, and daily bonuses — right from your smartphone.</p>
@@ -233,58 +237,111 @@
           <a href="https://wa.me/254755252499?text=Hello%20Coach%20Dajenny,%20guide%20me%20through." class="whatsapp-btn" target="_blank">
             <i class="fab fa-whatsapp"></i> Chat Coach
           </a>
-          <a href="https://helalink.com/register.php?ref=DAJENNY" class="register-action-btn" target="_blank">
+          <a href="registration.html" class="register-action-btn" target="_blank">
             <i class="fas fa-user-plus"></i> Join Now
           </a>
         </div>
       </div>
     </div>
+  </section>
 
-    <div class="about-content-detail">
-      <h2>What is Helalink?</h2>
-      <p><strong>Helalink Agencies</strong> is a modern earning platform designed to help Africans — especially Kenyans — make money online easily and safely through simple digital activities.</p>
+  <!-- What is Helalink -->
+  <section class="service">
+    <h2>What is Helalink?</h2>
+    <p><strong>Helalink Agencies</strong> is a modern earning platform designed to help Africans — especially Kenyans — make money online easily and safely through simple digital activities.</p>
 
-      <div class="highlight-box">
-        <h3>Why Thousands are Joining Helalink in 2025</h3>
-        <ul>
-          <li>✅ Low startup fee — Join with as little as KES 550</li>
-          <li>✅ Daily earnings — Withdraw instantly, no delays</li>
-          <li>✅ Withdrawals via M-Pesa — No bank account needed</li>
-          <li>✅ 100% legit & trusted — Real people, real payouts</li>
-          <li>✅ Earn while you learn — Gain valuable digital skills</li>
-        </ul>
-      </div>
-
-      <h2>How Does Helalink Work?</h2>
+    <div class="highlight-box">
+      <h3 style="color: #fff;">Why Thousands are Joining Helalink in 2025</h3>
       <ul>
-        <li>✅ Earn welcome bonuses and daily rewards</li>
-        <li>✅ Refer friends and earn commissions</li>
-        <li>✅ Watch and share videos</li>
-        <li>✅ Complete surveys and online tasks</li>
-        <li>✅ Play games and share memes</li>
-      </ul>
-
-      <h2>🚀 Why Choose Helalink?</h2>
-      <ul>
-        <li><strong>Transparent & Reliable</strong> — Real results, real people</li>
-        <li><strong>Instant Withdrawals via M-Pesa</strong></li>
-        <li><strong>User-Friendly Dashboard</strong> for mobile and desktop</li>
-        <li><strong>Referral Bonuses</strong> — Earn even when you’re offline</li>
-      </ul>
-
-      <h2>Helalink Is More Than Just Money</h2>
-      <ul>
-        <li>Learn online marketing & branding</li>
-        <li>Build digital confidence</li>
-        <li>Connect with other entrepreneurs</li>
+        <li>✅ Low startup fee — Join with as little as KES 550</li>
+        <li>✅ Daily earnings — Withdraw instantly, no delays</li>
+        <li>✅ Withdrawals via M-Pesa — No bank account needed</li>
+        <li>✅ 100% legit & trusted — Real people, real payouts</li>
+        <li>✅ Earn while you learn — Gain valuable digital skills</li>
       </ul>
     </div>
+
+    <h2>How Does Helalink Work?</h2>
+    <p>Helalink Agencies provides <strong>diverse ways to earn</strong>, making it ideal for anyone looking to make money online from any country.</p>
+    <ul>
+      <li><strong>Affiliate Marketing (Referral Bonus):</strong> Earn instant commissions by inviting others.</li>
+      <li><strong>Watching Videos:</strong> Get paid to watch and complete daily tasks.</li>
+      <li><strong>Reading News & Articles:</strong> Earn by reading selected articles.</li>
+      <li><strong>Social Media Engagement:</strong> Like, share, and comment for rewards.</li>
+      <li><strong>Daily Login Bonus:</strong> Earn just by logging in daily.</li>
+      <li><strong>Surveys & Polls:</strong> Participate and earn extra.</li>
+      <li><strong>Content Sharing:</strong> Share Helalink memes and posters for bonuses.</li>
+    </ul>
+  </section>
+
+  <!-- About / Why Choose -->
+  <section class="about-us" id="about">
+    <h2>🚀 Why Choose Helalink?</h2>
+    <ul>
+      <li><strong>Transparent & Reliable</strong> — Real results, real people</li>
+      <li><strong>Instant Withdrawals via M-Pesa</strong></li>
+      <li><strong>User-Friendly Dashboard</strong> for mobile and desktop</li>
+      <li><strong>Referral Bonuses</strong> — Earn even when you’re offline</li>
+    </ul>
+
+    <div class="highlight-box">
+      <h3 style="color: #fff;">🔑 How to Join Helalink Agencies</h3>
+      <ol>
+        <li>Visit the <strong>Registration page</strong>.</li>
+        <li>Click <strong>"Register"</strong>.</li>
+        <li>Fill in your username, email, and password.</li>
+        <li>Choose your country.</li>
+        <li>Click <strong>Create Account</strong>.</li>
+        <li>Pay activation fee to activate your account.</li>
+        <li>After confirmation, log in and start earning.</li>
+      </ol>
+    </div>
+
+    <h2>💰 How To Earn Daily With Helalink</h2>
+    <p>Helalink offers <strong>daily earning potential</strong> based on your activity level:</p>
+
+    <div class="earnings-table">
+      <table>
+        <thead>
+          <tr><th>Activity</th><th>Estimated Daily Income</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Welcome Bonus</td><td>Ksh 150</td></tr>
+          <tr><td>Watching Videos</td><td>Ksh 50 – 200</td></tr>
+          <tr><td>Answering Surveys</td><td>Ksh 50 – 150</td></tr>
+          <tr><td>Referring Friends</td><td>Ksh 300 – 2,000</td></tr>
+          <tr><td>Playing Games</td><td>Ksh 30 – 70</td></tr>
+          <tr><td>Doing Blogs</td><td>Ksh 100 – 500</td></tr>
+          <tr><td>Sharing Contents</td><td>Ksh 50 – 100</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p><strong>Active users earn Ksh 500–2,000/day</strong>. Top referrers earn even more.</p>
+
+    <h2>🌍 Available in Multiple Countries</h2>
+    <ul>
+      <li>Kenya 🇰🇪</li><li>Uganda 🇺🇬</li><li>Tanzania 🇹🇿</li>
+      <li>Rwanda 🇷🇼</li><li>South Africa 🇿🇦</li>
+      <li>Nigeria 🇳🇬</li><li>Ghana 🇬🇭</li><li>Zambia 🇿🇲</li><li>And more…</li>
+    </ul>
+
+    <h2>Helalink Is More Than Just Money</h2>
+    <ul>
+      <li>Learn online marketing & branding</li>
+      <li>Build digital confidence</li>
+      <li>Connect with other entrepreneurs</li>
+    </ul>
 
     <div class="about-navigation">
-      <a href="index.html" class="nav-about"><i class="fas fa-arrow-left" style="margin-right: 8px;"></i> Back: Home</a>
-      <a href="readmore-app.html" class="nav-about">Next: Download App <i class="fas fa-arrow-right" style="margin-left: 8px;"></i></a>
+      <a href="index.html" class="nav-about">
+        <i class="fas fa-arrow-left"></i> Back: Home
+      </a>
+      <a href="readmore-app.html" class="nav-about">
+        Next: Download App <i class="fas fa-arrow-right"></i>
+      </a>
     </div>
-  </div>
+  </section>
 
   <!-- Footer -->
   <footer>
@@ -292,7 +349,7 @@
       <div style="font-weight: 600; font-size: 1.1rem;">
         Website developed by <a href="https://wa.me/254707995729" target="_blank">Jeff 🔗</a>
       </div>
-      <small style="color: #cbd5e1;">© <span id="year"></span> Helalink Agencies — All rights reserved.</small>
+      <small style="color: #202122;">© <span id="year"></span> Helalink Agencies — All rights reserved.</small>
     </div>
   </footer>
 

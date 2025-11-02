@@ -1,137 +1,406 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17559254524"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'AW-17559254524');
-  </script>
-
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="icon" type="image/png" href="images/fevicon.png">
   <title>Affiliate Marketing - Unlock Massive Online Earnings 💰 | Helalink</title>
   <meta name="description" content="Unlock Helalink earnings with proven affiliate and network-marketing strategies. Step-by-step 30-day plan, top-earner secrets and tools to scale." />
   <link rel="canonical" href="https://hela-link.co.ke/post-unlock-earnings.html" />
   <meta name="keywords" content="helalink earnings, network marketing helalink, affiliate strategies, helalink 30-day plan" />
-
-  <!-- Fonts & Icons -->
+  <link rel="icon" type="image/png" href="images/fevicon.png">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <style>
-    :root{
-      --bg: #0f172a;
-      --card-bg: #fff;
-      --accent1: #FFB74D; /* warm gold */
-      --accent2: #FF7043; /* orange */
-      --accent3: #6A11CB; /* purple */
-      --muted: #6b7280;
-      --glass: rgba(255,255,255,0.06);
+    :root {
+      --bg: #f8fafc;
+      --text: #1e293b;
+      --primary: #3b82f6;
+      --accent1: #f59e0b;
+      --accent2: #f97316;
+      --accent3: #6366f1;
+      --muted: #64748b;
+      --card-bg: #ffffff;
     }
-    html,body{height:100%; margin:0; font-family:"Inter",system-ui,Segoe UI,Roboto,"Helvetica Neue",Arial; background: linear-gradient(180deg,#070617 0%, #0f172a 100%);}
-    .wrap{max-width:1100px;margin:36px auto;padding:0 18px;}
-    /* Keep original nav & footer content but style lightly to match the article */
-    nav.navigation-bar{
-      background: transparent;
-      padding: 14px 0;
-      display:flex;
-      justify-content:center;
-      align-items:center;
-    }
-    .nav-container{display:flex;gap:18px;align-items:center;flex-wrap:wrap;}
-    .nav-link{color:#e6eef8;text-decoration:none;font-weight:600;padding:8px 12px;border-radius:8px;transition:all .18s}
-    .nav-link:hover{background:rgba(255,255,255,0.03);transform:translateY(-3px)}
-    .register-btn{background:linear-gradient(90deg,var(--accent3),#2575fc);color:white;padding:8px 14px;border-radius:10px;text-decoration:none;font-weight:700;box-shadow:0 8px 24px rgba(106,17,203,0.12)}
-    /* Hero / Article Card */
-    .post-card{
-      background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));
-      border-radius:16px;
-      padding:28px;
-      box-shadow: 0 10px 40px rgba(2,6,23,0.6);
-      border: 1px solid rgba(255,255,255,0.03);
-      color: #e6eef8;
+    body {
+      margin: 0;
+      font-family: "Inter", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
     }
 
-    .meta-row{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:18px}
-    .post-meta{color:var(--muted);font-size:0.95rem}
-    .share-actions{display:flex;gap:8px;align-items:center}
-    .pill{background:linear-gradient(90deg,var(--accent1),var(--accent2));padding:6px 12px;border-radius:999px;color:#111;font-weight:700;font-size:0.95rem}
+    .wrap {
+      max-width: 1100px;
+      margin: 40px auto;
+      padding: 0 18px;
+    }
 
-    h1.post-title{
-      margin:6px 0 12px 0;font-size:2.1rem;line-height:1.05;color:white;text-shadow:0 6px 30px rgba(106,17,203,0.12);
+    /* Navbar */
+    nav.navigation-bar {
+      position: sticky;
+      z-index: 1000;
+      top: 0;
+      background: #ffffffee;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+      padding: 12px 0;
+    }
+
+    .nav-container {
+      display: flex;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      justify-content: center;
+      align-items: center;
+      gap: 14px;
+      scrollbar-width: none;
+    }
+    .nav-container::-webkit-scrollbar { display: none; }
+
+    .nav-link,
+    .register-btn,
+    .whatsapp-btn {
+      text-decoration: none;
+      font-weight: 600;
+      padding: 10px 14px;
+      border-radius: 16px;
+      white-space: nowrap;
+      transition: all 0.25s ease;
+    }
+
+    .nav-link {
+      color: var(--text);
+    }
+    .nav-link:hover {
+      background: #e2e8f0;
+    }
+
+    .register-btn {
+      background: linear-gradient(90deg, var(--accent3), var(--primary));
+      color: white;
+      font-weight: 700;
+    }
+
+    .whatsapp-btn {
+      background: linear-gradient(90deg, #22c55e, #4ade80);
+      color: #fff;
+      font-weight: 700;
+    }
+
+    /* Post card */
+    .post-card {
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.05);
+      padding: 28px;
+    }
+
+    .post-title {
+      font-size: 2rem;
+      margin: 6px 0 16px;
+      color: var(--text);
+    }
+
+    .meta-row {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      color: var(--muted);
+      font-size: 0.9rem;
     }
 
     /* Intro */
-    .intro{display:flex;gap:22px;align-items:flex-start;flex-wrap:wrap}
-    .intro-left{flex:1 1 58%}
-    .intro-right{flex:1 1 38%; min-width:230px; text-align:right}
-    .hero-badge{display:inline-block;padding:10px 14px;border-radius:12px;background:linear-gradient(90deg,var(--accent1),var(--accent2));color:#04111a;font-weight:800;margin-bottom:12px}
-    .lead{color:#dbeafe;font-size:1.05rem;line-height:1.7}
+    .intro {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 22px;
+      margin-top: 10px;
+    }
 
-    /* right-top image */
-    .hero-image{width:120px;border-radius:12px;box-shadow:0 12px 40px rgba(255,183,77,0.15);border:4px solid rgba(255,255,255,0.03);}
+    .intro-left { flex: 1 1 55%; }
+    .intro-right { flex: 1 1 35%; min-width: 230px; }
+
+    .hero-image {
+      width: 100%;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
+
+    .hero-badge {
+      background: linear-gradient(90deg, var(--accent1), var(--accent2));
+      padding: 8px 14px;
+      border-radius: 12px;
+      color: #fff;
+      font-weight: 700;
+      display: inline-block;
+      margin-bottom: 10px;
+    }
+
+    .lead {
+      color: var(--muted);
+      font-size: 1rem;
+    }
 
     /* Buttons */
-    .action-buttons{display:flex;gap:12px;margin-top:18px;flex-wrap:wrap}
-    .btn{
-      display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:10px;text-decoration:none;font-weight:700;color:#071424; font-size:0.95rem;
-      transition:transform .18s, box-shadow .18s;
+    .action-buttons {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 18px;
     }
-    .btn--whatsapp{background:#25D366;color:#04111a;box-shadow:0 10px 30px rgba(37,211,102,0.12)}
-    .btn--register{background:linear-gradient(90deg,var(--accent3),#2575fc);color:white;box-shadow:0 12px 40px rgba(37,117,252,0.12)}
 
-    .btn:hover{transform:translateY(-4px)}
-    .btn i{font-size:1.05rem}
-
-    /* Highlight Info */
-    .bonus-info{margin-top:20px;padding:18px;border-radius:12px;background:linear-gradient(90deg,#4a148c44, #2575fc33);color:#fff;box-shadow:0 10px 30px rgba(106,17,203,0.08)}
-    .bonus-info h2{margin:0;font-size:1.25rem}
-    .bonus-info p{opacity:0.95;margin-top:8px}
-
-    /* Strategy cards grid (vibrant) */
-    .strategy-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;margin-top:26px}
-    .card{
-      background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));
-      border-radius:12px;padding:18px;border:1px solid rgba(255,255,255,0.03);
-      box-shadow:0 10px 30px rgba(2,6,23,0.5); transition:transform .25s, box-shadow .25s;
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 14px;
+      border-radius: 16px;
+      text-decoration: none;
+      font-weight: 700;
+      transition: transform 0.2s;
     }
-    .card:hover{transform:translateY(-8px);box-shadow:0 18px 50px rgba(2,6,23,0.6)}
-    .card .icon{font-size:1.8rem;color:var(--accent2);margin-bottom:10px}
-    .card h3{margin:6px 0 8px 0;color:#fff}
-    .card p{color:#d1d5db;line-height:1.6}
 
-    /* Earnings table */
-    .tracker{margin-top:28px;background:linear-gradient(180deg,#061022 0%, #061226 60%);padding:14px;border-radius:12px;border:1px solid rgba(255,255,255,0.03)}
-    table {width:100%;border-collapse:collapse;color:#e6eef8}
-    thead th{background:linear-gradient(90deg,var(--accent1),var(--accent2));color:#071424;padding:12px;border-radius:8px 8px 0 0;font-weight:800;text-align:left}
-    tbody td{padding:12px;border-bottom:1px dashed rgba(255,255,255,0.04);color:#dbeafe}
-    tbody tr:last-child td{border-bottom:none}
-
-    /* 30-day plan cards */
-    .plan-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:18px}
-    .plan{background:linear-gradient(180deg,#08102b 0%, #081027 100%);padding:14px;border-radius:10px;border:1px solid rgba(255,255,255,0.03);color:#e6eef8}
-    .plan strong{display:block;margin-bottom:8px;color:var(--accent1)}
-
-    /* highlight box */
-    .highlight-box{background:linear-gradient(90deg,#ffcf6a33,#ff7a4a33);padding:16px;border-radius:10px;margin-top:18px;color:#fff;border:1px solid rgba(255,255,255,0.04)}
-    .highlight-box h3{margin:0 0 8px 0;color:#071424}
-
-    /* lists */
-    ul, ol{color:#dbeafe;line-height:1.8;margin-left:18px}
-
-    /* footer kept same content but styled slightly */
-    footer{background:#0f172a;color:#f1f5f9;padding:28px 0;margin-top:28px;border-top:1px solid rgba(255,255,255,0.03)}
-    footer .wrap{display:flex;flex-direction:column;gap:8px;align-items:center}
-
-    /* small responsive tweaks */
-    @media (max-width:880px){
-      .intro-right{text-align:left}
-      .intro{flex-direction:column}
+    .btn--whatsapp {
+      background: #22c55e;
+      color: #fff;
     }
+
+    .btn--register {
+      background: linear-gradient(90deg, var(--accent3), var(--primary));
+      color: #fff;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+    }
+
+    /* Cards / Sections */
+    .card {
+      background: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.06);
+      padding: 18px;
+      transition: all 0.25s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
+
+    .strategy-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 16px;
+      margin-top: 20px;
+    }
+
+    .card .icon {
+      font-size: 1.8rem;
+      color: var(--accent2);
+      margin-bottom: 10px;
+    }
+
+    .plan-grid, .highlight-box, .tracker, .plan {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 6px 14px rgba(0,0,0,0.05);
+      padding: 16px;
+      margin-top: 16px;
+    }
+
+    h2 {
+      margin-top: 32px;
+      color: var(--text);
+    }
+
+section { /* gentle card container baseline */
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(16,24,40,0.06);
+  padding: 22px;
+  margin: 32px auto 0;
+  max-width: 1100px;
+}
+
+/* headings inside these sections */
+section h2 {
+  margin: 0 0 12px 0;
+  font-size: 1.35rem;
+  color: #0b1220;
+}
+
+/* tracker (table) */
+.tracker {
+  background: linear-gradient(180deg, #f8fafc, #ffffff);
+  border-radius: 10px;
+  padding: 8px;
+  margin-top: 12px;
+  border: 1px solid rgba(15,23,42,0.04);
+}
+
+.tracker table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.96rem;
+  color: #0f1724;
+}
+
+.tracker thead th {
+  text-align: left;
+  padding: 12px;
+  background: linear-gradient(90deg, #fff7e6, #fff1d6);
+  color: #071424;
+  font-weight: 700;
+  border-bottom: 1px solid rgba(15,23,42,0.04);
+  border-radius: 6px;
+}
+
+.tracker tbody td {
+  padding: 12px;
+  border-bottom: 1px dashed rgba(15,23,42,0.04);
+  color: #263047;
+}
+
+.tracker tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* plan-grid and plan cards */
+/* 30-Day Plan */
+section .plan-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 18px;
+  margin-top: 18px;
+  align-items: stretch;
+}
+
+section .plan {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 18px rgba(15,23,42,0.06);
+  border: 1px solid rgba(15,23,42,0.05);
+  padding: 20px 18px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+section .plan strong {
+  display: block;
+  font-size: 1.05rem;
+  color: #0b1220;
+  margin-bottom: 8px;
+}
+
+section .plan p {
+  color: #374151;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+
+/* highlight-box (top-earner area) */
+.highlight-box {
+  background: linear-gradient(90deg,#fff7e6,#fff1d6);
+  color: #071424;
+  padding: 14px;
+  border-radius: 10px;
+  border: 1px solid rgba(15,23,42,0.03);
+  margin-top: 10px;
+  box-shadow: 0 6px 14px rgba(2,6,23,0.03);
+}
+
+.highlight-box h3 {
+  margin: 0 0 8px 0;
+  color: #0b1220;
+}
+
+/* cards used in Advanced Streams & other grids */
+.card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 16px;
+  box-shadow: 0 8px 22px rgba(2,6,23,0.04);
+  border: 1px solid rgba(15,23,42,0.03);
+}
+
+.card h3 { margin: 8px 0; color: #0b1220; }
+.card p, .card ul, .card li { color: #253447; line-height:1.6; }
+
+/* small utility for lists inside plan/card */
+.plan ul, .card ul { margin-left: 18px; margin-top: 8px; color: #2b3743; }
+
+/* About / Tools grids */
+.plan-grid .plan:first-child { /* subtle visual variation */
+  border-left: 4px solid #f59e0b;
+}
+
+/* Nav-post (previous/next) */
+.nav-post {
+  color: #0b1220 !important;
+  text-decoration: none;
+  padding: 8px 10px;
+  border-radius: 8px;
+  transition: background .18s, transform .18s;
+}
+.nav-post:hover {
+  background: #f1f5f9;
+  transform: translateY(-2px);
+}
+
+/* responsive tweaks */
+@media (max-width: 880px) {
+  section { padding: 18px; margin: 24px 14px; }
+  .tracker thead th, .tracker tbody td { padding: 10px; }
+  
+  .intro {
+        flex-direction: column;
+      }
+}
+
+/* Navigation Links */
+.about-navigation {
+  width: 100%;
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center;
+  margin: 28px 0;
+  padding: 12px 20px;
+  background: #f9fafb;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  box-sizing: border-box;
+}
+
+.nav-about {
+  color: #0f172a;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 1rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.25s ease;
+}
+
+.nav-about:hover {
+  color: #2563eb;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 480px) {
+  .plan-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+}
+  .nav-container { gap: 10px; padding: 6px 8px; }
+
+
   </style>
 </head>
 <body>
@@ -141,13 +410,10 @@
     <div class="nav-container">
       <div class="nav-items">
         <a href="index.html" class="nav-link">Home</a>
-        <a href="helalink.html" class="nav-link">Helalink</a>
-        <a href="hela-link.html" class="nav-link">Hela Link</a>
-        <a href="blog-post.html" class="nav-link">Blog</a>
-        <button class="dark-mode-toggle" style="background:transparent;border:0;color:#e6eef8;cursor:pointer;font-size:16px;margin-left:6px;">
-          <i class="fas fa-moon"></i>
-        </button>
-        <a href="https://helalink.com/register.php?ref=DAJENNY" class="register-btn">REGISTER HELALINK</a>
+        <a href="#strategy.html" class="nav-link">Services</a>
+        <a href="#about.html" class="nav-link">About</a>
+        <a href="https://wa.me/254755252499?text=Hello%20Coach%20Dajenny,%20guide%20me%20through." class="whatsapp-btn">WHATSAPP</a>
+        <a href="registration.html" class="register-btn">REGISTER</a>
       </div>
     </div>
   </nav>
@@ -155,16 +421,12 @@
   <div class="wrap">
     <article class="post-card">
       <div class="meta-row">
-        <div class="post-meta">Posted in <span style="color:#FFB74D; font-weight:700">Helalink Agencies</span> • Posted by <strong>DAJENNY</strong> • May 29, 2025</div>
-        <div class="share-actions">
-          <span class="pill">Affiliate Marketing</span>
-          <a class="nav-link" href="https://wa.me/254755252499?text=Hello%20Coach%20Dajenny,%20guide%20me%20through." target="_blank"><i class="fab fa-whatsapp"></i> Chat</a>
-        </div>
+        <div class="post-meta">📅 Updated May 21, 2025 • Written by <strong>DAJENNY</strong></div>
       </div>
 
       <h1 class="post-title">Affiliate Marketing - Unlock Massive Online Earnings 💰</h1>
 
-      <!-- Intro row with right top image -->
+      <!-- Intro row with right image -->
       <div class="intro">
         <div class="intro-left">
           <div class="hero-badge">Proven Strategies • Scalable • Passive</div>
@@ -172,69 +434,63 @@
 
           <div class="action-buttons">
             <a href="https://wa.me/254755252499?text=Hello%20Coach%20Dajenny,%20guide%20me%20through." class="btn btn--whatsapp" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp Us</a>
-            <a href="https://helalink.com/register.php?ref=DAJENNY" class="btn btn--register" target="_blank"><i class="fas fa-user-plus"></i> REGISTER HERE</a>
+            <a href="registration.html" class="btn btn--register" target="_blank"><i class="fas fa-user-plus"></i> REGISTER HERE</a>
           </div>
-
-          <!-- Highlight box -->
-          <div class="bonus-info" role="note" aria-label="What makes Helalink different">
-            <h2>💡 What Makes Helalink Different?</h2>
-            <p>Multiple income streams, scalable systems, passive income elements, an active community and time-tested methods that help you grow from beginner to expert.</p>
-          </div>
-
         </div>
 
         <div class="intro-right">
-          <!-- right-top image (replace path) -->
-          <img src="images/network-top.png" alt="Network marketing hero" class="hero-image">
+          <!-- right-side image  -->
+          <img src="pictures/affiliate.jpg" alt="Network marketing hero" class="hero-image">
         </div>
       </div>
-
+      
       <!-- Strategy cards -->
-      <section aria-labelledby="strategies" style="margin-top:28px">
-        <h2 id="strategies" style="color:#fff;margin:0 0 12px 0">💰 Network Marketing Strategies</h2>
-        <div class="strategy-grid">
+      <section aria-labelledby="strategies" id="strategy" style="margin-top:28px">
+  <h2 id="strategy" style="color:#0e0d0d; text-align:center; margin-bottom:18px;">💰 Network Marketing Strategies</h2>
+  <div class="strategy-grid">
+
+          <div class="card">
+            <div class="icon"><i class="fa-solid fa-coins"></i></div>
+            <h3>Why Helalink</h3>
+             <p>Helalink is more than a platform — it’s a complete digital ecosystem for income growth. It combines multiple earning streams, scalable systems, and passive income tools, backed by an active community. Whether you’re a beginner or an expert, Helalink equips you with training, mentorship, and resources to turn your time online into consistent earnings.</p>
+          </div>
+
           <div class="card">
             <div class="icon"><i class="fas fa-network-wired"></i></div>
             <h3>Network Building</h3>
-            <p>Build a powerful referral network that generates passive income through multiple levels of commissions and active engagement.</p>
+            <p>Helalink rewards teamwork. Build a powerful referral network that earns across multiple levels — not just from your direct invites, but also from your team’s success. Every connection increases your potential for recurring, passive income and long-term stability.</p>
           </div>
 
           <div class="card">
             <div class="icon"><i class="fas fa-chart-line"></i></div>
             <h3>Income Optimization</h3>
-            <p>Maximize ROI by focusing on top-paying tasks during peak hours and using analytics to double down on what works.</p>
-          </div>
-
-          <div class="card">
-            <div class="icon"><i class="fas fa-robot"></i></div>
-            <h3>Automation Systems</h3>
-            <p>Automate onboarding, reminders and content distribution so your systems keep earning even when you're offline.</p>
+            <p>Work smarter, not longer. Focus on high-paying activities like referrals, video tasks, and content creation during peak hours. Use your analytics and daily reports to track what performs best, then double down to increase your ROI.</p>
           </div>
 
           <div class="card">
             <div class="icon"><i class="fas fa-graduation-cap"></i></div>
             <h3>Skill Development</h3>
-            <p>Invest in marketing and leadership skills to access higher-paying roles, bonuses and mentoring income streams.</p>
+            <p>Helalink helps you grow your marketing, communication, and leadership skills. These abilities open doors to leadership bonuses, mentorship roles, and higher-paying opportunities within the community.</p>
           </div>
 
           <div class="card">
             <div class="icon"><i class="fas fa-users"></i></div>
             <h3>Community Leadership</h3>
-            <p>Lead, mentor and organize — leaders gain exclusive rewards, retention bonuses and powerful leverage.</p>
+            <p>Leaders earn more. By mentoring others and leading active teams, you gain exclusive rewards, retention bonuses, and high visibility in the Helalink ecosystem. Leadership builds both income and influence.</p>
           </div>
 
           <div class="card">
             <div class="icon"><i class="fas fa-clock"></i></div>
             <h3>Time Management</h3>
-            <p>Time block and batch similar activities to increase earnings per hour while reducing burnout.</p>
+            <p>Consistency beats intensity. Use time-blocking to schedule your Helalink activities — referrals in the morning, tasks at midday, mentorship at night. Focused effort helps you earn more in less time while staying balanced.</p>
           </div>
         </div>
       </section>
 
       <!-- Earnings Tracker -->
       <section style="margin-top:32px">
-        <h2 style="color:#fff;">📊 Earning Progression Levels</h2>
-        <p style="color:#dbeafe; margin-top:8px">Understanding the levels helps you set realistic goals and plan growth.</p>
+        <h2 style="color:#0a0a0a; text-align:center; margin-bottom:18px;">📊 Earning Progression Levels</h2>
+        <p style="color:#2d2f31; margin-top:8px">Understanding the levels helps you set realistic goals and plan growth.</p>
 
         <div class="tracker" role="table" aria-label="Earnings progression table">
           <table>
@@ -283,31 +539,56 @@
       </section>
 
       <!-- 30-Day Plan -->
-      <section style="margin-top:32px">
-        <h2 style="color:#fff;">🎯 The 30-Day Earning Acceleration Plan</h2>
-        <div class="plan-grid">
-          <div class="plan">
-            <strong>Week 1: Foundation</strong>
-            <p>Days 1-2: Complete onboarding & first tasks. Days 3-4: Make first 5 referrals. Days 5-7: Establish daily routine. Target: Ksh 200-400/day.</p>
-          </div>
-          <div class="plan">
-            <strong>Week 2: Growth</strong>
-            <p>Days 8-10: Expand referrals to 15+. Days 11-12: Focus high-value tasks. Days 13-14: Join community groups. Target: Ksh 500-800/day.</p>
-          </div>
-          <div class="plan">
-            <strong>Week 3: Optimization</strong>
-            <p>Days 15-17: Analyze top activities. Days 18-19: Help referrals increase earnings. Days 20-21: Apply for leadership. Target: Ksh 1,000-1,500/day.</p>
-          </div>
-          <div class="plan">
-            <strong>Week 4: Scale</strong>
-            <p>Days 22-24: Build systems. Days 25-26: Train top referrals. Days 27-30: Set passive streams. Target: Ksh 2,000-3,000+/day.</p>
-          </div>
-        </div>
-      </section>
+<section class="earning-plan">
+  <h2 style="color:#0a0a0a; text-align:center; margin-bottom:18px;">🎯 The 30-Day Earning Acceleration Plan</h2>
+
+  <div class="plan-grid">
+    <div class="plan">
+      <strong>Week 1: Foundation</strong>
+      <p>
+        <b>Days 1–2:</b> Complete onboarding & your first tasks.<br>
+        <b>Days 3–4:</b> Make your first 5 referrals.<br>
+        <b>Days 5–7:</b> Establish a consistent daily routine.<br>
+        <b>Target:</b> Earn between <b>Ksh 200–400/day.</b>
+      </p>
+    </div>
+
+    <div class="plan">
+      <strong>Week 2: Growth</strong>
+      <p>
+        <b>Days 8–10:</b> Expand referrals to at least 15+.<br>
+        <b>Days 11–12:</b> Focus on completing high-value tasks.<br>
+        <b>Days 13–14:</b> Join Helalink community groups for support.<br>
+        <b>Target:</b> Earn between <b>Ksh 500–800/day.</b>
+      </p>
+    </div>
+
+    <div class="plan">
+      <strong>Week 3: Optimization</strong>
+      <p>
+        <b>Days 15–17:</b> Analyze which activities give the best results.<br>
+        <b>Days 18–19:</b> Help your referrals increase their earnings.<br>
+        <b>Days 20–21:</b> Apply for leadership or mentorship opportunities.<br>
+        <b>Target:</b> Earn between <b>Ksh 1,000–1,500/day.</b>
+      </p>
+    </div>
+
+    <div class="plan">
+      <strong>Week 4: Scale</strong>
+      <p>
+        <b>Days 22–24:</b> Build repeatable systems for growth.<br>
+        <b>Days 25–26:</b> Train and motivate your top referrals.<br>
+        <b>Days 27–30:</b> Set up passive income streams for sustainability.<br>
+        <b>Target:</b> Earn <b>Ksh 2,000–3,000+/day.</b>
+      </p>
+    </div>
+  </div>
+</section>
+
 
       <!-- Top Earner Secrets -->
       <section style="margin-top:32px">
-        <h2 style="color:#fff;">🏆 Top Earner Secrets</h2>
+        <h2 style="color:#030303; text-align:center; margin-bottom:18px;">🏆 Top Earner Secrets</h2>
 
         <div class="highlight-box">
           <h3>💡 Insider Tips from Million-Shilling Earners</h3>
@@ -324,51 +605,107 @@
       </section>
 
       <!-- Advanced Streams -->
-      <section style="margin-top:32px">
-        <h2 style="color:#fff;">🔥 Advanced Income Streams</h2>
+      <section id="about" style="margin-top:32px;">
+       <h2 style="color:#0a0a0a; text-align:center; margin-bottom:18px;">🔥 Advanced Helalink Income Streams</h2>
 
         <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;margin-top:18px">
           <div class="card">
             <div class="icon"><i class="fas fa-sitemap"></i></div>
-            <h3>Multi-Level Referral Mastery</h3>
-            <p>Build deep referral layers to capture commissions across levels and scale with leverage.</p>
-            <ul>
-              <li>Level 1: Direct referrals (50% commission)</li>
-              <li>Level 2: Referrals' referrals (25%)</li>
-              <li>Level 3+: Deeper passive commissions</li>
-            </ul>
+            <h3>Multi-Level Referral System</h3>
+            <p>Every Helalink member gets a unique referral link.  
+      Share it with friends, family, and social media followers.  
+      When they sign up using your link, they become your direct referrals.</p>
+            </div>
+
+          <div class="card">
+            <div class="icon"><i class="fas fa-users"></i></div>
+            <h3>Build a Strong Network</h3>
+            <p>Helalink uses a multi-level system — meaning you earn not only from your direct referrals but also from the team they build beneath you.</p>
           </div>
 
           <div class="card">
-            <div class="icon"><i class="fas fa-video"></i></div>
-            <h3>Content Creation Rewards</h3>
-            <p>Earn by producing tutorials, success stories and social campaigns — paid per accepted content piece.</p>
-          </div>
+            <div class="icon"><i class="fas fa-chart-line"></i></div>
+            <h3>Endless Earnings</h3>
+            <p>Your income grows automatically as your network expands.  
+      Each level adds passive income from your team’s activities.</p>
+            </div>
 
           <div class="card">
             <div class="icon"><i class="fas fa-chalkboard-teacher"></i></div>
             <h3>Mentorship & Training</h3>
             <p>Become a certified trainer to run paid sessions, webinars and private coaching for top income streams.</p>
           </div>
+
+          <div class="card">
+            <div class="icon"><i class="fas fa-wallet"></i></div>
+            <h3>Get Paid Instantly</h3>
+            <p>Earn commissions whenever referrals register, activate, or complete tasks.  
+      Withdraw your earnings directly via M-Pesa once you hit the minimum balance.</p>
+          </div>
+
+          <div class="card">
+            <div class="icon"><i class="fas fa-coins"></i></div>
+            <h3>Maximize Your Earnings</h3>
+            <ul>
+      <li>Be active daily — your network follows your example.</li>
+      <li>Teach your referrals how to earn consistently.</li>
+      <li>Promote on WhatsApp, Facebook, TikTok, and Telegram.</li>
+      <li>Focus on quality members, not just quantity.</li>
+      <li>Stay consistent — small daily actions lead to massive growth.</li>
+    </ul>
+  </div>
         </div>
-      </section>
+
+      <h2 style="color:#0a0a0a; text-align:center; margin-bottom:18px;">📊 Refferal Levels Breakdown</h2>
+        <div class="tracker" role="table" aria-label="Earnings progression table">
+          <table>
+
+            <thead>
+      <tr>
+        <th>Level</th>
+        <th>Who They Are</th>
+        <th>Commission</th>
+        <th>Reward Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Level 1</strong></td>
+        <td>People you invite directly</td>
+        <td>60%</td>
+        <td>Main commission — paid when your referral activates or earns.</td>
+      </tr>
+      <tr>
+        <td><strong>Level 2</strong></td>
+        <td>Invited by your Level 1 members</td>
+        <td>25%</td>
+        <td>Earns automatically as your team grows and gets active.</td>
+      </tr>
+      <tr>
+        <td><strong>Level 3+</strong></td>
+        <td>Extended network</td>
+        <td>10%</td>
+        <td>Passive income from deeper levels — fully automated.</td>
+      </tr>
+    </tbody>
+
+          </table>
+  </section>
 
       <!-- Tools & Productivity -->
       <section style="margin-top:32px">
-        <h2 style="color:#fff;">📱 Tools & Productivity for Success</h2>
+        <h2 style="color:#0a0a0a;">📱 Tools & Productivity for Success</h2>
         <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:12px">
           <div class="plan"><strong>Helalink App</strong> — Core platform for tasks & payouts.</div>
           <div class="plan"><strong>WhatsApp Business</strong> — Manage referrals and groups.</div>
-          <div class="plan"><strong>Google Sheets</strong> — Track earnings & network growth.</div>
-          <div class="plan"><strong>Canva</strong> — Create promotional content.</div>
-          <div class="plan"><strong>Buffer/Hootsuite</strong> — Schedule posts and campaigns.</div>
+          <div class="plan"><strong>Facebook</strong> — Advertising the business to det customers.</div>
           <div class="plan"><strong>Zoom</strong> — Host training sessions.</div>
         </div>
       </section>
 
       <!-- Mindset & Habits -->
       <section style="margin-top:32px">
-        <h2 style="color:#fff;">🌟 Success Mindset & Daily Habits</h2>
+        <h2 style="color:#0f0f0f;">🌟 Success Mindset & Daily Habits</h2>
         <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:12px">
           <div class="plan"><strong>Think Long-Term</strong> — Build sustainable systems.</div>
           <div class="plan"><strong>Value Creation</strong> — Help others and profit together.</div>
@@ -380,20 +717,20 @@
 
       <!-- Scaling to six-figure -->
       <section style="margin-top:32px">
-        <h2 style="color:#fff;">📈 Scaling to Six-Figure Income</h2>
-        <p style="color:#dbeafe">Follow the roadmap below over months to scale to Ksh 100,000+ monthly.</p>
+        <h2 style="color:#0f0f0f;">📈 Scaling to Six-Figure Income</h2>
+        <p style="color:#252627">Follow the roadmap below over months to scale to Ksh 100,000+ monthly.</p>
 
         <div class="plan-grid" style="margin-top:12px">
-          <div class="plan"><strong>Phase 1 (1-2 mo)</strong> — 50+ active referrals. Master activities. Target Ksh 2,000+/day.</div>
-          <div class="plan"><strong>Phase 2 (3-4 mo)</strong> — 200+ active members. Leadership & Ksh 5,000+/day.</div>
-          <div class="plan"><strong>Phase 3 (5-6 mo)</strong> — 500+ members. Certified trainer. Ksh 10,000+/day.</div>
-          <div class="plan"><strong>Phase 4 (7+ mo)</strong> — Multi-region networks & passive systems. Ksh 15,000+/day.</div>
+          <div class="plan"><strong>Phase 1 (1-2 months)</strong> — 20+ active referrals. Master activities. Target Ksh 2,000+/day.</div>
+          <div class="plan"><strong>Phase 2 (3-4 months)</strong> — 100+ active members. Leadership & Ksh 5,000+/day.</div>
+          <div class="plan"><strong>Phase 3 (5-6 months)</strong> — 500+ members. Certified trainer. Ksh 10,000+/day.</div>
+          <div class="plan"><strong>Phase 4 (7+ months)</strong> — Multi-region networks & passive systems. Ksh 15,000+/day.</div>
         </div>
       </section>
 
       <!-- Common mistakes -->
       <section style="margin-top:32px">
-        <h2 style="color:#fff;">⚠️ Common Mistakes to Avoid</h2>
+        <h2 style="color:#070707;">⚠️ Common Mistakes to Avoid</h2>
         <div class="highlight-box">
           <h3>🚫 Success Killers</h3>
           <ul style="margin-top:8px">
@@ -408,38 +745,44 @@
 
       <!-- Support -->
       <section style="margin-top:28px">
-        <h2 style="color:#fff;">📞 Advanced Support & Mentorship</h2>
-        <p style="color:#dbeafe; margin-top:8px">Ready to scale faster? Reach out to advanced support and mentorship programs:</p>
+        <h2 style="color:#0c0c0c;">📞 Advanced Support & Mentorship</h2>
+        <p style="color:#181818; margin-top:8px">Ready to scale faster? Reach out to advanced support and mentorship programs:</p>
         <ul style="margin-top:10px">
-          <li><strong>VIP Support Line:</strong> 254798619720</li>
+          <li><strong>VIP Support Line:</strong> +254755252499</li>
           <li><strong>Advanced Strategies Email:</strong> advanced@Helalink.com</li>
           <li><strong>One-on-One Mentorship:</strong> Available for top performers</li>
           <li><strong>Mastermind Groups:</strong> Join high-earner sessions</li>
         </ul>
 
-        <p style="color:#e6eef8; margin-top:16px"><strong>Your journey to massive online earnings starts today!</strong> Apply these proven strategies, stay consistent, and watch your income grow exponentially with Helalink.</p>
+        <p style="color:#202020; margin-top:16px"><strong>Your journey to massive online earnings starts today!</strong> Apply these proven strategies, stay consistent, and watch your income grow exponentially with Helalink.</p>
       </section>
 
-      <!-- Navigation between posts (kept but styled) -->
-      <div style="margin-top:26px; display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap">
-        <a href="post-kenya.html" class="nav-post" style="background:transparent;color:#fff"> <i class="fas fa-arrow-left" style="margin-right:8px"></i> Previous: Helalink Kenya</a>
-        <a href="post-how-to-join.html" class="nav-post" style="background:transparent;color:#fff">Next: How to Join Helalink <i class="fas fa-arrow-right" style="margin-left:8px"></i></a>
-      </div>
+      <div class="about-navigation">
+      <a href="index.html" class="nav-about">
+        <i class="fas fa-arrow-left"></i> Back: Home
+      </a>
+      <a href="readmore-about.html" class="nav-about">
+        Next: About Helalink <i class="fas fa-arrow-right"></i>
+      </a>
+    </div>
 
     </article>
   </div>
 
-  <!-- Footer (kept content; slight style applied above) -->
-  <footer>
-    <div class="wrap">
-      <div style="font-weight:600; font-size:1.1rem;">
-        Website developed by
-        <a href="https://wa.me/254707995729" target="_blank" style="color:#38bdf8; text-decoration:none;">Jeff 🔗</a>
-      </div>
-      <small style="color:#cbd5e1;">© <span id="year"></span> Helalink Agencies — All rights reserved.</small>
+<footer style="background:#e8e8f0; color:#15212c; padding:25px 0; text-align:center; margin-top:40px;">
+  <div class="wrap" style="display:flex; flex-direction:column; gap:6px; align-items:center; justify-content:center;">
+    <div style="font-weight:600; font-size:1.1rem;">
+      Website developed with ❤️ by 
+      <a href="https://wa.me/254707995729" target="_blank" 
+         style="color:#051df8; text-decoration:none;">
+         Jeff 🔗
+      </a>
     </div>
-  </footer>
-
+    <small class="muted" style="color:#25282b;">
+      © <span id="year"></span> Helalink Agencies — All rights reserved.
+    </small>
+  </div>
+</footer>
   <script>
     // set year
     document.getElementById('year').textContent = new Date().getFullYear();
