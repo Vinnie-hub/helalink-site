@@ -235,6 +235,11 @@
     .nav-about:hover {
       color: #6f42c1;
     }
+   .footer-bottom {background:#f9fafc; color:#15212c; padding:25px 0; text-align:center; margin-top:40px;}
+   .footer-text{font-weight:600; font-size:0.9rem;}
+   .jeff {color:#170f91; text-decoration:none}
+   .jeff:hover {text-decoration: underline;}
+   .mute {color:#25282b}
 
     @media (max-width: 768px) {
       .post-detail { padding: 25px; }
@@ -252,7 +257,7 @@
       <a href="index.html" class="nav-link">Home</a>
       <a href="#services" class="nav-link">Services</a>
       <a href="#about" class="nav-link">About</a>
-      <a href="https://wa.me/254755252499?text=Hello%20Coach%20Dajenny,%20guide%20me%20through." class="contact-btn" target="_blank">WHATSAPP</a>
+      <a href="https://wa.me/254755252499?text=Hello%20Coach%20Dajenny,%20guide%20me%20through." class="contact-btn" target="_blank" rel="noopener noreferrer">WHATSAPP</a>
       <a href="registration.html" class="register-btn" target="_blank">REGISTER</a>
     </div>
   </nav>
@@ -324,22 +329,22 @@
     </div>
 
     <div class="about-navigation">
-      <a href="readmore-about.html" class="nav-about"><i class="fas fa-arrow-left" style="margin-right: 8px;"></i> Back: About Helalink</a>
-      <a href="readmore-bonus.html" class="nav-about">Next: Get Welcome Bonus <i class="fas fa-arrow-right" style="margin-left: 8px;"></i></a>
-    </div>
-  </div>
-
-  <!-- Footer -->
-  <footer style="background:#e8e8f0; color:#15212c; padding:25px 0; text-align:center; margin-top:40px;">
-  <div class="wrap" style="display:flex; flex-direction:column; gap:6px; align-items:center; justify-content:center;">
-    <div style="font-weight:600; font-size:1.1rem;">
-      Website developed with ❤️ by 
-      <a href="https://wa.me/254707995729" target="_blank" 
-         style="color:#170f91; text-decoration:none;">
-         Jeff 🔗
+      <a href="readmore-about.html" class="nav-about">
+        <i class="fas fa-arrow-left"></i> Back: About Helalink
+      </a>
+      <a href="readmore-bonus.html" class="nav-about">
+        Next: Welcome Bonus <i class="fas fa-arrow-right"></i>
       </a>
     </div>
-    <small class="muted" style="color:#25282b;">
+  </div>
+  <!-- Footer -->
+  <footer class="footer-bottom">
+  <div class="wrap">
+    <div class="footer-text">
+      Website developed with ❤️ by 
+      <a href="https://wa.me/254707995729" target="_blank" rel="noopener noreferrer" class="jeff">Jeff 🔗</a>
+    </div>
+    <small class="mute">
       © <span id="year"></span> Helalink Agencies — All rights reserved.
     </small>
   </div>

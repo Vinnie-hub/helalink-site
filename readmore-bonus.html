@@ -38,7 +38,6 @@
       top:0;
       z-index:1200;
       background: rgba(255,255,255,0.98);
-      backdrop-filter: blur(6px);
       box-shadow: 0 2px 10px rgba(2,6,23,0.06);
     }
 
@@ -50,8 +49,11 @@
       gap:12px;
       align-items:center;
       justify-content:center;
-      flex-wrap:wrap;
-    }
+      flex-wrap:nowrap;
+    } /*
+    @media (max-width: 400px) {
+}
+*/
 
     .nav-link {
       text-decoration:none;
@@ -109,9 +111,10 @@
     }
 
     .welcome-left h1 {
-      font-size:1.9rem;
+      font-size:2.0rem;
       margin:0 0 12px 0;
       color:var(--primary);
+      font-weight: 700;
     }
     .welcome-left p.lead {
       margin:0 0 18px 0;
@@ -133,58 +136,19 @@
       border:1px solid rgba(15,23,42,0.03);
       color:#0b1220;
     }
-    .welcome-card h2 { margin:0 0 8px 0; font-size:1.2rem; color:var(--primary); }
-    .welcome-card p { margin:0; color:#334155; }
-
-    .claim-btn {
-      display:inline-block;
-      margin-top:12px;
-      background:var(--success);
-      color:#fff;
-      padding:10px 16px;
-      border-radius:8px;
-      text-decoration:none;
-      font-weight:700;
-    }
-
-    .welcome-right {
-      flex:1 1 45%;
-      min-height:340px;
-      background-image: url('pictures/welcome.jpg');
-      background-size:cover;
-      background-position:center;
-      border-left:1px solid rgba(2,6,23,0.03);
-    }
-    /* --- Bonus Section Below Image --- */
-.bonus-section {
-  background: linear-gradient(135deg, #6a11cb, #2575fc);
-      color: white;
-      border-radius: 10px;
-      padding: 25px;
-      margin: 25px 0;
-      text-align: center;
-    }
-
-    .bonus-info h2 {
-      margin: 0;
-      font-size: 1.6rem;
-      color: white;
-    }
-
-    .content-inner {
-      padding:28px;
-      background:var(--card);
-    }
+    .welcome-card h2 {margin:0 0 8px 0; font-size:1.2rem; color:var(--primary);}
+    .welcome-card p {margin:0; color:#334155; }
+    .claim-btn {display:inline-block;margin-top:12px;background:var(--success);color:#fff;padding:10px 16px;border-radius:8px;text-decoration:none;font-weight:700;}
+    .welcome-right {flex:1 1 45%;border-radius: 18px; min-height:340px;background-image: url('pictures/welcome.png');background-size:cover;background-position:center;border-left:1px solid rgba(2,6,23,0.03);}
+    .bonus-section {background: linear-gradient(135deg, #6a11cb, #2575fc);color: white;border-radius: 10px;padding: 25px;margin: 25px 0;text-align: center;}
+    .content-inner {padding:28px;background:var(--card);}
     .steps { margin:18px 0 0 0; }
-    .step {
-      background:#f8fafc;
-      border-left:4px solid var(--primary);
-      padding:12px 14px;
+    .step {background:#f8fafc;border-left:4px solid var(--primary);padding:12px 14px;
       border-radius:8px;
       margin-bottom:12px;
       color:#263547;
     }
-
+    .bonus-info {margin-top:18px; font-size: 1.6rem;}
     .about-navigation {
       display:flex;
       justify-content:space-between;
@@ -199,26 +163,23 @@
     .nav-about { color:var(--primary); text-decoration:none; font-weight:700; }
     .nav-about:hover { text-decoration:underline; }
 
-    footer.site-footer {
-      background:#eef2ff;
-      padding:26px 0;
-      margin-top:22px;
-      text-align:center;
-      color:#0b1220;
-    }
+   .footer-bottom {background:#f9fafc; color:#15212c; padding:25px 0; text-align:center; margin-top:40px;}
+   .footer-text{font-weight:600; font-size:0.9rem;}
+   .jeff {color:#170f91; text-decoration:none}
+   .jeff:hover {text-decoration: underline;}
+   .mute {color:#25282b}
 
 
     @media (max-width:900px){
       .welcome-section { gap:18px; }
-      .welcome-right { min-height:260px; }
       .welcome-left { padding:22px; }
     }
 
     @media (max-width:720px){
       .post-body { flex-direction:column; }
-      .welcome-section { flex-direction:column-reverse; } /* image below on mobile */
-      .welcome-right { min-height:220px; border-left:none; border-top:1px solid rgba(2,6,23,0.03); border-radius:0; }
-      .nav-inner { justify-content:center; gap:8px; }
+      .welcome-section { flex-direction:column-reverse; }
+      .welcome-right { border-left:none; border-top:1px solid rgba(2,6,23,0.03); border-radius:18px; }
+      .nav-inner { padding: 8px;font-size: 14px;justify-content:center; gap:8px; }
     }
   </style>
 </head>
@@ -230,7 +191,7 @@
       <a class="nav-link" href="index.html">Home</a>
       <a class="nav-link" href="#services">Services</a>
       <a class="nav-link" href="#about">About</a>
-      <a class="nav-cta contact" href="https://wa.me/254755252499?text=Hello%20Coach%20Dajenny,%20guide%20me%20through." target="_blank">WhatsApp</a>
+      <a class="nav-cta contact" href="https://wa.me/254755252499?text=Hello%20Coach%20Dajenny,%20guide%20me%20through." target="_blank" rel="noopener noreferrer">WhatsApp</a>
       <a class="nav-cta register" href="registration.html" target="_blank">Register</a>
     </div>
   </nav>
@@ -245,11 +206,11 @@
       <!-- WELCOME SECTION -->
 <section id="welcome" class="wrap welcome-section">
   <div class="welcome-left" aria-labelledby="welcome-heading">
-    <h1 id="welcome-heading">🎁 Get Your <span style="color:var(--primary);font-weight:700">Free Welcome Bonus</span> Instantly!</h1>
+    <h1 id="welcome-heading">🎁 Get Your Free Welcome Bonus Instantly!</h1>
     <p class="lead">At <strong>Helalink Agencies</strong>, we believe every new member deserves a powerful start. Immediately after activating your account you receive a <strong>Ksh.300 welcome bonus</strong>, credited straight to your dashboard.</p>
 
     <div class="welcome-actions">
-      <a class="btn whatsapp" href="https://wa.me/254755252499?text=Hello%20Coach%20Dajenny,%20help%20me%20get%20my%20bonus." target="_blank">
+      <a class="btn whatsapp" href="https://wa.me/254755252499?text=Hello%20Coach%20Dajenny,%20help%20me%20get%20my%20bonus." target="_blank" rel="noopener noreferrer">
         <i class="fab fa-whatsapp"></i> WhatsApp Us
       </a>
 
@@ -270,10 +231,8 @@
     <a class="claim-btn" href="registration.html" target="_blank">🚀 Join Now & Claim Your Bonus</a>
   </div>
 </section>
-
-
-      <div class="wrap content-inner" style="margin-top:18px;">
-        <h2 id="services" style="margin-top:0;">🔑 Steps to Get Your Bonus</h2>
+      <div class="wrap content-inner" class="bonus-info">
+        <h1 id="services">🔑 Steps to Get Your Bonus</h1>
 
         <div class="steps" aria-hidden="false">
           <div class="step"><strong>Step 1:</strong> Visit the registration page using the register button.</div>
@@ -283,42 +242,42 @@
           <div class="step"><strong>Step 5:</strong> Start completing tasks and grow your earnings!</div>
         </div>
 
-        <h3 id="about" style="margin-top:18px;">🎯 Why We Offer It</h3>
+        <h3 id="about" class="bonus-info">🎯 Why We Offer It</h3>
         <ul>
           <li>Experience Helalink’s earning system from day one.</li>
           <li>Encourages you to start tasks and referrals immediately.</li>
           <li>Boosts confidence and accelerates your first payouts.</li>
         </ul>
 
-        <h3 style="margin-top:18px;">💰 Important Notes</h3>
+        <h3 class="bonus-info">💰 Important Notes</h3>
         <ul>
           <li>The bonus is a <strong>one-time reward</strong> for new activations only.</li>
           <li>The bonus contributes to your balance but typically cannot be withdrawn alone; combine with earned balance.</li>
           <li>Use it to unlock features, access tasks, and kickstart your network growth.</li>
         </ul>
 
-        <h3 style="margin-top:18px;">💡 Pro Tip</h3>
+        <h3 class="bonus-info">💡 Pro Tip</h3>
         <p>Turn your welcome bonus into a growth engine: complete the highest-paying tasks, invite active friends, and train your referrals to maximize daily earnings.</p>
 
-        <div class="about-navigation" aria-label="Post navigation">
-          <a class="nav-about" href="readmore-app.html"><i class="fas fa-arrow-left" style="margin-right:8px"></i> Back: Helalink App</a>
-          <a class="nav-about" href="videos.html">Next: Watch Videos <i class="fas fa-arrow-right" style="margin-left:8px"></i></a>
-        </div>
+        <div class="about-navigation">
+      <a href="readmore-app.html" class="nav-about">
+        <i class="fas fa-arrow-left"></i> Back: Download App
+      </a>
+      <a href="videos.html" class="nav-about">
+        Next: Watch Video <i class="fas fa-arrow-right"></i>
+      </a>
+    </div>
       </div>
 
     </div> 
   </main>
-
-  <footer style="background:#e8e8f0; color:#15212c; padding:25px 0; text-align:center; margin-top:40px;">
-  <div class="wrap" style="display:flex; flex-direction:column; gap:6px; align-items:center; justify-content:center;">
-    <div style="font-weight:600; font-size:1.1rem;">
+  <footer class="footer-bottom">
+  <div class="wrap">
+    <div class="footer-text">
       Website developed with ❤️ by 
-      <a href="https://wa.me/254707995729" target="_blank" 
-         style="color:#170f91; text-decoration:none;">
-         Jeff 🔗
-      </a>
+      <a href="https://wa.me/254707995729" target="_blank" rel="noopener noreferrer" class="jeff">Jeff 🔗</a>
     </div>
-    <small class="muted" style="color:#25282b;">
+    <small class="mute">
       © <span id="year"></span> Helalink Agencies — All rights reserved.
     </small>
   </div>

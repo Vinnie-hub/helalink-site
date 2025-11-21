@@ -27,8 +27,6 @@
       min-height: 100vh;
     }
 
-    /* Header Base */
-/* Header full width background */
 header {
   width: 100%;
   background: #0066ff;
@@ -37,7 +35,6 @@ header {
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Header content centered inside */
 .header-container {
   max-width: 1100px;
   margin: 0 auto;
@@ -48,7 +45,6 @@ header {
   flex-wrap: wrap;
 }
 
-/* Title style */
 .site-title {
   font-size: 1.6rem;
   font-weight: 700;
@@ -56,7 +52,6 @@ header {
   color: #fff;
 }
 
-/* Nav links */
 nav {
   display: flex;
   gap: 16px;
@@ -96,8 +91,6 @@ nav a:hover {
   }
 }
 
-
-/* Navigation */
 nav {
   display: flex;
   gap: 14px;
@@ -118,7 +111,6 @@ nav a:hover {
   text-decoration: underline;
 }
 
-/* Responsive Fix */
 @media (max-width: 768px) {
   .header-container {
     flex-direction: column;
@@ -160,27 +152,22 @@ nav a:hover {
   color: #fff;
 }
 
-/* Green Sign Up button */
-.btn.primary {
-  background: #1faa00;
+.btn.sign{
+  background: linear-gradient(90deg, #6366f1, #10b981);
 }
-.btn.primary:hover {
-  background: #106800;
-}
-
-/* Blue Sign In button */
-.btn.secondary {
+.btn.sign:hover {
   background: #0040ff;
 }
-.btn.secondary:hover {
-  background: #022083;
-}
 
-/* Make icons slightly smaller */
-.btn i {
-  font-size: 1rem;
+.btn.support {
+  background: linear-gradient(90deg, #6366f1, #10b981);
 }
-
+.wrap{display:flex; flex-direction:column; gap:6px; align-items:center; justify-content:center;}
+.btn.support:hover {background: #05d65c;}
+.btn i {font-size: 1rem;}
+.footer-bottom {background:#f9fafc; color:#15212c; padding:25px 0; text-align:center; margin-top:40px;}
+.footer-text{font-weight:600; font-size:0.9rem;}
+.jeff {color:#170f91; text-decoration:none}
   </style>
 </head>
 
@@ -198,32 +185,28 @@ nav a:hover {
     <h2>Registration is Required to Get Started on Helalink</h2>
     <p>Complete registration to start earning from Helalink</p>
 
-    <a href="https://helalink.com/register.php?ref=DAJENNY" class="btn primary">
+    <a href="https://helalink.com/register.php?ref=DAJENNY" class="btn sign">
   <i class="fa fa-user-plus"></i> Sign Up
 </a>
 
-<h2>Already Registered?</h2>
+<h2>Contact Support</h2>
 
-<a href="https://helalink.com/login.php" class="btn secondary">
-  <i class="fa fa-sign-in-alt"></i> Sign In
+<a href="https://wa.me/254755252499?text=Hello%20Coach%20Dajenny,%20guide%20me%20through." class="btn support">
+  <i class="fa-brands fa-whatsapp"></i> WhatsApp Us
 </a>
 
     <p><strong>Invite friends</strong> and earn an extra <strong>40% bonus</strong> from their income!</p>
   </div>
-
-  <footer style="background:#f9fafc; color:#15212c; padding:25px 0; text-align:center; margin-top:40px;">
-  <div class="wrap" style="display:flex; flex-direction:column; gap:6px; align-items:center; justify-content:center;">
-    <div style="font-weight:600; font-size:0.9rem;">
+  <footer class="footer-bottom">
+  <div class="wrap">
+    <div class="footer-text">
       Website developed with ❤️ by 
-      <a href="https://wa.me/254707995729" target="_blank" 
-         style="color:#170f91; text-decoration:none;">
-         Jeff 🔗
-      </a>
+      <a href="https://wa.me/254707995729" target="_blank" rel="noopener noreferrer" class="jeff">Jeff 🔗</a>
     </div>
-    <small class="muted" style="color:#25282b;">
+    <small class="muted">
       © <span id="year"></span> Helalink Agencies — All rights reserved.
     </small>
   </div>
-</footer>
+   </footer>
 </body>
 </html>

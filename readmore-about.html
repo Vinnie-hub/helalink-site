@@ -73,6 +73,7 @@
     .contact-btn:hover {
       transform: scale(1.05);
     }
+    .top-date {width: 100%;background: #f8fafc; color: #475569; text-align: center;padding: 8px 0;font-size: 0.95rem;border-bottom: 1px solid rgba(0,0,0,0.05);}
 
     /* Section Boxes */
     section {
@@ -150,6 +151,7 @@
       margin: 25px 0;
     }
     .highlight-box h3 { margin-top: 0; }
+    .highlight-box-2 {color: #fff;}
 
     /* Table */
     .earnings-table table {
@@ -187,21 +189,11 @@
     .nav-about:hover { color: #6f42c1; }
 
     /* Footer */
-    footer {
-      background: #f9fafc;
-      color: #07121d;
-      padding: 25px 0;
-      text-align: center;
-      margin-top: 50px;
-    }
-    footer a {
-      color: #0834f8;
-      text-decoration: none;
-      font-weight: 600;
-    }
-    footer a:hover {
-      text-decoration: underline;
-    }
+    .footer-bottom {background:#f9fafc; color:#15212c; padding:25px 0; text-align:center; margin-top:40px;}
+    .footer-text{font-weight:600; font-size:0.9rem;}
+    .jeff {color:#170f91; text-decoration:none}
+    .jeff:hover {text-decoration: underline;}
+    .mute {color:#25282b}
 
     @media (max-width: 768px) {
       .intro-section { flex-direction: column; }
@@ -217,15 +209,15 @@
       <a href="index.html" class="nav-link">Home</a>
       <a href="#services" class="nav-link">Services</a>
       <a href="#about" class="nav-link">About</a>
-      <a href="https://wa.me/254755252499?text=Hello%20Coach%20Dajenny,%20guide%20me%20through." class="contact-btn" target="_blank">WHATSAPP</a>
+      <a href="https://wa.me/254755252499?text=Hello%20Coach%20Dajenny,%20guide%20me%20through." class="contact-btn" target="_blank" rel="noopener noreferrer">WHATSAPP</a>
       <a href="registration.html" class="register-btn" target="_blank">REGISTER</a>
     </div>
   </nav>
   <!-- Hero Section -->
   <section class="hero-detail" id="services">
-    <div style="text-align: center;" class="post-meta">
-      📅 Updated May 21, 2025 • Written by <strong>DAJENNY</strong>
-    </div>
+    <div class="top-date">
+    📅 Updated May 21, 2025 • Written by <strong>DAJENNY</strong>
+  </div>
     <h1>Helalink Agencies — Platform for Earning Money Online in 2025</h1>
     <div class="intro-section">
       <img src="pictures/about.jpg" alt="Helalink platform overview" />
@@ -234,7 +226,7 @@
         <p>Helalink is one of Africa’s most reliable and fast-growing platforms for digital income, launched in 2023. It empowers you to earn through referrals, surveys, videos, and daily bonuses — right from your smartphone.</p>
 
         <div class="action-buttons">
-          <a href="https://wa.me/254755252499?text=Hello%20Coach%20Dajenny,%20guide%20me%20through." class="whatsapp-btn" target="_blank">
+          <a href="https://wa.me/254755252499?text=Hello%20Coach%20Dajenny,%20guide%20me%20through." class="whatsapp-btn" target="_blank" rel="noopener noreferrer">
             <i class="fab fa-whatsapp"></i> Chat Coach
           </a>
           <a href="registration.html" class="register-action-btn" target="_blank">
@@ -251,7 +243,7 @@
     <p><strong>Helalink Agencies</strong> is a modern earning platform designed to help Africans — especially Kenyans — make money online easily and safely through simple digital activities.</p>
 
     <div class="highlight-box">
-      <h3 style="color: #fff;">Why Thousands are Joining Helalink in 2025</h3>
+      <h3 class="highlight-box-2">Why Thousands are Joining Helalink in 2025</h3>
       <ul>
         <li>✅ Low startup fee — Join with as little as KES 550</li>
         <li>✅ Daily earnings — Withdraw instantly, no delays</li>
@@ -285,7 +277,7 @@
     </ul>
 
     <div class="highlight-box">
-      <h3 style="color: #fff;">🔑 How to Join Helalink Agencies</h3>
+      <h3 class="highlight-box-2">🔑 How to Join Helalink Agencies</h3>
       <ol>
         <li>Visit the <strong>Registration page</strong>.</li>
         <li>Click <strong>"Register"</strong>.</li>
@@ -344,14 +336,17 @@
   </section>
 
   <!-- Footer -->
-  <footer>
-    <div>
-      <div style="font-weight: 600; font-size: 1.1rem;">
-        Website developed by <a href="https://wa.me/254707995729" target="_blank">Jeff 🔗</a>
-      </div>
-      <small style="color: #202122;">© <span id="year"></span> Helalink Agencies — All rights reserved.</small>
+  <footer class="footer-bottom">
+  <div class="wrap">
+    <div class="footer-text">
+      Website developed with ❤️ by 
+      <a href="https://wa.me/254707995729" target="_blank" rel="noopener noreferrer" class="jeff">Jeff 🔗</a>
     </div>
-  </footer>
+    <small class="mute">
+      © <span id="year"></span> Helalink Agencies — All rights reserved.
+    </small>
+  </div>
+</footer>
 
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
